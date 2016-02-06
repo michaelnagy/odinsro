@@ -3,21 +3,60 @@
   <head>
     <meta charset="utf-8">
     <title>OdinsRO</title>
-    <link rel="stylesheet" href="/bower_components/Materialize/dist/css/materialize.min.css" media="screen" charset="utf-8">
-    <link rel="stylesheet" href="/css/style.css" media="screen" charset="utf-8">
+    <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="/bower_components/Materialize/dist/css/materialize.min.css" media="screen" charset="utf-8">
+      <link rel="stylesheet" href="/css/style.css" media="screen" charset="utf-8">
   </head>
-  <body>
+  <body class="blue lighten-5">
+
+    <!-- Login Register Modal -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4 class="center-align">Login</h4>
+        <div class="row">
+          <form class="col s12 login-form">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" name="email" class="validate">
+                <label for="email" data-error="Isso não um e-mail válido :(">E-mail</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="password" type="password" name="user_pass" class="validate">
+                <label for="password">Password</label>
+              </div>
+            </div>
+          </form>
+          <div class="row buttons">
+              <div class="col s6">
+                <button class="btn waves-effect waves-light btn-login" name="action">Login
+                  <i class="material-icons right">send</i>
+                </button>
+              </div>
+              <div class="col s6">
+                <button class=" light-blue darken-3 btn waves-effect waves-light btn-register" name="action">Registrar
+                  <i class="material-icons right">perm_identity</i>
+                </button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Login Register Modal END-->
+
     <header>
       <nav class="blue darken-3">
         <div class="nav-wrapper container">
           <a href="#" class="brand-logo"><img src="img/logo.png" alt="" /></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/">Home</a></li>
+            <li><a class=".home" href="/">Home</a></li>
             <li><a href="/download">Download</a></li>
-            <li><a href="/register">Register</a></li>
             <li><a href="/donate">Donate</a></li>
             <li><a href="/panel">Panel</a></li>
             <li><a href="/database">Database</a></li>
+            <li>
+              <perfil-menu></perfil-menu>
+            </li>
           </ul>
 
           <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -32,7 +71,30 @@
         </div>
       </nav>
     </header>
+    <main>
+        <div class="container">
+          <div class="row section1">
+            <div class="col s12 m4 z-depth-1 white-card">
+
+            </div>
+            <div class="col s12 m8 z-depth-1">
+              <h4 class="center-align">Ranking</h4>
+              <img class="responsive-img" src="http://lorempixel.com/image_output/abstract-q-c-500-500-8.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
   <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
   <script src="/bower_components/Materialize/dist/js/materialize.min.js" charset="utf-8"></script>
+  <script src="/bower_components/riot/riot+compiler.min.js" charset="utf-8"></script>
+  <script src="js/script.js" charset="utf-8"></script>
+  <script src="js/functions.js" charset="utf-8"></script>
+  <script src="js/app.js" charset="utf-8"></script>
+  <script src="/components/perfil-menu.tag" type="riot/tag"></script>
+  <script>riot.mount('*')</script>
+
   </body>
 </html>
