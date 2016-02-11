@@ -17,7 +17,7 @@
                     cache:false,
                     method:'POST',
                     success: function (response) {
-                        
+
                         if(response.hasOwnProperty('session_token')) {
 
                           Materialize.toast('<span>Você agora está logado</span>', 8000);
@@ -60,6 +60,7 @@
                     success:function (response) {
                         Materialize.toast('<span>Você foi deslogado</span>', 8000);
                         sessionStorage.clear();
+                        $('.login-form')[0].reset();
                         riot.update();
                         console.log(getToken('token'));
                     },
