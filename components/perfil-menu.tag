@@ -1,35 +1,24 @@
 <perfil-menu>
 
-  <div class="modal-content">
-    <h4 class="center-align">Login</h4>
-    <div class="row">
-      <form class="col s12 login-form">
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="email" type="email" name="email" class="validate">
-            <label for="email" data-error="Isso não um e-mail válido :(">E-mail</label>
-          </div>
-          <div class="input-field col s12">
-            <input id="password" type="password" name="user_pass" class="validate">
-            <label for="password">Password</label>
-          </div>
-        </div>
-      </form>
-      <div class="row buttons">
-          <div class="col s6">
-            <button class="btn waves-effect waves-light btn-login" name="action">Login
-              <i class="material-icons right">send</i>
-            </button>
-          </div>
-          <div class="col s6">
-            <button class=" light-blue darken-3 btn waves-effect waves-light btn-register" name="action">Registrar
-              <i class="material-icons right">perm_identity</i>
-            </button>
-            <a href="#recover">Recover your password</a>
-          </div>
-      </div>
+  <a if={!session} class="modal-trigger" href="#modal1">
+    <div class="chip wrapper">
+      <img src="img/avatar.png">
+      Anonymous
     </div>
-  </div>
+  </a>
+
+  <a if={session} class="dropdown-button" href="#!" data-activates="dropdown1"><div class="chip wrapper">
+    <img src="img/logged.png">{usermail}</div><i class="material-icons right">arrow_drop_down</i>
+  </a>
+
+  <!-- Dropdown Structure -->
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">Account</a></li>
+    <li><a href="#!">System</a></li>
+    <li><a href="#!">Shop</a></li>
+    <li class="divider"></li>
+    <li><a class="logout" href="#logout">Logout</a></li>
+  </ul>
 
   <style>
 
@@ -56,7 +45,7 @@
       dataform = $('.login-form').serializeArray();
       // console.log(dataform);
 
-        $.api.register(dataform[0].value, dataform[1].value, registered);
+        $.api.register(dataform[0].value, dataform[1].value);
 
       });
       // Ajax to login

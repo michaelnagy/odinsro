@@ -1,7 +1,7 @@
-<pass-recover>
+<login-register>
 
-  <div class="modal-content recover">
-    <h4 class="center-align">Password Recovery</h4>
+  <div class="modal-content" id="login-register">
+    <h4 class="center-align">Login or Register</h4>
     <div class="row">
       <form class="col s12 login-form">
         <div class="row">
@@ -17,14 +17,15 @@
       </form>
       <div class="row buttons">
           <div class="col s6">
-            <button class="btn waves-effect waves-light btn-login" name="action">Send new password
+            <button class="btn waves-effect waves-light btn-login" name="action">Login
               <i class="material-icons right">send</i>
             </button>
           </div>
           <div class="col s6">
-            <button class=" light-blue darken-3 btn waves-effect waves-light btn-register" name="action">Go back
-              <i class="material-icons right">replay</i>
+            <button class=" light-blue darken-3 btn waves-effect waves-light btn-register" name="action">Registrar
+              <i class="material-icons right">perm_identity</i>
             </button>
+            <a href="#forgot">Recover your password</a>
           </div>
       </div>
     </div>
@@ -53,4 +54,4 @@
 
   </script>
 
-</pass-recover>
+</login-register>

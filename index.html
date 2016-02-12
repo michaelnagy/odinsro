@@ -6,13 +6,17 @@
     <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="/bower_components/Materialize/dist/css/materialize.min.css" media="screen" charset="utf-8">
+      <link rel="stylesheet" href="/bower_components/animate.css/animate.min.css" media="screen" charset="utf-8">
       <link rel="stylesheet" href="/css/style.css" media="screen" charset="utf-8">
   </head>
   <body class="blue lighten-5">
 
     <!-- Login Register Modal -->
+
+
     <div id="modal1" class="modal">
-      <div class="modal-content" id="">
+      <login-register></login-register>
+      <!-- <div class="modal-content" id="">
         <h4 class="center-align">Login</h4>
         <div class="row">
           <form class="col s12 login-form">
@@ -41,7 +45,7 @@
               </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <!-- Login Register Modal END-->
 
@@ -94,6 +98,7 @@
   <script src="js/script.js" charset="utf-8"></script>
   <script src="js/functions.js" charset="utf-8"></script>
   <script src="js/app.js" charset="utf-8"></script>
+  <script src="/components/login-register.tag" type="riot/tag"></script>
   <script src="/components/perfil-menu.tag" type="riot/tag"></script>
   <script>riot.mount('*')</script>
 
