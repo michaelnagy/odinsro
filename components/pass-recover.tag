@@ -1,6 +1,5 @@
 <pass-recover>
-
-  <div class="modal-content recover">
+  <div class="animated slideInLeft">
     <h4 class="center-align">Password Recovery</h4>
     <div class="row">
       <form class="col s12 login-form">
@@ -8,10 +7,6 @@
           <div class="input-field col s12">
             <input id="email" type="email" name="email" class="validate">
             <label for="email" data-error="Isso não um e-mail válido :(">E-mail</label>
-          </div>
-          <div class="input-field col s12">
-            <input id="password" type="password" name="user_pass" class="validate">
-            <label for="password">Password</label>
           </div>
         </div>
       </form>
@@ -22,24 +17,40 @@
             </button>
           </div>
           <div class="col s6">
-            <button class=" light-blue darken-3 btn waves-effect waves-light btn-register" name="action">Go back
+            <a href="#login-register" class="light-blue darken-3 btn waves-effect waves-light btn-go-back" name="action">Go back
               <i class="material-icons right">replay</i>
-            </button>
+            </a>
           </div>
       </div>
     </div>
   </div>
 
   <style>
-
+  /*.pass-recover > .animated {
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
+  }*/
   </style>
 
   <script>
 
     var self = this;
 
-    this.on('mount', function(){
+    riot.route('login-register', function(name) {
+      console.log('montou e desmontou 2');
+      riot.mount('.login-register','login-register');
+      self.unmount(true);
+    });
 
+
+    this.on('mount', function(){
+      // $('.btn-go-back').click(function () {
+      //   riot.mount('.modal-content', 'login-register');
+      //   console.log('montou de novo');
+      //   self.unmount();
+      //   console.log('desmontou de novo');
+      // });
 
     });
 

@@ -1,6 +1,6 @@
 <login-register>
 
-  <div class="modal-content" id="login-register">
+  <div class="animated slideInRight">
     <h4 class="center-align">Login or Register</h4>
     <div class="row">
       <form class="col s12 login-form">
@@ -15,7 +15,7 @@
           </div>
         </div>
       </form>
-      <div class="row buttons">
+      <div style="margin-bottom:0;" class="row buttons">
           <div class="col s6">
             <button class="btn waves-effect waves-light btn-login" name="action">Login
               <i class="material-icons right">send</i>
@@ -25,23 +25,38 @@
             <button class=" light-blue darken-3 btn waves-effect waves-light btn-register" name="action">Registrar
               <i class="material-icons right">perm_identity</i>
             </button>
-            <a href="#forgot">Recover your password</a>
           </div>
+          <div class="col s12 valign-wrapper"><a href="#pass-recover" id="pass-recover">Forgot your password?</a></div>
       </div>
     </div>
   </div>
 
-  <style>
 
+  <style>
+  a#pass-recover {
+    margin-top: 20px;
+    margin-bottom: -20px;
+  }
   </style>
 
   <script>
 
     var self = this;
 
+    riot.route('pass-recover', function(name) {
+      console.log('montou e desmontou');
+      riot.mount('.pass-recover','pass-recover');
+      self.unmount(true);
+    });
+
     this.on('mount', function(){
-
-
+      // $('.pass-recover').click(function () {
+      //
+      //   console.log('montou e desmontou');
+      //   riot.mount('.modal-content','pass-recover');
+      //   this.unmount();
+      //
+      // });
     });
 
     this.on('update', function(){
