@@ -26,7 +26,6 @@
 
   <script>
 
-    var dataform = [];
     var self = this;
 
     this.on('mount', function(){
@@ -37,26 +36,7 @@
       // $('.modal-trigger').click(function () {
       //   $('#modal1.modal').openModal();
       // });
-      $('.modal-trigger').leanModal();
-
-      // Ajax to register
-      $('.btn-register').click(function () {
-
-      dataform = $('.login-form').serializeArray();
-      // console.log(dataform);
-
-        $.api.register(dataform[0].value, dataform[1].value);
-
-      });
-      // Ajax to login
-      $('.btn-login').click(function () {
-
-      dataform = $('.login-form').serializeArray();
-      // console.log(dataform);
-
-        // Email and password are typically input fields in the app UI.
-        $.api.login(dataform[0].value, dataform[1].value);
-      });
+      
       //Logout
     });
 

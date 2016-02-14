@@ -40,7 +40,7 @@
   </style>
 
   <script>
-
+    var dataform = [];
     var self = this;
 
     riot.route('pass-recover', function(name) {
@@ -50,13 +50,26 @@
     });
 
     this.on('mount', function(){
-      // $('.pass-recover').click(function () {
-      //
-      //   console.log('montou e desmontou');
-      //   riot.mount('.modal-content','pass-recover');
-      //   this.unmount();
-      //
-      // });
+      $('.modal-trigger').leanModal();
+
+      // Ajax to register
+      $('.btn-register').click(function () {
+
+      dataform = $('.login-form').serializeArray();
+      // console.log(dataform);
+
+        $.api.register(dataform[0].value, dataform[1].value);
+
+      });
+      // Ajax to login
+      $('.btn-login').click(function () {
+
+      dataform = $('.login-form').serializeArray();
+      // console.log(dataform);
+
+        // Email and password are typically input fields in the app UI.
+        $.api.login(dataform[0].value, dataform[1].value);
+      });
     });
 
     this.on('update', function(){
