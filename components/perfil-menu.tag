@@ -32,12 +32,6 @@
 
       this.session = getToken('token');
       this.usermail = getToken('email');
-      // console.log(this.usermail);
-      // $('.modal-trigger').click(function () {
-      //   $('#modal1.modal').openModal();
-      // });
-      
-      //Logout
     });
 
     this.on('update', function(){

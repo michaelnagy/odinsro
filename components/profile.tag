@@ -1,6 +1,6 @@
-<database>
+<profile>
   <div class="container">
-    <div class="row section1">
+    <div class="row profile">
       <div class="col s12">
         database component
       </div>
@@ -14,4 +14,4 @@
       self.unmount(true);
     });
   </script>
-</database>
+</profile>

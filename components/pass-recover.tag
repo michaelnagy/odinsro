@@ -5,16 +5,16 @@
       <form class="col s12 reset-form">
         <div class="row">
           <div class="input-field col s12">
-            <input id="email" type="email" name="email" class="validate" required>
+            <input id="email" type="email" name="email" class="validate" required="" aria-required="true">
             <label for="email" data-error="Isso não um e-mail válido :(">E-mail</label>
           </div>
           <div style="display:none" class="reset2">
             <div class="input-field col s12">
-              <input id="code" type="text" name="code" class="validate" required>
+              <input id="code" type="text" name="code" class="validate" required="" aria-required="true">
               <label for="code">Confirmation Code</label>
             </div>
             <div class="input-field col s12">
-              <input id="new_password" type="password" name="new_password" class="validate" required>
+              <input id="new_password" type="password" name="new_password" class="validate" required="" aria-required="true">
               <label for="new_password">New Password</label>
             </div>
           </div>

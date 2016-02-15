@@ -58,7 +58,7 @@
                     cache:false,
                     method:'DELETE',
                     success:function (response) {
-                        Materialize.toast('<span>Você foi deslogado</span>', 8000);
+                        Materialize.toast('<span>You have been disconnected from the system</span>', 8000);
                         sessionStorage.clear();
                         $('.login-form')[0].reset();
                         riot.update();
@@ -149,8 +149,18 @@
                     method:'POST',
                     success:function (response) {
                       if(response.hasOwnProperty('session_token')) {
-                          setToken('token', response.session_token);
-                          console.log(response);
+                          console.log(response, email);
+                            Materialize.toast('<span><b>Account created!</b><br>You are now logged in your account</span>', 8000);
+                            setToken('token', response.session_token);
+                            setToken('email', email);
+                            //update riotjs tags
+                            riot.update();
+                            //changes URL in browser
+                            riot.route('perfil');
+
+                            //closes the login modal
+                            $('#modal1.modal').closeModal();
+
                       }
 
                     },
