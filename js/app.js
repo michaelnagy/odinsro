@@ -24,8 +24,8 @@ $(document).ready(function(){
     view.render('download');
   })
 
-  router('database', function() {
-    view.render('database');
+  router('getting-started', function() {
+    view.render('getting-started');
   })
 
   // example with params
