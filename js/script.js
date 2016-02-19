@@ -4,8 +4,8 @@
     //  DreamFactory 2.0 instance specific constants
     //--------------------------------------------------------------------------
 
-    var INSTANCE_URL   = 'http://df-odinsro.enterprise.dreamfactory.com';
-    var APP_API_KEY     = 'bf54f5860f64620a8a14357ebdc473fc75d2ffbdea8db7b8f0f8adbf44d22083';
+    var INSTANCE_URL   = 'http://localhost:8001';
+    var APP_API_KEY     = 'ed3c7ead094660610e1a05a19b73c8446124b6b2c57091759feab237d9f94291';
 
 //--------------------------------------------------------------------------
     //  Login
@@ -74,22 +74,6 @@
     //  Groups
     //--------------------------------------------------------------------------
 
-    var table = $('#table_groups').DataTable({
-        "paging":   false,
-        "order": [
-            [ 1, "asc" ]
-        ],
-        "info":     false,
-        "columnDefs": [
-            { "visible": false, "targets": 0 }
-        ],
-        "drawCallback": function ( settings ) {
-            $("#table_groups thead").remove();
-            $("#table_groups tfoot").remove();
-        }
-
-    });
-
     $('#table_groups tbody').on( 'click', 'tr', function () {
         var groupId = $('#table_groups').DataTable().row(this).data();
         $.route('group/' + groupId[0]);
@@ -127,39 +111,6 @@
     //--------------------------------------------------------------------------
     //  Group Create
     //--------------------------------------------------------------------------
-
-    var tableGroupCreate = $('#table_group_create').DataTable({
-        "paging":   false,
-        "order": [
-            [ 2, "asc" ],
-            [ 3, "asc" ],
-            [ 1, "asc" ]
-        ],
-        "info":     false,
-        "columnDefs": [
-            { "visible": false, "targets": 0 },
-            { "visible": false, "targets": 2 },
-            { "visible": false, "targets": 3 }
-        ],
-        "drawCallback": function ( settings ) {
-            var api = this.api();
-            var rows = api.rows( {page:'current'} ).nodes();
-            var last=null;
-
-            api.column(2, {page:'current'} ).data().each( function ( group, i ) {
-                if ( last !== group ) {
-                    $(rows).eq( i ).before(
-                        '<tr class="group info"><td colspan="5">'+group+'</td></tr>'
-                    );
-
-                    last = group;
-                }
-            } );
-
-            $("#table_group_create thead").remove();
-            $("#table_group_create tfoot").remove();
-        }
-    } );
 
     var populateGroupCreateTable = function(data) {
         var contacts = [];
@@ -228,40 +179,6 @@
     //  Group Show
     //--------------------------------------------------------------------------
 
-    var tableGroup = $('#table_group').DataTable({
-        "paging":   false,
-        "info":     false,
-        "order": [
-            [2, "asc" ],
-            [3, "asc"],
-            [1, "asc"]
-        ],
-        "columnDefs": [
-            { "visible": false, "targets": 0 },
-            { "visible": false, "targets": 2 },
-            { "visible": false, "targets": 3 }
-        ],
-
-        "drawCallback": function () {
-            var api = this.api();
-            var rows = api.rows( {page:'current'} ).nodes();
-            var last=null;
-
-            api.column(2, {page:'current'} ).data().each( function ( group, i ) {
-                if ( last !== group ) {
-                    $(rows).eq( i ).before(
-                        '<tr class="group info"><td colspan="4">'+group+'</td></tr>'
-                    );
-
-                    last = group;
-                }
-            } );
-
-            $("#table_group thead").remove();
-            $("#table_group tfoot").remove();
-        }
-    });
-
     var populateGroupShowName = function(data) {
         $('#group_show_name').text(data[0].name);
     };
@@ -316,41 +233,6 @@
     //--------------------------------------------------------------------------
     //  Group Edit
     //--------------------------------------------------------------------------
-
-    var tableGroupEdit = $('#table_group_edit').DataTable({
-        "paging":   false,
-        "order": [
-            [ 2, "asc" ],
-            [ 3, "asc" ],
-            [ 1, "asc" ]
-        ],
-        "info":     false,
-        "columnDefs": [
-            { "visible": false, "targets": 0 },
-            { "visible": false, "targets": 2 },
-            { "visible": false, "targets": 3 }
-        ],
-
-
-        "drawCallback": function () {
-            var api = this.api();
-            var rows = api.rows( {page:'current'} ).nodes();
-            var last=null;
-
-            api.column(2, {page:'current'} ).data().each( function ( group, i ) {
-                if ( last !== group ) {
-                    $(rows).eq( i ).before(
-                        '<tr class="group info"><td colspan="5">'+group+'</td></tr>'
-                    );
-
-                    last = group;
-                }
-            } );
-
-            $("#table_group_edit thead").remove();
-            $("#table_group_edit tfoot").remove();
-        }
-    });
 
     var populateGroupName = function(data) {
         $('#group_edit_name').val(data.name);

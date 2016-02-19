@@ -23,14 +23,15 @@
                           Materialize.toast('<span>You are now logged in your account</span>', 8000);
                           setToken('token', response.session_token);
                           setToken('email', response.email);
-                          //changes URL in browser
-                          riot.route('perfil');
-                          //update riotjs tags
-                          riot.update();
+                          
                           //closes the login modal
                           $('#modal1.modal').closeModal();
+                          //update riotjs tags
+                          riot.update();
+                          //changes URL in browser
+                          riot.route('profile');
                         }
-                        console.log(response);
+                        // console.log(response);
                     },
                     error: function (response) {
                         var msgObj = {};
@@ -62,10 +63,12 @@
                         sessionStorage.clear();
                         $('.login-form')[0].reset();
                         riot.update();
-                        console.log(getToken('token'));
+                        riot.route('');
+                        // console.log(getToken('token'));
                     },
                     error:function (response) {
-                        console.log(response);
+                        Materialize.toast('<span><b>Error!</b><br>Please try to logout again.</span>', 5000);
+                    
                         return false;
                     }
                 });
@@ -115,8 +118,6 @@
                     }),
                     success:function (response) {
                         Materialize.toast('<span><b>Sucess!</b> Your password was sucessfully changed.<br>You can now press Go Back and login.</span>', 8000);
-                        $().
-                        console.log(response);
                     },
                     error:function (response) {
                         console.log(response);
@@ -141,22 +142,25 @@
                     url: INSTANCE_URL + '/api/v2/user/register?login=true',
                     data: JSON.stringify({
                         // "first_name": firstname,
-                        // "last_name": lastname,
+                        // "display_name": displayname,
                         "email": email,
                         "new_password": password
                     }),
+                    headers: {
+                        "X-DreamFactory-API-Key": APP_API_KEY
+                    },
                     cache:false,
                     method:'POST',
                     success:function (response) {
                       if(response.hasOwnProperty('session_token')) {
-                          console.log(response, email);
+                          // console.log(response, email);
                             Materialize.toast('<span><b>Account created!</b><br>You are now logged in your account</span>', 8000);
                             setToken('token', response.session_token);
                             setToken('email', email);
                             //update riotjs tags
                             riot.update();
                             //changes URL in browser
-                            riot.route('perfil');
+                            riot.route('/profile');
 
                             //closes the login modal
                             $('#modal1.modal').closeModal();
@@ -169,9 +173,7 @@
                       var msgObj = {};
                       msgObj = parseResponse(response);
                       if(msgObj) {
-
-                          //
-                          messageBox(msgObj.code, msgObj.message, msgObj.error);
+                        Materialize.toast('<span>'+msgObj.message+'</span>', 8000);
                       }
 
                     }

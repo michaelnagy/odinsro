@@ -5,6 +5,10 @@
     <div class="row">
       <form class="col s12 login-form">
         <div class="row">
+        <!-- <div class="input-field col s12">
+            <input id="displayname" type="text" name="displayname" class="validate" required="required" required>
+            <label for="displayname" data-error="This field is required :(">Nickname</label>
+          </div> -->
           <div class="input-field col s12">
             <input id="email" type="email" name="email" class="validate" required="required" required>
             <label for="email" data-error="This is not a valid e-mail :(">E-mail</label>
@@ -54,14 +58,14 @@
 
       // Ajax to register
       $('.btn-register').click(function () {
-        console.log('clicou');
+        // console.log('clicou');
 
       dataform = $('.login-form').serializeArray();
       // console.log(dataform);
       $('.login-form').submit(function(event){
         if(!this.checkValidity())
               {
-                console.log($(this).find('input'));
+                // console.log($(this).find('input'));
                 $(this).find('input').filter(function() {
                     return !this.value;
                 }).first().addClass('invalid').focus();
@@ -71,9 +75,11 @@
               else {
                 event.preventDefault();
                 $.api.register(dataform[0].value, dataform[1].value);
+                dataform = [];
               }
           });
           $('.login-form').submit();
+          // dataform = [];
 
       });
       // Ajax to login
@@ -83,21 +89,24 @@
         $('.login-form').submit(function(event){
                 if(!this.checkValidity())
                 {
-                  console.log($(this).find('input'));
+                  // console.log($(this).find('input'));
                   $(this).find('input').filter(function() {
                       return !this.value;
                   }).first().addClass('invalid').focus();
                     event.preventDefault();
+                    dataform = [];
 
                 }
                 else {
                   event.preventDefault();
                   // Email and password are typically input fields in the app UI.
                   $.api.login(dataform[0].value, dataform[1].value);
+                  dataform = [];
                 }
 
         });
           $('.login-form').submit();
+          // dataform = [];
       });
     });
 

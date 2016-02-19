@@ -17,7 +17,7 @@
     <li><a href="#!">System</a></li>
     <li><a href="#!">Shop</a></li>
     <li class="divider"></li>
-    <li><a class="logout" href="#logout">Logout</a></li>
+    <li><a class="logout">Logout</a></li>
   </ul>
 
   <style>
@@ -32,6 +32,13 @@
 
       this.session = getToken('token');
       this.usermail = getToken('email');
+
+      $(".logout").click(function() {
+        // console.log('deslogou');
+        $.api.logout();
+        self.update();
+        // console.log(self.session);
+      });
     });
 
     this.on('update', function(){
@@ -42,15 +49,6 @@
     this.on('updated', function(){
       $(".dropdown-button").dropdown();
 
-
-
-    });
-
-    riot.route('logout', function() {
-      console.log('deslogou');
-      $.api.logout();
-      self.update();
-      console.log(self.session);
     });
 
   </script>
