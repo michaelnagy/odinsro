@@ -1,5 +1,5 @@
 <home>
-  <div class="container">
+  <div class="container animated fadeInUp">
       <div class="row section1">
         <div class="col s12 m4 z-depth-1 white-card">
 
@@ -13,6 +13,10 @@
 
   <script>
     var self = this;
+
+    this.on('mount', function(){
+      $('.main-menu').addClass('container');
+    });
 
     view.addUnmountListener('home', function() {
       self.unmount(true);

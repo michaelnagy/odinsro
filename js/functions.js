@@ -23,12 +23,10 @@
                           Materialize.toast('<span>You are now logged in your account</span>', 8000);
                           setToken('token', response.session_token);
                           setToken('email', response.email);
-                          
                           //closes the login modal
                           $('#modal1.modal').closeModal();
-                          //update riotjs tags
-                          riot.update();
                           //changes URL in browser
+                          riot.update();
                           riot.route('profile');
                         }
                         // console.log(response);
@@ -62,9 +60,11 @@
                         Materialize.toast('<span>You have been disconnected from the system</span>', 8000);
                         sessionStorage.clear();
                         $('.login-form')[0].reset();
+
                         riot.update();
-                        riot.route('');
-                        // console.log(getToken('token'));
+                        console.log(getToken('token'), riot.update());
+                        // riot.route('/');
+                        //update tag contexts
                     },
                     error:function (response) {
                         Materialize.toast('<span><b>Error!</b><br>Please try to logout again.</span>', 5000);
@@ -135,14 +135,14 @@
                 });
             },
 
-            register: function(email, password, callback) {
+            register: function(display_name, email, password) {
                 $.ajax({
                     dataType: 'json',
                     contentType: 'application/json; charset=utf-8',
                     url: INSTANCE_URL + '/api/v2/user/register?login=true',
                     data: JSON.stringify({
                         // "first_name": firstname,
-                        // "display_name": displayname,
+                        "display_name": display_name,
                         "email": email,
                         "new_password": password
                     }),
@@ -163,7 +163,7 @@
                             riot.route('/profile');
 
                             //closes the login modal
-                            $('#modal1.modal').closeModal();
+                            $('#modal2.modal').closeModal();
 
                       }
 

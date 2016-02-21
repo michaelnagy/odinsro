@@ -1,23 +1,35 @@
 <perfil-menu>
 
-  <a if={!session} class="modal-trigger" href="#modal1">
+  <!-- <a if={!session} class="modal-trigger" href="#modal1">
     <div class="chip wrapper">
       <img src="img/avatar.png">
-      Anonymous
+      Login/Register
     </div>
+  </a> -->
+
+  <a if={!session} class="dropdown-button1" href="#" data-activates="dropdown2">
+    <div class="chip wrapper">
+      <img src="img/avatar.png">
+      Login/Register
+    </div><i class="material-icons right">arrow_drop_down</i>
   </a>
 
-  <a if={session} class="dropdown-button" href="#!" data-activates="dropdown1"><div class="chip wrapper">
+  <a if={session} class="dropdown-button2" href="#" data-activates="dropdown1"><div class="chip wrapper">
     <img src="img/logged.png">{usermail}</div><i class="material-icons right">arrow_drop_down</i>
   </a>
 
   <!-- Dropdown Structure -->
-  <ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">Account</a></li>
+  <ul if={session} id="dropdown1" class="dropdown-content">
+    <li><a href="#profile">Account</a></li>
     <li><a href="#!">System</a></li>
     <li><a href="#!">Shop</a></li>
     <li class="divider"></li>
-    <li><a class="logout">Logout</a></li>
+    <li><a class="logout" href="#logout">Logout</a></li>
+  </ul>
+
+  <ul if={!session} id="dropdown2" class="dropdown-content">
+    <li><a href="#login">Login</a></li>
+    <li><a href="#register">Register</a></li>
   </ul>
 
   <style>
@@ -29,25 +41,26 @@
     var self = this;
 
     this.on('mount', function(){
+      // this.session = getToken('token');
+      // this.usermail = getToken('email');
 
-      this.session = getToken('token');
-      this.usermail = getToken('email');
+      // console.log(riot.update(), this.session);
 
-      $(".logout").click(function() {
-        // console.log('deslogou');
-        $.api.logout();
-        self.update();
-        // console.log(self.session);
-      });
     });
 
     this.on('update', function(){
       this.session = getToken('token');
       this.usermail = getToken('email');
+      console.log(self.session, 'update');
     });
 
     this.on('updated', function(){
-      $(".dropdown-button").dropdown();
+
+      // this.session = getToken('token');
+      // this.usermail = getToken('email');
+
+      $(".dropdown-button1").dropdown();
+      $(".dropdown-button2").dropdown();
 
     });
 
