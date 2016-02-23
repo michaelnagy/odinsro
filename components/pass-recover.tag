@@ -30,7 +30,7 @@
             </button>
           </div>
           <div class="col s6">
-            <a href="#login-register" class="light-blue darken-3 btn waves-effect waves-light btn-go-back" name="action">Go back
+            <a href="#login" class="light-blue darken-3 btn waves-effect waves-light btn-go-back" name="action">Go back
               <i class="material-icons right">replay</i>
             </a>
           </div>
@@ -45,9 +45,13 @@
 
     var self = this;
 
-    riot.route('login-register', function(name) {
-      console.log('montou e desmontou 2');
-      riot.mount('.login-register','login-register');
+    // riot.route('login', function(name) {
+      // console.log('montou e desmontou 2');
+      // riot.mount('.login','login');
+      // self.unmount(true);
+    // });
+
+    view.addUnmountListener('pass-recover', function() {
       self.unmount(true);
     });
 

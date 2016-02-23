@@ -26,6 +26,7 @@
 
     // mount
     riot.mount(name);
+
     view.selected = name;
   };
 

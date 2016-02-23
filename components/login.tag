@@ -42,11 +42,15 @@
     var dataform = [];
     var self = this;
 
-    riot.route('pass-recover', function(name) {
-      // console.log('montou e desmontou');
-      riot.mount('.pass-recover','pass-recover');
+    view.addUnmountListener('login', function() {
       self.unmount(true);
     });
+
+    // riot.route('pass-recover', function(name) {
+    //   // console.log('montou e desmontou');
+    //   riot.mount('.pass-recover','pass-recover');
+    //   self.unmount(true);
+    // });
 
     this.on('mount', function(){
 
@@ -80,6 +84,13 @@
 
         $('.login-form').submit();
           // dataform = [];
+      });
+      //submit form on Enter press
+      $('input[type=password]').on('keydown', function(e) {
+        if (e.which == 13) {
+          e.preventDefault();
+          $('.login-form').submit();
+        }
       });
     });
 

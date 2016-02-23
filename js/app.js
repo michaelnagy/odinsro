@@ -29,9 +29,13 @@ $(document).ready(function(){
   });
 
   riot.route('login', function() {
-    $('#modal1').openModal();
+    view.render('login');
+  });
+  riot.route('pass-recover', function() {
+    view.render('pass-recover');
   });
   riot.route('register', function() {
+    view.render('register');
     $('#modal2').openModal();
   });
   riot.route('logout', function() {

@@ -28,7 +28,7 @@
   </ul>
 
   <ul if={!session} id="dropdown2" class="dropdown-content">
-    <li><a href="#login">Login</a></li>
+    <li><a class="modal-log" href="#login">Login</a></li>
     <li><a href="#register">Register</a></li>
   </ul>
 
@@ -41,11 +41,11 @@
     var self = this;
 
     this.on('mount', function(){
-      // this.session = getToken('token');
-      // this.usermail = getToken('email');
 
-      // console.log(riot.update(), this.session);
-
+      $('.modal-log').click(function () {
+        $('#modal1').openModal();
+      });
+      
     });
 
     this.on('update', function(){

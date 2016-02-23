@@ -71,8 +71,14 @@
                 dataform = [];
               }
           });
-          $('.register-form').submit();
-          // dataform = [];
+          $('.register-form').submit(); 
+      });
+      //submit form on Enter press
+      $('input[type=password]').on('keydown', function(e) {
+        if (e.which == 13) {
+          e.preventDefault();
+          $('.login-form').submit();
+        }
       });
     });
 

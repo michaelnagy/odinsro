@@ -154,7 +154,7 @@
                     success:function (response) {
                       if(response.hasOwnProperty('session_token')) {
                           // console.log(response, email);
-                            Materialize.toast('<span><b>Account created!</b><br>You are now logged in your account</span>', 8000);
+                            Materialize.toast('<span><b>Account created!</b><br>You are now logged in to your account</span>', 8000);
                             setToken('token', response.session_token);
                             setToken('email', email);
                             //update riotjs tags

@@ -3,8 +3,8 @@
     <div class="col s2 animated fadeInLeft navigation">
       <ul class="side-nav fixed" id="mobile-demo">
         <li><a href="shop">Shop</a></li>
-        <li><a href="sass.html">Sistema</a></li>
-        <li><a href="badges.html">Ferramentas</a></li>
+        <li><a href="sass.html">System</a></li>
+        <li><a href="badges.html">Tools</a></li>
       </ul>
     </div>
     <div class="col s10 animated fadeInUp content">
@@ -89,10 +89,6 @@
 
   <script>
     var self = this; 
-    
-    view.addUnmountListener('profile', function() {
-      self.unmount(true);
-    });
 
     this.on('mount', function(){
       
