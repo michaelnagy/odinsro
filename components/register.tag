@@ -92,7 +92,7 @@
 
     view.addUnmountListener('register', function() {
       self.unmount(true);
-    });
+    }, 'modal');
   </script>
 
 </register>

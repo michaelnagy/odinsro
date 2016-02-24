@@ -100,7 +100,7 @@
 
     view.addUnmountListener('login', function() {
       self.unmount(true);
-    });
+    }, 'modal');
 
   </script>
 
