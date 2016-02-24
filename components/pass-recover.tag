@@ -51,11 +51,6 @@
       // self.unmount(true);
     // });
 
-    view.addUnmountListener('pass-recover', function() {
-      self.unmount(true);
-    });
-
-
     this.on('mount', function(){
       // Ajax to register
       $('.btn-reset').click(function () {
@@ -83,6 +78,10 @@
 
     this.on('updated', function(){
 
+    });
+
+    view.addUnmountListener('pass-recover', function() {
+      self.unmount(true);
     });
 
   </script>

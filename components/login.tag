@@ -42,10 +42,6 @@
     var dataform = [];
     var self = this;
 
-    view.addUnmountListener('login', function() {
-      self.unmount(true);
-    });
-
     // riot.route('pass-recover', function(name) {
     //   // console.log('montou e desmontou');
     //   riot.mount('.pass-recover','pass-recover');
@@ -100,6 +96,10 @@
 
     this.on('updated', function(){
 
+    });
+
+    view.addUnmountListener('login', function() {
+      self.unmount(true);
     });
 
   </script>
