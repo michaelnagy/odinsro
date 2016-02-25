@@ -5,29 +5,49 @@
 (function (w, riot) {
   "use strict";
 
-  var view = {};
+  var view = {},
+    groups = {},
+    createGroupIfNotExist;
 
-  view.unmountListeners = {};
+  createGroupIfNotExist = function (groupName) {
+    if (!groups[groupName]) {
+      groups[groupName] = {
+        unmountListeners: {}
+      };
+    }
+  };
 
-  view.unmount = function (name) {
-    var func = view.unmountListeners[name];
+  view.getGroups = function () {
+    return groups;
+  };
+
+  view.unmount = function (name, groupName) {
+    groupName = groupName || "default";
+    var func = groups[groupName].unmountListeners[name];
     func();
   };
 
-  view.addUnmountListener = function (name, func) {
-    view.unmountListeners[name] = func;
+  view.addUnmountListener = function (name, func, groupName) {
+    groupName = groupName || "default";
+    createGroupIfNotExist(groupName);
+
+    //view.unmountListeners[name] = func;
+    groups[groupName].unmountListeners[name] = func;
   };
 
-  view.render = function (name) {
-    // unmount
-    if (view.selected) {
-      view.unmount(view.selected);
+  view.render = function (name, groupName) {
+    groupName = groupName || "default";
+    createGroupIfNotExist(groupName);
+
+    // unmount previous selected
+    if (groups[groupName].selected) {
+      view.unmount(groups[groupName].selected, groupName);
     }
 
     // mount
     riot.mount(name);
 
-    view.selected = name;
+    groups[groupName].selected = name;
   };
 
   w.view = view;
