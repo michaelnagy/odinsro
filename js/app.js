@@ -32,7 +32,7 @@ $(document).ready(function(){
     view.render('login', 'modal');
   });
   riot.route('pass-recover', function() {
-    view.render('pass-recover');
+    view.render('pass-recover', 'modal');
   });
   riot.route('register', function() {
     view.render('register', 'modal');

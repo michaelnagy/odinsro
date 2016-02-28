@@ -45,12 +45,6 @@
 
     var self = this;
 
-    // riot.route('login', function(name) {
-      // console.log('montou e desmontou 2');
-      // riot.mount('.login','login');
-      // self.unmount(true);
-    // });
-
     this.on('mount', function(){
       // Ajax to register
       $('.btn-reset').click(function () {
@@ -82,7 +76,7 @@
 
     view.addUnmountListener('pass-recover', function() {
       self.unmount(true);
-    });
+    }, 'modal');
 
   </script>
 

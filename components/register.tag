@@ -41,12 +41,6 @@
     var dataform = [];
     var self = this;
 
-    // riot.route('pass-recover', function(name) {
-    //   // console.log('montou e desmontou');
-    //   riot.mount('.pass-recover','pass-recover');
-    //   self.unmount(true);
-    // });
-
     this.on('mount', function(){
       // Ajax to register
       $('.btn-register').click(function () {
