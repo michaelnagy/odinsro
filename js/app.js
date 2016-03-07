@@ -15,7 +15,6 @@ $(document).ready(function(){
     view.render('home');
     //remove container from header
     $('.main-menu').addClass('container');
-    // riot.update();
   });
 
   riot.route('profile', function() {
@@ -30,14 +29,18 @@ $(document).ready(function(){
 
   riot.route('login', function() {
     view.render('login', 'modal');
+    $('#modal1').openModal();
   });
+
   riot.route('pass-recover', function() {
     view.render('pass-recover', 'modal');
   });
+  
   riot.route('register', function() {
     view.render('register', 'modal');
     $('#modal2').openModal();
   });
+  
   riot.route('logout', function() {
     $.api.logout();
     riot.route('');

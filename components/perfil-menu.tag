@@ -1,12 +1,5 @@
 <perfil-menu>
 
-  <!-- <a if={!session} class="modal-trigger" href="#modal1">
-    <div class="chip wrapper">
-      <img src="img/avatar.png">
-      Login/Register
-    </div>
-  </a> -->
-
   <a if={!session} class="dropdown-button1" href="#" data-activates="dropdown2">
     <div class="chip wrapper">
       <img src="img/avatar.png">
@@ -40,18 +33,10 @@
 
     var self = this;
 
-    this.on('mount', function(){
-
-      $('.modal-log').click(function () {
-        $('#modal1').openModal();
-      });
-      
-    });
-
     this.on('update', function(){
       this.session = getToken('token');
       this.usermail = getToken('email');
-      console.log(self.session, 'update');
+      // console.log(self.session, 'update');
     });
 
     this.on('updated', function(){

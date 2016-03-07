@@ -5,10 +5,6 @@
     <div class="row">
       <form class="col s12 login-form">
         <div class="row">
-          <!-- <div class="input-field display_name col s12">
-            <input id="display_name" type="text" name="display_name" class="validate" required="required" required>
-            <label for="display_name" data-error="This username is already taken :(">Username</label>
-          </div> -->
           <div class="input-field email col s12">
             <input id="email" type="email" name="email" class="validate" required="required" required>
             <label for="email" data-error="This is not a valid e-mail :(">E-mail</label>
@@ -42,12 +38,6 @@
     var dataform = [];
     var self = this;
 
-    // riot.route('pass-recover', function(name) {
-    //   // console.log('montou e desmontou');
-    //   riot.mount('.pass-recover','pass-recover');
-    //   self.unmount(true);
-    // });
-
     this.on('mount', function(){
 
       //submit binder function
@@ -66,8 +56,6 @@
                   event.preventDefault();
                   // Email and password are typically input fields in the app UI.
                   $.api.login(dataform[0].value, dataform[1].value);
-                  console.log(dataform, 'else');
-                  // riot.update();
                 }
         });
 
@@ -84,6 +72,10 @@
       //submit form on Enter press
       $('input[type=password]').on('keydown', function(e) {
         if (e.which == 13) {
+         
+          dataform = [];
+          dataform = $('.login-form').serializeArray();
+
           e.preventDefault();
           $('.login-form').submit();
         }
@@ -91,7 +83,7 @@
     });
 
     this.on('update', function(){
-
+       // $('.login-form')[0].reset();
     });
 
     this.on('updated', function(){

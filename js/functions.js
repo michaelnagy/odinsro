@@ -14,6 +14,9 @@
                         "email": email,
                         "password": password
                     }),
+                    headers: {
+                        "X-DreamFactory-API-Key": APP_API_KEY
+                    },
                     cache:false,
                     method:'POST',
                     success: function (response) {
@@ -23,6 +26,9 @@
                           Materialize.toast('<span>You are now logged in your account</span>', 8000);
                           setToken('token', response.session_token);
                           setToken('email', response.email);
+                          setToken('odinid', response.odinid);
+                          setToken('name', response.name);
+                          console.log(response);
                           //closes the login modal
                           $('#modal1.modal').closeModal();
                           //changes URL in browser
@@ -56,11 +62,12 @@
                     url: INSTANCE_URL + '/api/v2/user/session',
                     cache:false,
                     method:'DELETE',
+                    headers: {
+                        "X-DreamFactory-API-Key": APP_API_KEY
+                    },
                     success:function (response) {
                         Materialize.toast('<span>You have been disconnected from the system</span>', 8000);
                         sessionStorage.clear();
-                        $('.login-form')[0].reset();
-
                         riot.update();
                         console.log(getToken('token'), riot.update());
                         // riot.route('/');
@@ -84,6 +91,9 @@
                     data: JSON.stringify({
                         "email": email,
                     }),
+                    headers: {
+                        "X-DreamFactory-API-Key": APP_API_KEY
+                    },
                     success:function (response) {
                         Materialize.toast('<span>A <b>confirmation code</b> was sent to your e-mail.<br>Insert it in the field below and set your <b>new password.</b></span>', 20000);
                         $('.reset2, .btn-reset2').fadeIn('slow');
@@ -116,6 +126,9 @@
                         "code": code,
                         "new_password": new_password
                     }),
+                    headers: {
+                        "X-DreamFactory-API-Key": APP_API_KEY
+                    },
                     success:function (response) {
                         Materialize.toast('<span><b>Sucess!</b> Your password was sucessfully changed.<br>You can now press Go Back and login.</span>', 8000);
                     },
@@ -157,6 +170,10 @@
                             Materialize.toast('<span><b>Account created!</b><br>You are now logged in to your account</span>', 8000);
                             setToken('token', response.session_token);
                             setToken('email', email);
+                            setToken('odinid', response.odinid);
+                            setToken('name', display_name);
+                            console.log(response);
+
                             //update riotjs tags
                             riot.update();
                             //changes URL in browser
@@ -180,12 +197,11 @@
                 });
             },
 
-            getRecords: function(table, params, token, callback) {
+            getRecords: function(table, token, account_id, callback) {
                 $.ajax({
                     dataType: 'json',
                     contentType: 'application/json; charset=utf-8',
-                    url: INSTANCE_URL + '/api/v2/db/_table/' + table,
-                    data: params,
+                    url: INSTANCE_URL + '/api/v2/odinsro/_table/' + table +'?id_field=account_id&ids='+2004003,//account_id,
                     cache:false,
                     method:'GET',
                     headers: {
@@ -193,19 +209,45 @@
                         "X-DreamFactory-Session-Token": token
                     },
                     success:function (response) {
-                        if(typeof callback !== 'undefined') {
-                            if (response.hasOwnProperty('resource'))
-                                callback(response.resource);
-                            else
-                                callback(response);
-                        }
+                        setToken('zeny', response.resource[0].zeny); 
+                        riot.update();
                     },
                     error:function (response) {
-                        callback(response);
-                        return false;
+                        
+                        console.log(response.responseJSON.error.message);
+                        if (response.responseJSON.error.message == 'Token has expired')
+                        Materialize.toast('<span>Session expired. Please log in again</span>', 8000);
+                        $.api.logout();
+                        riot.route('login');
                     }
                 });
             },
+            // getRecords: function(table, params, token) {
+            //     $.ajax({
+            //         dataType: 'json',
+            //         contentType: 'application/json; charset=utf-8',
+            //         url: INSTANCE_URL + '/api/v2/odinsro/_table/' + table +'?id_field=account_id&ids='+2004003,
+            //         cache:false,
+            //         data: params,
+            //         method:'GET',
+            //         headers: {
+            //             "X-DreamFactory-API-Key": APP_API_KEY,
+            //             "X-DreamFactory-Session-Token": token
+            //         },
+            //         success:function (response) {
+            //             if(typeof callback !== 'undefined') {
+            //                 if (response.hasOwnProperty('resource'))
+            //                     callback(response.resource);
+            //                 else
+            //                     callback(response);
+            //             }
+            //         },
+            //         error:function (response) {
+            //             callback(response);
+            //             return false;
+            //         }
+            //     });
+            // },
 
             setRecord: function(table, params, token, callback) {
                 $.ajax({

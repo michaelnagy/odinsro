@@ -2,5 +2,5 @@
     //  DreamFactory 2.0 instance specific constants
     //--------------------------------------------------------------------------
 
-    var INSTANCE_URL   = 'http://localhost/dreamfactory';
-    var APP_API_KEY     = 'b22f106eda6b3dd340d2592884c57544aad3961e3437293d773c89c65c9f8bf5';
+    var INSTANCE_URL   = 'http://149.56.47.245';
+    var APP_API_KEY     = '6b683ef66c7a94ab810afe01df1faacfffd45bb05d86676feaf79b7cf94ba553';
