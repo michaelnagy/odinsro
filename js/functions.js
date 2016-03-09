@@ -27,6 +27,7 @@
                           setToken('token', response.session_token);
                           setToken('email', response.email);
                           setToken('odinid', response.odinid);
+                          setToken('birthdate', response.birthdate);
                           setToken('name', response.name);
                           console.log(response);
                           //closes the login modal
@@ -171,6 +172,7 @@
                             setToken('token', response.session_token);
                             setToken('email', email);
                             setToken('odinid', response.odinid);
+                            setToken('birthdate', response.birthdate);
                             setToken('name', display_name);
                             console.log(response);
 
@@ -201,7 +203,7 @@
                 $.ajax({
                     dataType: 'json',
                     contentType: 'application/json; charset=utf-8',
-                    url: INSTANCE_URL + '/api/v2/odinsro/_table/' + table +'?id_field=account_id&ids='+2004003,//account_id,
+                    url: INSTANCE_URL + '/api/v2/odinsro/_table/' + table +'?id_field=account_id&ids='+account_id,
                     cache:false,
                     method:'GET',
                     headers: {
@@ -209,16 +211,31 @@
                         "X-DreamFactory-Session-Token": token
                     },
                     success:function (response) {
-                        setToken('zeny', response.resource[0].zeny); 
+
+                        if (response.resource[0].zeny != undefined) {
+                            setToken('zeny', response.resource[0].zeny);
+                            console.log(response.resource[0].zeny); 
+                        }
+                        
+                        if (response.resource[0].autotrade) {
+                            setToken('autotrade', response.resource[0].autotrade);
+                        }
+                        
+                        if (response.resource[0].value) {
+                            setToken('cash', response.resource[0].value);
+                        }
+                        
+                        // console.log(response.resource[0].zeny); 
                         riot.update();
                     },
                     error:function (response) {
                         
-                        console.log(response.responseJSON.error.message);
-                        if (response.responseJSON.error.message == 'Token has expired')
+                        // console.log(response.responseJSON.error.message);
+                        if (response.responseJSON.error.message == 'Token has expired') {
                         Materialize.toast('<span>Session expired. Please log in again</span>', 8000);
                         $.api.logout();
-                        riot.route('login');
+                        riot.route('/');
+                        }
                     }
                 });
             },

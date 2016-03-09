@@ -12,31 +12,32 @@
 
         <div class="col s6">
           <div class="card-panel grey lighten-5 z-depth-1">
-              <h5>Profile</h5>
+              <h5>Profile  <i class="small material-icons right">perm_identity</i></h5>
                 <p class="profile-tags"><span>Username:</span><span class="profile-info right">{name}</span></p>
                 <p class="profile-tags"><span>E-mail:</span><span class="profile-info right"> {email}</span></p>
+                <p class="profile-tags"><span>Birthdate:</span><span class="profile-info right"> {birthdate}</span></p>
           </div>
         </div>
 
         <div class="col s6">
           <div class="card-panel grey lighten-5 z-depth-1">
-              <h5>Autotrade Itens</h5>
-                <p class="profile-tags"><span>Username:</span><span class="profile-editable">{username}</span></p>
-                <p class="profile-tags"><span>E-mail</span></p>
+              <h5>Autotrade Items</h5> <a if={autotrade} class="btn-floating waves-effect waves-light green autotrade"><i class="material-icons">power_settings_new</i></a>
+              <a if={!autotrade} class="btn-floating waves-effect waves-light red"><i class="material-icons">OFF</i></a>
+                <p class="profile-tags"><span>Quantity:</span><span class="profile-zeny right"> {autotrade}</span></p>
           </div>
         </div>
 
-        <div class="col s6">
+        <div class="col s6 right">
           <div class="card-panel grey lighten-5 z-depth-1">
               <h5>Zeny</h5>
-                <p class="profile-tags"><span><img src="/img/zeny.png"></span><span class="profile-zeny right">{zeny}</span></p>
+                <p class="profile-tags"><span><img src="/img/zeny.png"></span><span class="profile-zeny right"> {zeny}</span></p>
           </div>
         </div>
 
-        <div class="col s6 cash-col">
+        <div class="col s6 cash-col left">
           <div class="card-panel grey lighten-5 z-depth-1">
               <h5>Cash</h5>
-                <p class="profile-tags"><span><img src="/img/cash.png"></span><span class="profile-zeny right">{zeny}</span></p>
+                <span class="profile-zeny">{cash}</span> <a class="waves-effect waves-light btn right"><i class="material-icons left">shopping_cart</i>buy more cash</a>
           </div>
         </div>
 
@@ -64,6 +65,10 @@
     .profile-info {
       font-size: 20px;
     }
+    .autotrade {
+      left:93%;
+      bottom: 40px;
+    }
   </style>
 
   <script>
@@ -73,6 +78,8 @@
     this.email = getToken('email');
     this.odinid = getToken('odinid');
     this.name = getToken('name');
+    this.birthdate = getToken('birthdate');
+    console.log('birth',getToken('birthdate'));
 
     if (!this.session) {
       riot.route('/');
@@ -81,10 +88,15 @@
 
     this.on('mount', function(){
     $.api.getRecords('char', this.session, this.odinid);
+    $.api.getRecords('vendings', this.session, this.odinid);
+    $.api.getRecords('global_reg_value', this.session, this.odinid);
     });
 
     this.on('update', function(){
+      
+      this.autotrade = getToken('autotrade');
       this.zeny = getToken('zeny');
+      this.cash = getToken('cash');
     });
 
     view.addUnmountListener('profile', function() {
