@@ -27,6 +27,11 @@ $(document).ready(function(){
     view.render('download');
   });
 
+  riot.route('server-info', function() {
+    view.render('server-info');
+    console.log('ok');
+  });
+
   riot.route('login', function() {
     view.render('login', 'modal');
     $('#modal1').openModal();

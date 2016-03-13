@@ -53,31 +53,23 @@
 
               <span class="card-title grey-text text-darken-4">Server Features</span>
                <ul class="collection">
-                <li class="collection-item"><i class="material-icons green">trending_up</i> <span>Episode 14.3 - New Doram Race updates!</span></li>
-                <li class="collection-item"><i class="material-icons green">trending_up</i> <span>New BG System!</span></li>
-                <li class="collection-item"><i class="material-icons green">trending_up</i> <span>New Market System!</span></li>
-              </ul>
-              <span class="card-title activator grey-text text-darken-4">Server Features<i class="material-icons right">more_vert</i></span>
-              
-            </div>
-            <div class="card-content">
-
-            </div>
-            <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Server Features<i class="material-icons right">close</i></span>
-               <ul class="collection">
-                <li class="collection-item"><i class="material-icons green">trending_up</i> <span>Max Level: </span><span>175/60</span></li>
-                <li class="collection-item"><i class="material-icons green">trending_up</i> <span>Max Level: </span><span>175/60</span></li>
-                <li class="collection-item"><i class="material-icons green">trending_up</i> <span>Max Level: </span><span>175/60</span></li>
-                <li class="collection-item"><i class="material-icons green">trending_up</i> <span>Max Level: </span><span>175/60</span></li>
+                <li class="collection-item"><span>Episode 14.3</span> <i class="material-icons green-text right">done</i></li>
+                <li class="collection-item"><span>New Doram Race updates!</span> <i class="material-icons green-text right">done</i></li>
+                <li class="collection-item"><span>New BG System!</span> <i class="material-icons green-text right">done</i></li>
+                <li class="collection-item"><span>New Market System!</span> <i class="material-icons green-text right">done</i></li>
               </ul>
             </div>
+            <div class="card-action grey lighten-3">
+              <span class="card-title grey-text text-darken-4">Server and Game Info<a href="#server-info" class="btn-game-info btn waves-effect waves-light blue darken-2 right"><i class="material-icons">info_outline</i></a></span>
+            </div>
+        
           </div>
           
         </div>
+
         <div class="col s6 video">
           <div class="video-container z-depth-1">
-            <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/2vKt_xav6gI" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -150,11 +142,18 @@
   <style>
     .video-container {
       margin-top: 0.5rem;
-      padding-bottom: 47.25%; 
+      padding-bottom: 78.25%;%; 
     }
     .section-news img {
       margin-top: 25px;
       margin-left: 25px;
+    }
+    span.badge {
+      font-weight: 400;
+      font-size: 1.0rem;
+      color: #fff;
+      background-color: #26a69a;
+      border-radius: 2px;
     }
   </style>
 
@@ -162,12 +161,11 @@
     var self = this;
 
     this.on('mount', function(){
-      $('.main-menu').addClass('container');
-
-      $('.collapsible').collapsible({
-      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-    });
-    });
+      $('.main-menu').addClass('container')
+        $('.collapsible').collapsible({
+        accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+      });
 
     view.addUnmountListener('home', function() {
       self.unmount(true);
