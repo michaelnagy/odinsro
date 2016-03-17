@@ -1,9 +1,9 @@
 <register>
 
   <div class="animated slideInRight">
-    <h4 class="center-align">Register</h4>
+    <h4 class="left-align">Register</h4>
     <div class="row">
-      <form class="col s12 register-form">
+      <form class="col s6 register-form">
         <div class="row">
           <div class="input-field display_name col s12">
             <input id="display_name" type="text" name="display_name" class="validate" required="required" required>
@@ -18,13 +18,24 @@
             <label for="password" data-error="You have to set a password :(">Password</label>
           </div>
         </div>
-      </form>
-      <div style="margin-bottom:0;" class="row buttons">
+        <div style="margin-bottom:0;" class="row buttons">
           <div class="col s6">
             <button class=" light-blue darken-3 btn waves-effect waves-light btn-register" type="submit" form="login-form">Registrar
               <i class="material-icons right">perm_identity</i>
             </button>
           </div>
+      </div>
+      </form>
+
+      <div class="col s6 register-features">
+      <h5>OdinsRO Panel</h5>
+        <ul class="collection with-header">
+          <li class="collection-item">Vote daily and get a reward <i class="material-icons left green-text bold">done</i></li>
+          <li class="collection-item">Account and character status <i class="material-icons left green-text bold">done</i></li>
+          <li class="collection-item">Cash Shop and Packet Shop <i class="material-icons left green-text bold">done</i></li>
+          <li class="collection-item">Rank System <i class="material-icons left green-text bold">done</i></li>
+        </ul>
+        <a href="" target="_blank">General Rules</a>
       </div>
     </div>
   </div>
@@ -34,6 +45,9 @@
   a#pass-recover {
     margin-top: 20px;
     margin-bottom: -20px;
+  }
+  .bold {
+    font-weight: bold;
   }
   </style>
 

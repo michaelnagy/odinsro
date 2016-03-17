@@ -1,16 +1,19 @@
 html, body {
   height:100%;
+  background: url('../img/bg.jpg') no-repeat;
+  background-size: 100%;
 }
 
 .white-card {
   background-color: white;
 }
 
-.logo {
-
+.brand-logo img {
+	height: 60px;
+    margin-top: 20px;
 }
 #nav-mobile a {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
     height: 100px;
@@ -19,4 +22,10 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
 
 label {
     width: 100%;
+}
+
+nav ul a:hover {
+    background-color: rgba(0,0,0,0.1);
+    border-bottom: 2px solid #88D3E8;
+    margin-top: -2px;
 }

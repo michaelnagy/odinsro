@@ -14,8 +14,6 @@
   <!-- Dropdown Structure -->
   <ul if={session} id="dropdown1" class="dropdown-content">
     <li><a href="#profile">Account</a></li>
-    <li><a href="#!">System</a></li>
-    <li><a href="#!">Shop</a></li>
     <li class="divider"></li>
     <li><a class="logout" href="#logout">Logout</a></li>
   </ul>

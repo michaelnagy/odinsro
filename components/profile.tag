@@ -2,9 +2,8 @@
   <div class="row">
     <div class="col s2 animated fadeInLeft navigation">
       <ul class="side-nav fixed" id="mobile-demo">
-        <li><a href="shop">Shop</a></li>
-        <li><a href="sass.html">System</a></li>
-        <li><a href="badges.html">Tools</a></li>
+        <!-- <li><a href="shop">Shop</a></li> -->
+        <!-- <li><a href="https://odinsro.freshdesk.com" target="_blank">Support</a></li> -->
       </ul>
     </div>
     <div class="col s10 animated fadeInUp content">

@@ -1,5 +1,5 @@
 <server-info>
-  <div class="container animated fadeInUp">
+  <div class="container animated fadeIn">
       <div class="row">
         <div class="col s6">
         	<div class="card-panel">

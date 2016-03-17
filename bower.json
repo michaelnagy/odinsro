@@ -19,6 +19,7 @@
   "dependencies": {
     "riot": "riotjs#~2.3.13",
     "Materialize": "materialize#~0.97.5",
-    "animate.css": "^3.5.1"
+    "animate.css": "^3.5.1",
+    "slick": "*"
   }
 }

@@ -1,40 +1,18 @@
 <home>
-  <div class="container animated fadeInUp">
+  <div class="container animated fadeIn">
       <div class="row section1">
-        <div class="col s12 m4 z-depth-1 white-card">
-
-        </div>
-
+        
         <div class="col s12 ">
-          <div class="slider">
+         <div class="slider">
             <ul class="slides z-depth-1">
               <li>
-                <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
-                <div class="caption center-align">
-                  <h3>This is our big Tagline!</h3>
-                  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
+                <img src="http://legendro.com.br/files/images/1.jpg"> <!-- random image -->
               </li>
               <li>
-                <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
-                <div class="caption left-align">
-                  <h3>Left Aligned Caption</h3>
-                  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
+                <img src="http://legendro.com.br/files/images/2.jpg"> <!-- random image -->
               </li>
               <li>
-                <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
-                <div class="caption right-align">
-                  <h3>Right Aligned Caption</h3>
-                  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
-              </li>
-              <li>
-                <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
-                <div class="caption center-align">
-                  <h3>This is our big Tagline!</h3>
-                  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                </div>
+                <img src="http://legendro.com.br/files/images/3.jpg"> <!-- random image -->
               </li>
             </ul>
           </div>
@@ -46,21 +24,19 @@
         <div class="col s6 news">
 
           <div class="card">
-            <!-- <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="images/office.jpg">
-            </div> -->
-            <div class="card-content black-text">
-
+           
+            <div class="card-content black-text server-features">
               <span class="card-title grey-text text-darken-4">Server Features</span>
                <ul class="collection">
-                <li class="collection-item"><span>Episode 14.3</span> <i class="material-icons green-text right">done</i></li>
-                <li class="collection-item"><span>New Doram Race updates!</span> <i class="material-icons green-text right">done</i></li>
-                <li class="collection-item"><span>New BG System!</span> <i class="material-icons green-text right">done</i></li>
-                <li class="collection-item"><span>New Market System!</span> <i class="material-icons green-text right">done</i></li>
+                <li class="collection-item"><a href=""><span>Episode 14.3</span> <img class="right" src="img/tv.png"></a></li>
+                <li class="collection-item"><a href=""><span>New Doram Race updates!</span> <img class="right" src="img/tv.png"></a></li>
+                <li class="collection-item"><a href=""><span>New BG System!</span> <img class="right" src="img/tv.png"></a></li>
+                <li class="collection-item"><a href=""><span>New Market System!</span> <img class="right" src="img/tv.png"></a></li>
               </ul>
             </div>
+
             <div class="card-action grey lighten-3">
-              <span class="card-title grey-text text-darken-4">Server and Game Info<a href="#server-info" class="btn-game-info btn waves-effect waves-light blue darken-2 right"><i class="material-icons">info_outline</i></a></span>
+              <span class="card-title grey-text text-darken-4">Server and Game Info<a href="#server-info" class="btn-game-info btn waves-effect waves-light right"><i class="material-icons">info_outline</i></a></span>
             </div>
         
           </div>
@@ -76,57 +52,23 @@
 
       <div class="row section-news">
         <div class="col s12">
-          <ul class="collapsible popout" data-collapsible="accordion">
-            <li>
-              <div class="collapsible-header">First</div>
-              <div class="collapsible-body grey lighten-4">
-                
-                <div class="row">
-                  <div class="col s3">
-                     <img class="responsive-img" src="http://img.levelup.com.br/ragnarok/_img/noticias/2012-09-05/120904_topo_ro_niver-ragna.jpg">
-                  </div>
-                  <div class="col s9">
-                    <p style="padding: 10px;" class="">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet<br>
-                    Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-                  </div>
-                </div>
 
+
+        <div class="row">
+          <div class="col s12 z-depth-1 grey lighten-3">
+            <div class="row news-item">
+              <div class="col s2 news-date orange lighten-1 white-text">
+                <span class="day">8</span>
+                <span class="month">Jul</span>
               </div>
-
-            </li>
-            <li>
-              <div class="collapsible-header">Second</div>
-              <div class="collapsible-body grey lighten-4">
-
-                <div class="row">
-                  <div class="col s3">
-                     <img class="responsive-img" src="http://img.levelup.com.br/ragnarok/_img/noticias/2012-09-05/120904_topo_ro_niver-ragna.jpg">
-                  </div>
-                  <div class="col s9">
-                    <p style="padding: 10px;" class="">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet<br>
-                    Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-                  </div>
-                </div>
-
+              <div class="col s10 news-content">
+                <h5>I am a very simple card</h5>
+                <img class="facebook circle" src="img/facebook.png">
               </div>
-            </li>
-            <li>
-              <div class="collapsible-header">Third</div>
-              <div class="collapsible-body grey lighten-4 left-align">
+            </div>
+          </div>
+        </div>
 
-                <div class="row">
-                  <div class="col s3">
-                     <img class="responsive-img" src="http://img.levelup.com.br/ragnarok/_img/noticias/2012-09-05/120904_topo_ro_niver-ragna.jpg">
-                  </div>
-                  <div class="col s9">
-                    <p style="padding: 10px;" class="">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet<br>
-                    Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-                  </div>
-                </div>
-  
-              </div>
-            </li>
-          </ul>  
         </div>
         
       </div>
@@ -144,16 +86,60 @@
       margin-top: 0.5rem;
       padding-bottom: 78.25%;%; 
     }
-    .section-news img {
+    .section-news .news-img {
       margin-top: 25px;
       margin-left: 25px;
     }
+    .section-news .col-s3 {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .news-header-img {
+      width: 30px;
+    }
+
     span.badge {
       font-weight: 400;
       font-size: 1.0rem;
       color: #fff;
       background-color: #26a69a;
       border-radius: 2px;
+    }
+    .server-features i {
+      font-size: 30px;
+      line-height: 0.8;
+    }
+    .server-features img {
+      width: 30px;
+      width: 30px;
+      position: relative;
+      bottom: 5px;
+    }
+    .btn-game-info {
+      background-color: #FF9438;
+    }
+    .day {
+      font-size: 56pt;
+      font-weight: 100;
+      line-height: 1;
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+    .month {
+      font-size: 24pt;
+      font-weight: 900;
+      line-height: 1;
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+    .news-item {
+      margin-bottom: 0; 
+    }
+    .facebook {
+     float: right;
     }
   </style>
 
@@ -166,6 +152,10 @@
         accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
         });
       });
+
+    this.on('updated', function(){
+      $('.slider').slider();
+    });
 
     view.addUnmountListener('home', function() {
       self.unmount(true);
