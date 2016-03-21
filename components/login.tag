@@ -1,7 +1,7 @@
 <login>
 
   <div class="animated slideInRight">
-    <h4 class="center-align">Login</h4>
+    <h4 class="center-align">Login</h4><a href="#" class="modal-action modal-close right"><img src="img/close.png"></a>
     <div class="row">
       <form class="col s12 login-form">
         <div class="row">

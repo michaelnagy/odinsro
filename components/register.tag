@@ -1,7 +1,7 @@
 <register>
 
   <div class="animated slideInRight">
-    <h4 class="left-align">Register</h4>
+    <h4 class="left-align">Register</h4><a href="#" class="modal-action modal-close"><img src="img/close.png"></a>
     <div class="row">
       <form class="col s6 register-form">
         <div class="row">
@@ -19,12 +19,19 @@
           </div>
         </div>
         <div style="margin-bottom:0;" class="row buttons">
-          <div class="col s6">
+
+          <div class="col s12 recaptcha">
+            <div id="recaptcha"></div>
+          </div>
+
+          <div class="col s12">
             <button class=" light-blue darken-3 btn waves-effect waves-light btn-register" type="submit" form="login-form">Registrar
               <i class="material-icons right">perm_identity</i>
             </button>
           </div>
-      </div>
+          
+        </div>
+      
       </form>
 
       <div class="col s6 register-features">
@@ -42,6 +49,13 @@
 
 
   <style>
+  #modal2 {
+    max-height: 90%;
+  }
+  .recaptcha {
+    margin-bottom: 10px;
+  } 
+
   a#pass-recover {
     margin-top: 20px;
     margin-bottom: -20px;
@@ -49,19 +63,55 @@
   .bold {
     font-weight: bold;
   }
+  .modal-close {
+    position: relative;
+    bottom: 55px;
+    float: right;
+  }
+  .collection {
+    border: none;
+  }
+  .collection .collection-item {
+    border-bottom: none;
+    background-color: transparent;
+  }
+  .register-form {
+    background-color: #F3F3F3;
+    border: 1px solid #E4E4E4;
+    padding-bottom: 10px !important;
+  }
+  .register-features > h5 {
+    padding-left: 30px;
+    font-size: 1.8rem;
+  }
+  register h4 {
+    font-size: 1.8rem;
+  }
+  register a {
+    padding-left: 30px;
+  }
+  .btn-register {
+    width: 100%;
+  }
   </style>
 
   <script>
     var dataform = [];
     var self = this;
 
-    this.on('mount', function(){
+     this.on('mount', function(){
+
+       //recaptcha loading
+      grecaptcha.render('recaptcha', {
+        'sitekey' : '6LflHxsTAAAAAJd8J1vtxys-GZRNVLAq2ipGAP_x',
+      });
+
       // Ajax to register
       $('.btn-register').click(function () {
         console.log('register');
 
       dataform = $('.register-form').serializeArray();
-      // console.log(dataform);
+      console.log(dataform);
       $('.register-form').submit(function(event){
         if(!this.checkValidity())
               {
@@ -88,10 +138,11 @@
           $('.login-form').submit();
         }
       });
+      
     });
 
     this.on('update', function(){
-
+      
     });
 
     this.on('updated', function(){
