@@ -12,25 +12,38 @@
   </head>
   <body class="blue lighten-5">
 
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '157530937615088',
+          xfbml      : true,
+          version    : 'v2.5'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     <!-- Login Register Modal -->
     <div id="modal1" class="modal">
       <div class="modal-content">
+
         <login></login>
         <pass-recover></pass-recover>
-        <!-- <div class="login">
-
-        </div>
-        <div class="pass-recover">
-
-        </div> -->
+        
       </div>
     </div>
     <div id="modal2" class="modal">
       <div class="modal-content">
-        <!-- <div class="register">
-
-        </div> -->
+       
         <register></register>
+
       </div>
     </div>
     <!-- Login Register Modal END-->

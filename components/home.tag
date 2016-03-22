@@ -1,8 +1,8 @@
 <home>
   <div class="container animated fadeIn">
       <div class="row section1">
-        
-        <div class="col s12 ">
+
+        <div class="col s8 ">
          <div class="slider">
             <ul class="slides z-depth-1">
               <li>
@@ -18,10 +18,7 @@
           </div>
         </div>
 
-      </div> <!-- ROW SECTION END -->
-
-      <div class="row section-featured">
-        <div class="col s6 news">
+        <div class="col s4 news">
 
           <div class="card">
            
@@ -36,11 +33,18 @@
             </div>
 
             <div class="card-action grey lighten-3">
-              <span class="card-title grey-text text-darken-4">Server and Game Info<a href="#server-info" class="btn-game-info btn waves-effect waves-light right"><i class="material-icons">info_outline</i></a></span>
+              <span class="card-title grey-text text-darken-4">Server Info<a href="#server-info" class="btn-game-info btn waves-effect waves-light right"><i class="material-icons">info_outline</i></a></span>
             </div>
         
           </div>
           
+        </div>
+
+      </div> <!-- ROW SECTION END -->
+
+      <div class="row section-featured">
+         <div class="col s6 facebook-widget">
+          <div class="fb-page" data-href="https://www.facebook.com/oficialodinsro" data-tabs="timeline" data-width="460" data-height="361" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/oficialodinsro"><a href="https://www.facebook.com/oficialodinsro">Odinsro</a></blockquote></div></div>
         </div>
 
         <div class="col s6 video">
@@ -82,6 +86,16 @@
   </div><!-- CONTAINER END -->
 
   <style>
+    .facebook-widget {
+      padding-top: 8px !important;
+    }
+    .slider {
+      height: 390px !important;
+      margin-top: 10px;
+    }
+    ul.slides {
+      height: 354px !important;
+    } 
     .video-container {
       margin-top: 0.5rem;
       padding-bottom: 78.25%;%; 
@@ -151,10 +165,12 @@
         $('.collapsible').collapsible({
         accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
         });
+        FB.XFBML.parse();
       });
 
     this.on('updated', function(){
       $('.slider').slider();
+      FB.XFBML.parse();
     });
 
     view.addUnmountListener('home', function() {

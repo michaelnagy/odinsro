@@ -149,7 +149,7 @@
                 });
             },
 
-            register: function(display_name, email, password) {
+            register: function(display_name, email, password, recaptcha) {
                 $.ajax({
                     dataType: 'json',
                     contentType: 'application/json; charset=utf-8',
@@ -158,7 +158,8 @@
                         // "first_name": firstname,
                         "display_name": display_name,
                         "email": email,
-                        "new_password": password
+                        "new_password": password,
+                        "recaptcha": recaptcha
                     }),
                     headers: {
                         "X-DreamFactory-API-Key": APP_API_KEY

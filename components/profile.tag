@@ -90,7 +90,7 @@
     this.odinid = getToken('odinid');
     this.name = getToken('name');
     this.birthdate = getToken('birthdate');
-    console.log('birth',getToken('birthdate'));
+    // console.log('birth',getToken('birthdate'));
 
     if (!this.session) {
       riot.route('/');

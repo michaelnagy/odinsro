@@ -68,10 +68,10 @@
     bottom: 55px;
     float: right;
   }
-  .collection {
+  register .collection {
     border: none;
   }
-  .collection .collection-item {
+  register .collection .collection-item {
     border-bottom: none;
     background-color: transparent;
   }
@@ -125,7 +125,7 @@
               else {
                 event.preventDefault();
                 console.log(dataform);
-                $.api.register(dataform[0].value, dataform[1].value, dataform[2].value);
+                $.api.register(dataform[0].value, dataform[1].value, dataform[2].value, dataform[3].value);
                 dataform = [];
               }
           });
