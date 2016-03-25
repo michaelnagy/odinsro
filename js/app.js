@@ -5,8 +5,6 @@ riot.route.start(true);
 //preloader to use everywhere
 var preloader = '<div class="row"><div class="col s12"><div class="progress"><div class="indeterminate"></div></div></div></div>';
 
-
-
 $(document).ready(function(){
 
   // ROUTES
@@ -52,3 +50,25 @@ $(document).ready(function(){
   });
 
 });
+
+function postDate (d) {
+
+  var date = new Date(d);
+  var month = new Array();
+  var n = [];
+  month[0] = "Jan";
+  month[1] = "Feb";
+  month[2] = "Mar";
+  month[3] = "Apr";
+  month[4] = "May";
+  month[5] = "Jun";
+  month[6] = "Jul";
+  month[7] = "Aug";
+  month[8] = "Sep";
+  month[9] = "Oct";
+  month[10] = "Nov";
+  month[11] = "Dec";
+  n[0] = month[d.getMonth()];
+  n[1] = d.getDay();
+  return n;
+}

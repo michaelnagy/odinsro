@@ -1,23 +1,25 @@
 <home>
   <div class="container animated fadeIn">
+      <!-- ROW SECTION -->
       <div class="row section1">
-
+      <!-- Slider -->
         <div class="col s8 ">
          <div class="slider">
             <ul class="slides z-depth-1">
               <li>
-                <img src="http://legendro.com.br/files/images/1.jpg"> <!-- random image -->
+                <img src="img/1.jpg">
               </li>
               <li>
-                <img src="http://legendro.com.br/files/images/2.jpg"> <!-- random image -->
+                <img src="img/2.jpg">
               </li>
               <li>
-                <img src="http://legendro.com.br/files/images/3.jpg"> <!-- random image -->
+                <img src="img/3.jpg">
               </li>
             </ul>
           </div>
         </div>
-
+        <!-- Slider END -->
+        <!-- Server Features -->
         <div class="col s4 news">
 
           <div class="card">
@@ -25,7 +27,7 @@
             <div class="card-content black-text server-features">
               <span class="card-title grey-text text-darken-4">Server Features</span>
                <ul class="collection">
-                <li class="collection-item"><a href=""><span>Episode 14.3</span> <img class="right" src="img/tv.png"></a></li>
+                <li class="collection-item"><a href=""><span>Episode 15.1</span> <img class="right" src="img/tv.png"></a></li>
                 <li class="collection-item"><a href=""><span>New Doram Race updates!</span> <img class="right" src="img/tv.png"></a></li>
                 <li class="collection-item"><a href=""><span>New BG System!</span> <img class="right" src="img/tv.png"></a></li>
                 <li class="collection-item"><a href=""><span>New Market System!</span> <img class="right" src="img/tv.png"></a></li>
@@ -39,12 +41,12 @@
           </div>
           
         </div>
-
+        <!-- Server Features END -->
       </div> <!-- ROW SECTION END -->
 
       <div class="row section-featured">
          <div class="col s6 facebook-widget">
-          <div class="fb-page" data-href="https://www.facebook.com/oficialodinsro" data-tabs="timeline" data-width="460" data-height="361" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/oficialodinsro"><a href="https://www.facebook.com/oficialodinsro">Odinsro</a></blockquote></div></div>
+          <div class="fb-page" data-href="https://www.facebook.com/oficialodinsro" data-tabs="timeline" data-width="460" data-height="361" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/oficialodinsro"><a href="https://www.facebook.com/oficialodinsro">Odinsro</a></blockquote></div></div>
         </div>
 
         <div class="col s6 video">
@@ -58,16 +60,17 @@
         <div class="col s12">
 
 
-        <div class="row">
+        <div class="row" each={new, key in news}>
           <div class="col s12 z-depth-1 grey lighten-3">
             <div class="row news-item">
               <div class="col s2 news-date orange lighten-1 white-text">
-                <span class="day">8</span>
-                <span class="month">Jul</span>
+                <span class="day">{time[key].day}</span>
+                <span class="month">{time[key].month}</span>
               </div>
               <div class="col s10 news-content">
-                <h5>I am a very simple card</h5>
-                <img class="facebook circle" src="img/facebook.png">
+                <h5><a target="_blank" href="http://forum.odinsro.net/d/{news[key].id}">{news[key].attributes.title}</a></h5>
+                <span class="truncate">{posts[key].attributes.contentHtml}</span>
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://forum.odinsro.net/d/{news[key].id}&title=OdinsRO - {news[key].attributes.title}"><img class="facebook circle" src="img/facebook.png"></a>
               </div>
             </div>
           </div>
@@ -91,10 +94,10 @@
     }
     .slider {
       height: 390px !important;
-      margin-top: 10px;
+      margin-top: 9px;
     }
     ul.slides {
-      height: 354px !important;
+      height: 360px !important;
     } 
     .video-container {
       margin-top: 0.5rem;
@@ -159,17 +162,61 @@
 
   <script>
     var self = this;
+    self.strip = [];
+    self.time = [];
+    var date = {};
+    var month = new Array();
 
     this.on('mount', function(){
       $('.main-menu').addClass('container')
         $('.collapsible').collapsible({
         accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
         });
-        FB.XFBML.parse();
-      });
+
+      //get the news from forum
+      $.get("http://forum.odinsro.net/api/discussions?include=startPost%2Ctags&filter%5Bq%5D=%20tag%3Anews&", function( data ) {
+        
+        self.news = data.data;
+        self.posts = data.included;
+        // console.log(data.data, self.posts);
+        // console.log('TITLE: ',data.data[0].attributes.title, 'POST: ',data.included[0].attributes.contentHtml);
+        for (i = 0; i < self.posts.length; i++) { 
+          if (self.posts[i].attributes.contentHtml === undefined) {
+            self.posts.splice(i, 1); 
+          }
+          else {
+            self.posts[i].attributes.contentHtml = self.posts[i].attributes.contentHtml.replace(/<\/?[^>]+(>|$)/g, "");
+            // console.log(self.posts[i].attributes.contentHtml);
+            //convert the posts date to time object
+            date = new Date(self.posts[i].attributes.time);
+            //set months
+            month[0] = "Jan";
+            month[1] = "Feb";
+            month[2] = "Mar";
+            month[3] = "Apr";
+            month[4] = "May";
+            month[5] = "Jun";
+            month[6] = "Jul";
+            month[7] = "Aug";
+            month[8] = "Sep";
+            month[9] = "Oct";
+            month[10] = "Nov";
+            month[11] = "Dec";
+            //create the day and month objects
+            self.time[i] = {month:month[date.getMonth()], day:date.getDay()};
+            }
+         }
+        //order results by day
+        self.time = self.time.sort(function(a,b) {return (a.day > b.day) ? 1 : ((b.day > a.day) ? -1 : 0);} ); 
+        //update the tag instance
+        self.update();
+      });  
+    });
 
     this.on('updated', function(){
+      //initializes the slider
       $('.slider').slider();
+      //initializes facebook widget
       FB.XFBML.parse();
     });
 
