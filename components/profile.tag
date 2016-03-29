@@ -2,8 +2,9 @@
   <div class="row">
     <div class="col s2 animated fadeInLeft navigation">
       <ul class="side-nav fixed" id="mobile-demo">
-        <!-- <li><a href="shop">Shop</a></li> -->
-        <!-- <li><a href="https://odinsro.freshdesk.com" target="_blank">Support</a></li> -->
+      <li><a href="#profile">Profile</a></li>
+        <li><a href="#rank">Rank</a></li>
+        <li><a href="http://forum.odinsro.net/t/suport" target="_blank">Support</a></li>
       </ul>
     </div>
     <div class="col s10 animated fadeInUp content">
@@ -98,9 +99,9 @@
     }
 
     this.on('mount', function(){
-    $.api.getRecords('char', this.session, this.odinid);
-    $.api.getRecords('vendings', this.session, this.odinid);
-    $.api.getRecords('global_reg_value', this.session, this.odinid);
+    $.api.getRecords('char?id_field=account_id&ids='+this.odinid,this.session);
+    $.api.getRecords('vendings?id_field=account_id&ids='+this.odinid,this.session);
+    $.api.getRecords('global_reg_value?id_field=account_id&ids='+this.odinid,this.session);
     });
 
     this.on('update', function(){

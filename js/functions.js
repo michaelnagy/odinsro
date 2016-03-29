@@ -200,11 +200,11 @@
                 });
             },
 
-            getRecords: function(table, token, account_id, callback) {
+            getRecords: function(table, token) {
                 $.ajax({
                     dataType: 'json',
                     contentType: 'application/json; charset=utf-8',
-                    url: INSTANCE_URL + '/api/v2/odinsro/_table/' + table +'?id_field=account_id&ids='+account_id,
+                    url: INSTANCE_URL + '/api/v2/odinsro/_table/' + table,
                     cache:false,
                     method:'GET',
                     headers: {
@@ -224,6 +224,12 @@
                         
                         if (response.resource[0].value) {
                             setToken('cash', response.resource[0].value);
+                        }
+                        if (response.resource[0].kills) {
+                            storage.set({
+                              pvp: response.resource
+                            });
+                            console.log(response.resource);
                         }
                         
                         // console.log(response.resource[0].zeny); 
