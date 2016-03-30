@@ -1,6 +1,6 @@
 <profile>
   <div class="row">
-    <div class="col s2 animated fadeInLeft navigation">
+    <div class="col s2 navigation">
       <ul class="side-nav fixed" id="mobile-demo">
       <li><a href="#profile">Profile</a></li>
         <li><a href="#rank">Rank</a></li>
@@ -63,13 +63,13 @@
     .navigation {
       height: 100vh;
     }
-    profile > ul.side-nav.fixed {
-      top: 100px;
+    profile .side-nav {
+      top: inherit;
     }
 
-    profile .side-nav {
+    /*profile .side-nav {
       width: 100%;
-    }
+    */}
     .profile-zeny {
       font-weight: bold;
       font-size: 30px;
