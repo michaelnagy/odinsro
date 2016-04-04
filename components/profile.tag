@@ -2,9 +2,11 @@
   <div class="row">
     <div class="col s2 navigation">
       <ul class="side-nav fixed" id="mobile-demo">
-      <li><a href="#profile">Profile</a></li>
-        <li><a href="#rank">Rank</a></li>
-        <li><a href="http://forum.odinsro.net/t/suport" target="_blank">Support</a></li>
+       <li><a href="#profile">Profile</a></li>
+          <li><a href="#rank">Rank</a></li>
+          <li><a href="http://forum.odinsro.net/t/suport" target="_blank">Support</a></li>
+          <li><a href="#rank">Tools</a></li>
+          <li><a href="#rank">Shop</a></li>
       </ul>
     </div>
     <div class="col s10 animated fadeInUp content">

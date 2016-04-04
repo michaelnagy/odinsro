@@ -200,7 +200,7 @@
                 });
             },
 
-            getRecords: function(table, token) {
+            getRecords: function(table, token, tag) {
                 $.ajax({
                     dataType: 'json',
                     contentType: 'application/json; charset=utf-8',
@@ -215,7 +215,7 @@
 
                         if (response.resource[0].zeny != undefined) {
                             setToken('zeny', response.resource[0].zeny);
-                            console.log(response.resource[0].zeny); 
+                            // console.log(response.resource[0].zeny); 
                         }
                         
                         if (response.resource[0].autotrade) {
@@ -229,10 +229,16 @@
                             storage.set({
                               pvp: response.resource
                             });
-                            console.log(response.resource);
+                            // console.log(response.resource);
+                        }
+                        if (response.resource[0].castle_id) {
+                            storage.set({
+                              woe: response.resource
+                            });
+                            // console.log(response.resource);
                         }
                         
-                        // console.log(response.resource[0].zeny); 
+
                         riot.update();
                     },
                     error:function (response) {
