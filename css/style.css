@@ -30,4 +30,33 @@ nav ul a:hover {
   text-align: left;
   width: 200px; }
 
+.menu-icons {
+  position: relative;
+  top: 5px;
+  margin-right: 10px; }
+
+.side-nav li {
+  color: white; }
+
+.side-nav.fixed a {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #757575; }
+
+.side-nav .collapsible-body li a {
+  font-weight: normal; }
+
+.side-nav .collapsible-body li {
+  background-color: #fafafa; }
+
+.side-nav .collapsible-body li:hover {
+  background-color: #FDDFC6; }
+
+.side-nav.fixed a.side-profile {
+  margin-left: 5px; }
+
+.profile-zeny {
+  font-size: 20px;
+  font-weight: bold; }
+
 /*# sourceMappingURL=style.css.map */

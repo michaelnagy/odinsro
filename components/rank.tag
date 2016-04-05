@@ -1,12 +1,62 @@
 <rank>
   <div class="row">
       <div class="col s2 navigation">
+
         <ul class="side-nav fixed" id="mobile-demo">
-        <li><a href="#profile">Profile</a></li>
-          <li><a href="#rank">Rank</a></li>
-          <li><a href="http://forum.odinsro.net/t/suport" target="_blank">Support</a></li>
-          <li><a href="#rank">Tools</a></li>
-          <li><a href="#rank">Shop</a></li>
+        <li><a href="#profile"><i class="material-icons menu-icons">face</i> Profile</a></li>
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+              <li>
+                <a class="collapsible-header"><i class="material-icons">settings</i> System<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="#!">Vote Point</a></li>
+                    <li><a href="#rank">Rank</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+              <li>
+                <a class="collapsible-header"><i class="material-icons">build</i> Tools<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="#!">Char Problem</a></li>
+                    <li><a href="#!">Account Problem</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+              <li>
+                <a class="collapsible-header"><i class="material-icons">bubble_chart</i> Community<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="https://www.facebook.com/oficialodinsro/" target="_blank">Facebook</a></li>
+                    <li><a href="#!">Youtube</a></li>
+                    <li><a href="http://forum.odinsro.net/t/suport" target="_blank">Discussions</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+              <li>
+                <a class="collapsible-header"><i class="material-icons menu-icons">shopping_cart</i> Shop<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="" target="_blank">Cash</a></li>
+                    <li><a href="#!">VIP</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
         </ul>
       </div>
       <div class="col s10 animated fadeInUp content">
@@ -15,7 +65,6 @@
               <ul class="tabs">
                 <li class="tab"><a class="active" href="#pvp">PVP</a></li>
                 <li class="tab"><a href="#woe">WOE</a></li>
-                <li class="tab"><a href="#mvp">MVP</a></li>
                 <li class="tab"><a href="#hunter">HUNTER</a></li>
               </ul>
           </div>
@@ -23,7 +72,7 @@
           <div id="pvp" class="col s12">
             <div class="card-panel">
               <table class="striped">
-              <h5 class="animated fadeIn">Rank PVP</h5>
+              <h5 class="animated fadeIn">Rank PVP <img class="animated pulse woe-img"</h5>
                 <thead>
                   <tr>
                       <th data-field="id">User</th>
@@ -48,11 +97,11 @@
             <div class="card-panel">
 
               <table class="striped">
-              <h5 class="animated fadeIn">Rank WOE</h5>
+              <h5 class="animated fadeIn">Rank WOE <img class="animated pulse woe-img" src="/img/woe.png"></h5>
                 <thead>
                   <tr>
                       <th data-field="id">Guild Name</th>
-                      <th data-field="name">Castles</th>
+                      <th data-field="name">Castles Owned</th>
                       <th data-field="price">Guild Emblem</th>
                       <th data-field="price">Guild Master</th>
                   </tr>
@@ -62,33 +111,8 @@
                   <tr each={woerank}>
                     <td>{name}</td>
                     <td>{rank}</td>
-                    <td ><img if={emblem} src="data:image/png;base64,{emblem}"></td>
+                    <td ><img if={emblem} src="http://rathena.code-lab.co/?module=guild&action=emblem&login=FluxRO&charmap=FluxRO&id={id}"></td>
                     <td>{master}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            
-          </div>
-          <div id="mvp" class="col s12">
-
-          <div class="card-panel">
-
-              <table class="striped">
-              <h5 class="animated fadeIn">Rank MVP</h5>
-                <thead>
-                  <tr>
-                      <th data-field="id">User</th>
-                      <th data-field="name">Kills</th>
-                      <th data-field="price">Dies</th>
-                  </tr>
-                </thead>
-
-                <tbody class="animated fadeInUp">
-                  <tr each={pvp}>
-                    <td>{name}</td>
-                    <td>{kills}</td>
-                    <td>{dies}</td>
                   </tr>
                 </tbody>
               </table>
@@ -110,10 +134,8 @@
                 </thead>
 
                 <tbody class="animated fadeInUp">
-                  <tr each={pvp}>
-                    <td>{name}</td>
-                    <td>{kills}</td>
-                    <td>{dies}</td>
+                  <tr>
+                    <td>Coming Soon</td>
                   </tr>
                 </tbody>
               </table>
@@ -125,6 +147,31 @@
   </div>
 
   <style>
+  .woe-img {
+    animation-duration: 3.5s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    width: 30px;
+    margin-bottom: -5px;
+    padding-left: 10px;
+  }
+
+  @keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.20, 1.20, 1.20);
+    transform: scale3d(1.20, 1.20, 1.20);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
 
   rank .side-nav { 
     top:inherit;
@@ -162,15 +209,6 @@
     self.woeranki = [];
     var j = 0;
 
-    function str2ab(str) {
-      var buf = new ArrayBuffer(str.length*2); // 2 bytes for each char
-      var bufView = new Uint8Array(buf);
-      for (var i=0, strLen=str.length; i < strLen; i++) {
-        bufView[i] = str.charCodeAt(i);
-      }
-      return buf;
-    }
-
     //checks if the user is logged
     if (!this.session) {
       riot.route('/');
@@ -178,6 +216,10 @@
     }
 
     this.on('mount', function(){
+      //initialize side submenus
+      $('.collapsible').collapsible({
+        accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+      });
 
       $('ul.tabs').tabs();
       //get PVP data
@@ -200,44 +242,16 @@
                 }
                });
               // console.log(filtered.length);
-              self.woerank[self.woe[i].guild_id] = {id: self.woe[i].guild_id,rank:filtered.length, name: ''};  
+              self.woerank[self.woe[i].guild_id] = {id: self.woe[i].guild_id,rank:filtered.length, name: ''};
+              console.log(self.woerank);  
             }
 
 
             //reindex the array
               self.woerank.map(function(num, indice) {
 
-                //get emblem data bin
                 $.ajax({
-                url: INSTANCE_URL +"/api/v2/odinsro/_table/guild?fields=guild_id,emblem_data&id_field=guild_id&ids="+num.id,
-                dataType: 'json',
-                contentType: 'application/json; charset=utf-8',
-                cache:false,
-                method:'GET',
-                headers: {
-                    "X-DreamFactory-API-Key": APP_API_KEY,
-                    "X-DreamFactory-Session-Token": self.session
-                },
-                success:function (response) {
-
-                    var uint8array = new TextEncoder('utf-8').encode(response.resource[0].emblem_data);
-                    var gunzip = new Zlib.Gunzip(uint8array);
-                    var plain = gunzip.decompress();
-                    // num.emblem = window.btoa(plain);
-                    console.log(plain);
-                  
-                  
-                  // var gunzip = new Zlib.Gunzip(response.resource[0].emblem_data);
-                  // var plain = gunzip.decompress();
-                  // num.emblem = window.btoa(plain);
-                  // num.emblem = response.resource[0].emblem_data;
-                 
-                  self.update();
-                }
-                });
-
-                $.ajax({
-                url: INSTANCE_URL +"/api/v2/odinsro/_table/guild?fields=name,guild_id,char_id,master&id_field=guild_id&ids="+num.id,
+                url: INSTANCE_URL +"/api/v2/odinsro/_table/guild?fields=name,guild_id,char_id,master,emblem_data&id_field=guild_id&ids="+num.id,
                 dataType: 'json',
                 contentType: 'application/json; charset=utf-8',
                 cache:false,
@@ -252,6 +266,7 @@
                   // console.log(self.woerank[indice]);
                   num.name = response.resource[0].name;
                   num.master = response.resource[0].master;
+                  num.emblem = response.resource[0].emblem_data;
                   // console.log(response);
                   self.update();
                 }
