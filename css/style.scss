@@ -15,6 +15,9 @@ html, body {
 #nav-mobile a {
   font-size: 1.1rem;
 }
+nav {
+  background-color: #16475F;
+}
 nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
     height: 100px;
     line-height: 100px;
@@ -56,7 +59,7 @@ nav ul a:hover {
   background-color: #fafafa;
 }
 .side-nav .collapsible-body li:hover {
-  background-color: #FDDFC6;
+  background-color: #c8e6c9;
 }
 .side-nav.fixed a.side-profile {
   margin-left: 5px;
@@ -64,4 +67,12 @@ nav ul a:hover {
 .profile-zeny {
   font-size: 20px;
   font-weight: bold; 
+}
+.fixed1 {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.fixed2 {
+
 }

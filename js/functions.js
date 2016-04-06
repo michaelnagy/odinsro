@@ -29,6 +29,7 @@
                           setToken('odinid', response.odinid);
                           setToken('birthdate', response.birthdate);
                           setToken('name', response.name);
+                          setToken('last', response.last_login_date);
                           console.log(response);
                           //closes the login modal
                           $('#modal1.modal').closeModal();

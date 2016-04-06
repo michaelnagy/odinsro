@@ -1,7 +1,7 @@
 <profile>
   <div class="row">
     <div class="col s2 navigation">
-      <ul class="side-nav fixed" id="mobile-demo">
+      <ul class="side-nav green lighten-5 fixed" id="mobile-demo">
       <li><a class="side-profile" href="#profile"><i class="material-icons menu-icons">face</i> Profile</a></li>
           <li class="no-padding">
             <ul class="collapsible collapsible-accordion">
@@ -64,42 +64,31 @@
         <div class="col s6">
           <div class="card-panel grey lighten-5 z-depth-1">
               <h5>Profile  <i class="small material-icons right">perm_identity</i></h5>
+              <hr>
                 <p class="profile-tags"><span>Username:</span><span class="profile-info right">{name}</span></p>
                 <p class="profile-tags"><span>E-mail:</span><span class="profile-info right"> {email}</span></p>
                 <p if={birthdate != 'undefined'} class="profile-tags"><span>Birthdate:</span><span class="profile-info right"> {birthdate}</span></p>
+                <p if={autotrade} class="profile-tags"><span>Autotrade:</span><span class="profile-info right on">ON</span></p>
+                <p if={!autotrade} class="profile-tags"><span>Autotrade:</span><span class="profile-info right off">OFF</span></p>
+                <p class="profile-tags"><span>Zeny:</span><span class="profile-info right">{zeny}</span></p>
+                <p class="profile-tags"><span>Cash:</span><span class="profile-info right">{cash} <span class="buy right">buy more</span></span></p>
+                <p class="profile-tags"><span>Last Login:</span><span class="profile-info right">{last}</span></p>
           </div>
         </div>
 
         <div class="col s6">
           <div class="card-panel grey lighten-5 z-depth-1">
-              <h5>Autotrade Items</h5> <a if={autotrade} class="btn-floating waves-effect waves-light green autotrade"><i class="material-icons">power_settings_new</i></a>
-              <a if={!autotrade} class="btn-floating waves-effect waves-light red autotrade" title="Autotrade OFF"><i class="material-icons">power_settings_new</i></a>
+              <h5>Autotrade Items</h5> <!-- <a if={autotrade} class="btn-floating waves-effect waves-light green autotrade"><i class="material-icons">power_settings_new</i></a> -->
+              <hr>
+              <!-- <a if={!autotrade} class="btn-floating waves-effect waves-light red autotrade" title="Autotrade OFF"><i class="material-icons">power_settings_new</i></a> -->
                 <p if={autotrade} class="profile-tags"><span>Quantity:</span><span class="profile-zeny right"> {autotrade}</span></p>
                 <p if={!autotrade} class="profile-tags">Autotrade is OFF</p>
           </div>
         </div>
 
-        <div class="col s6 right">
+        <div class="col s12 cash-col left">
           <div class="card-panel grey lighten-5 z-depth-1">
-              <h5>Zeny</h5>
-              <div if={!zeny}>
-                <p class="profile-tags"><span><img src="/img/zeny.png"></span><span class="profile-zeny right"> 0</span></p>
-              </div>
-              <div if={zeny}>
-                <p class="profile-tags"><span><img src="/img/zeny.png"></span><span class="profile-zeny right"> {zeny}</span></p>
-              </div>
-                
-          </div>
-        </div>
-
-        <div class="col s6 cash-col left">
-          <div class="card-panel grey lighten-5 z-depth-1">
-              <h5>Cash</h5>
-              <div if={!cash}>
-                <span  class="profile-zeny">0</span> <a class="waves-effect waves-light btn right"><i class="material-icons left">shopping_cart</i>buy more cash</a>
-              </div>
-              <div if={cash}>
-                <span class="profile-zeny">{cash}</span> <a class="waves-effect waves-light btn right"><i class="material-icons left">shopping_cart</i>buy more cash</a>
+              
               </div>
           </div>
         </div>
@@ -111,6 +100,24 @@
   </div>
   
   <style>
+    .buy {
+      position: relative;
+      font-weight: 400;
+      font-size: 1.0rem;
+      color: #fff;
+      background-color: #26a69a;
+      border-radius: 2px;
+      padding: 4px;
+      margin-left:10px;
+    }
+    .off {
+      color: red;
+      font-size: 18px;
+    }
+    .on {
+      color: green;
+      font-size: 18px;
+    }
     .navigation {
       height: 100vh;
     }
@@ -142,6 +149,8 @@
     this.odinid = getToken('odinid');
     this.name = getToken('name');
     this.birthdate = getToken('birthdate');
+    this.last = getToken('last');
+
     // console.log('birth',getToken('birthdate'));
 
 
