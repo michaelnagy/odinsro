@@ -71,9 +71,6 @@
                         Materialize.toast('<span>You have been disconnected from the system</span>', 8000);
                         sessionStorage.clear();
                         riot.update();
-                        console.log(getToken('token'), riot.update());
-                        // riot.route('/');
-                        //update tag contexts
                     },
                     error:function (response) {
                         Materialize.toast('<span><b>Error!</b><br>Please try to logout again.</span>', 5000);
@@ -220,9 +217,11 @@
                         }
                         
                         if (response.resource[0].autotrade) {
-                            setToken('autotrade', response.resource[0].autotrade);
+                            storage.set({
+                              autotrade: response.resource
+                              console.log(response.resource);
+                            });
                         }
-                        
                         if (response.resource[0].value) {
                             setToken('cash', response.resource[0].value);
                         }
@@ -238,8 +237,6 @@
                             });
                             // console.log(response.resource);
                         }
-                        
-
                         riot.update();
                     },
                     error:function (response) {

@@ -6,7 +6,7 @@
           <li class="no-padding">
             <ul class="collapsible collapsible-accordion">
               <li>
-                <a class="collapsible-header"><i class="material-icons">settings</i> System<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                <a class="collapsible-header waves-effect waves-light"><i class="material-icons">settings</i> System<i class="mdi-navigation-arrow-drop-down right"></i></a>
                 <div class="collapsible-body">
                   <ul>
                     <li><a href="#!">Vote Point</a></li>
@@ -19,7 +19,7 @@
           <li class="no-padding">
             <ul class="collapsible collapsible-accordion">
               <li>
-                <a class="collapsible-header"><i class="material-icons">build</i> Tools<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                <a class="collapsible-header waves-effect waves-light"><i class="material-icons">build</i> Tools<i class="mdi-navigation-arrow-drop-down right"></i></a>
                 <div class="collapsible-body">
                   <ul>
                     <li><a href="#!">Char Problem</a></li>
@@ -32,7 +32,7 @@
           <li class="no-padding">
             <ul class="collapsible collapsible-accordion">
               <li>
-                <a class="collapsible-header"><i class="material-icons">bubble_chart</i> Community<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                <a class="collapsible-header waves-effect waves-light"><i class="material-icons">bubble_chart</i> Community<i class="mdi-navigation-arrow-drop-down right"></i></a>
                 <div class="collapsible-body">
                   <ul>
                     <li><a href="https://www.facebook.com/oficialodinsro/" target="_blank">Facebook</a></li>
@@ -46,7 +46,7 @@
           <li class="no-padding">
             <ul class="collapsible collapsible-accordion">
               <li>
-                <a class="collapsible-header"><i class="material-icons menu-icons">shopping_cart</i> Shop<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                <a class="collapsible-header waves-effect waves-light"><i class="material-icons menu-icons">shopping_cart</i> Shop<i class="mdi-navigation-arrow-drop-down right"></i></a>
                 <div class="collapsible-body">
                   <ul>
                     <li><a href="" target="_blank">Cash</a></li>
@@ -78,11 +78,13 @@
 
         <div class="col s6">
           <div class="card-panel grey lighten-5 z-depth-1">
-              <h5>Autotrade Items</h5> <!-- <a if={autotrade} class="btn-floating waves-effect waves-light green autotrade"><i class="material-icons">power_settings_new</i></a> -->
+              <h5>Autotrade: <span if={autotrade} class="profile-info right">{autotrade[0].title}</span></h5>
               <hr>
-              <!-- <a if={!autotrade} class="btn-floating waves-effect waves-light red autotrade" title="Autotrade OFF"><i class="material-icons">power_settings_new</i></a> -->
-                <p if={autotrade} class="profile-tags"><span>Quantity:</span><span class="profile-zeny right"> {autotrade}</span></p>
-                <p if={!autotrade} class="profile-tags">Autotrade is OFF</p>
+                <p if={!autotrade} class="profile-info">Autotrade is OFF</p>
+                <div class="chip" style='margin: 10px;' each={names}>
+                  <img src="http://www.divine-pride.net/img/items/item/iRO/{id}" alt="Contact Person">
+                  {name_japanese}
+                </div>
           </div>
         </div>
 
@@ -139,6 +141,9 @@
       left:93%;
       bottom: 40px;
     }
+    .profile-info {
+      font-weight:300; 
+    }
   </style>
 
   <script>
@@ -151,12 +156,9 @@
     this.birthdate = getToken('birthdate');
     this.last = getToken('last');
 
-    // console.log('birth',getToken('birthdate'));
-
-
 
     if (!this.session) {
-      riot.route('/');
+      $.api.logout();
       return;
     }
 
@@ -167,13 +169,91 @@
       });  
       
     $.api.getRecords('char?id_field=account_id&ids='+this.odinid,this.session);
-    $.api.getRecords('vendings?id_field=account_id&ids='+this.odinid,this.session);
     $.api.getRecords('global_reg_value?id_field=account_id&ids='+this.odinid,this.session);
+    
+    //get autotrade info
+
+    $.ajax({
+      dataType: 'json',
+      contentType: 'application/json; charset=utf-8',
+      cache:false,
+      headers: {
+        "X-DreamFactory-API-Key": APP_API_KEY,
+        "X-DreamFactory-Session-Token": getToken('token'),
+      },
+      url: INSTANCE_URL + '/api/v2/odinsro/_table/vendings?id_field=account_id&ids='+this.odinid,
+      method:'GET'
+    }).then(function (data) {
+      self.vendingid = data.resource[0].id; 
+    }).then(function (data) {
+        $.ajax({
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        cache:false,
+        headers: {
+          "X-DreamFactory-API-Key": APP_API_KEY,
+          "X-DreamFactory-Session-Token": getToken('token'),
+        }, 
+        url: INSTANCE_URL + '/api/v2/odinsro/_table/vending_items?filter=vending_id='+self.vendingid,
+        method:'GET'
+      }).then(function (data) {
+          self.vendingitems = [];
+          data.resource.forEach(function (value,index,ar) {
+            self.vendingitems[index] = value;
+          });
+        }).then(function (data) {
+          self.nameid = [];
+          self.vendingitems.forEach(function (value,index,ar) {
+            $.ajax({
+              dataType: 'json',
+              contentType: 'application/json; charset=utf-8',
+              cache:false,
+              headers: {
+                "X-DreamFactory-API-Key": APP_API_KEY,
+                "X-DreamFactory-Session-Token": getToken('token'),
+              },
+              url: INSTANCE_URL + '/api/v2/odinsro/_table/cart_inventory?ids='+value.cartinventory_id,
+              method:'GET'
+            }).then(function (data) {
+
+              self.nameid[index] = data.resource[0].nameid;
+              callNames(self.nameid);
+              // console.log(self.nameid);
+            });
+          });
+        });
+    });
+
+      function callNames (nameids) {
+        self.names = [];
+        nameids.forEach(function (value,index,ar) {
+          $.ajax({
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            cache:false,
+            headers: {
+              "X-DreamFactory-API-Key": APP_API_KEY,
+              "X-DreamFactory-Session-Token": getToken('token'),
+            },
+            url: INSTANCE_URL + '/api/v2/odinsro/_table/item_db_re?ids='+value,
+            method:'GET'
+          }).then(function (data) {
+
+            self.names[index] = data.resource[0];
+
+            self.update();
+            // console.log(self.names);
+          });
+        });
+      }
+      console.log(self.name);
     });
 
     this.on('update', function(){
       
-      this.autotrade = getToken('autotrade');
+      this.autotrade = storage.get('autotrade');
+      this.vending = storage.get('vending');
+      this.cartinventory = storage.get('cartinventory');
       this.zeny = getToken('zeny');
       this.cash = getToken('cash');
     });

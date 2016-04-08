@@ -1,3 +1,8 @@
+//AJAX SETUP
+$.ajaxSetup({
+  
+});
+
 //ROUTES
 // ** logout
 riot.route.start(true);

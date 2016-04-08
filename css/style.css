@@ -65,6 +65,7 @@ nav ul a:hover {
 .fixed1 {
   position: fixed;
   bottom: 20px;
-  right: 20px; }
+  right: 20px;
+  width: 12%; }
 
 /*# sourceMappingURL=style.css.map */

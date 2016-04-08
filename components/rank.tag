@@ -7,7 +7,7 @@
           <li class="no-padding">
             <ul class="collapsible collapsible-accordion">
               <li>
-                <a class="collapsible-header"><i class="material-icons">settings</i> System<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                <a class="collapsible-header waves-effect waves-light"><i class="material-icons">settings</i> System<i class="mdi-navigation-arrow-drop-down right"></i></a>
                 <div class="collapsible-body">
                   <ul>
                     <li><a href="#!">Vote Point</a></li>
@@ -20,7 +20,7 @@
           <li class="no-padding">
             <ul class="collapsible collapsible-accordion">
               <li>
-                <a class="collapsible-header"><i class="material-icons">build</i> Tools<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                <a class="collapsible-header waves-effect waves-light"><i class="material-icons">build</i> Tools<i class="mdi-navigation-arrow-drop-down right"></i></a>
                 <div class="collapsible-body">
                   <ul>
                     <li><a href="#!">Char Problem</a></li>
@@ -33,7 +33,7 @@
           <li class="no-padding">
             <ul class="collapsible collapsible-accordion">
               <li>
-                <a class="collapsible-header"><i class="material-icons">bubble_chart</i> Community<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                <a class="collapsible-header waves-effect waves-light"><i class="material-icons">bubble_chart</i> Community<i class="mdi-navigation-arrow-drop-down right"></i></a>
                 <div class="collapsible-body">
                   <ul>
                     <li><a href="https://www.facebook.com/oficialodinsro/" target="_blank">Facebook</a></li>
@@ -47,7 +47,7 @@
           <li class="no-padding">
             <ul class="collapsible collapsible-accordion">
               <li>
-                <a class="collapsible-header"><i class="material-icons menu-icons">shopping_cart</i> Shop<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                <a class="collapsible-header waves-effect waves-light"><i class="material-icons menu-icons">shopping_cart</i> Shop<i class="mdi-navigation-arrow-drop-down right"></i></a>
                 <div class="collapsible-body">
                   <ul>
                     <li><a href="" target="_blank">Cash</a></li>
@@ -211,7 +211,7 @@
 
     //checks if the user is logged
     if (!this.session) {
-      riot.route('/');
+      $.api.logout();
       return;
     }
 
