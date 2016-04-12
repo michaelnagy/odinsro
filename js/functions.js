@@ -29,7 +29,8 @@
                           setToken('odinid', response.odinid);
                           setToken('birthdate', response.birthdate);
                           setToken('name', response.name);
-                          setToken('last', response.last_login_date);
+                          setToken('lasttime', response.last_login_date);
+                          setToken('vip', response.group_id);
                           console.log(response);
                           //closes the login modal
                           $('#modal1.modal').closeModal();
@@ -173,7 +174,7 @@
                             setToken('odinid', response.odinid);
                             setToken('birthdate', response.birthdate);
                             setToken('name', display_name);
-                            console.log(response);
+                            // console.log(response);
 
                             //update riotjs tags
                             riot.update();
@@ -210,42 +211,41 @@
                         "X-DreamFactory-Session-Token": token
                     },
                     success:function (response) {
-
                         if (response.resource[0].zeny != undefined) {
                             setToken('zeny', response.resource[0].zeny);
-                            // console.log(response.resource[0].zeny); 
-                        }
-                        
-                        if (response.resource[0].autotrade) {
-                            storage.set({
-                              autotrade: response.resource
-                              console.log(response.resource);
+                            session.set({
+                              chars: response.resource
                             });
+                            window.dispatchEvent(charLoaded);
+                            // console.log('chars', session.get('chars')); 
                         }
                         if (response.resource[0].value) {
                             setToken('cash', response.resource[0].value);
                         }
                         if (response.resource[0].kills) {
-                            storage.set({
+                            session.set({
                               pvp: response.resource
                             });
-                            // console.log(response.resource);
+                            console.log('kills', response.resource);
                         }
                         if (response.resource[0].castle_id) {
-                            storage.set({
+                            session.set({
                               woe: response.resource
                             });
-                            // console.log(response.resource);
+                            console.log('castle_id', response.resource);
                         }
                         riot.update();
                     },
                     error:function (response) {
                         
-                        // console.log(response.responseJSON.error.message);
+                        console.log(response);
                         if (response.responseJSON.error.message == 'Token has expired') {
                         Materialize.toast('<span>Session expired. Please log in again</span>', 8000);
                         $.api.logout();
                         riot.route('/');
+                        }
+                        if (response.status == 404) {
+                            window.dispatchEvent(widgetLoaded);
                         }
                     }
                 });

@@ -211,7 +211,7 @@
 
     //checks if the user is logged
     if (!this.session) {
-      $.api.logout();
+      riot.route('logout');
       return;
     }
 

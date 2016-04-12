@@ -1,19 +1,31 @@
-//AJAX SETUP
-$.ajaxSetup({
-  
-});
-
 //ROUTES
 // ** logout
 riot.route.start(true);
 
+//event to listen when widget has finished loading data
+var widgetLoaded = new Event('widgetLoaded');
+var charLoaded = new Event('charLoaded');
+
 //preloader to use everywhere
-var preloader = '<div class="row"><div class="col s12"><div class="progress"><div class="indeterminate"></div></div></div></div>';
+var preloader = '<div class="preloader-wrapper big active"><div class="spinner-layer spinner-blue-only"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div></div><div class="circle-clipper right"><div class="circle"></div></div></div></div>';
+var element = '.autotrade, .profile';
+function preLoader(element, preloader) {
+  $(element).children().hide();
+  $(element).append(preloader).show();
+  $( window ).on('widgetLoaded',function() {
+    // Handler for .load() called.
+    $('.preloader-wrapper').remove();
+    $(element).children().show();
+    console.log(element);
+  });
+  
+}
+
+
 
 $(document).ready(function(){
 
   // ROUTES
-
   riot.route('', function() {
     view.render('home');
     //remove container from header
