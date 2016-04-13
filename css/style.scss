@@ -51,6 +51,9 @@ nav ul a:hover {
   font-weight: bold;
   color: #757575;
 }
+.side-nav.fixed {
+    top: inherit;
+}
 
 .side-nav .collapsible-body li a {
     font-weight: normal;

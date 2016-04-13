@@ -1,5 +1,5 @@
 <quest>
-  <h5>Instances <img class="right img-instance" src="/img/instance.png"></h5>
+  <h5>Instances</h5>
   <hr>
   <table class="striped">
     <thead>
@@ -12,8 +12,8 @@
     <tbody>
       <tr each={filtered_quests}>
         <td> {quest}</td>
-        <td if={time.seconds <= 0}>You can go to the quest now! <img class="right" style="margin-right: 5px;" src="{img}"></td>
-        <td if={!time}>You can go to this quest now! <img class="right" style="margin-right: 5px;" src="{img}"></td>
+        <td if={time.seconds <= 0}>You can go to the instance now! <img class="right" style="margin-right: 5px;" src="{img}"></td>
+        <td if={!time}>You can go to the instance now! <img class="right" style="margin-right: 5px;" src="{img}"></td>
         <td if={time.seconds > 0}>days: {time.days} hours: {time.hours} minutes: {time.minutes} left <img class="right" style="margin-right: 5px;" src="{img}"></td>
       </tr>
     </tbody>
@@ -31,7 +31,7 @@
 
   <script>
     var self = this;
-    self.quests = [{id:3045, quest:"Sealed Shrine", img:"http://www.divine-pride.net/img/items/item/iRO/750"}, {id:12059, quest:"Orc's Memory", img:"http://static.divine-pride.net/images/items/item/2299.png"}, {id:3136, quest:"Nidhoggur's Nest", img:"http://static.divine-pride.net/images/items/item/2554.png"}, {id:7211, quest:"Hazy Forest"}, {id:12254, quest:"Malangdo Culverts", img:"http://static.divine-pride.net/images/items/item/16750.png"}, {id:4197, quest:"Octopus"}, {id:9224, quest:"Bangungot Hospital"}, {id:4229, quest:"Buwaya Cave"}, {id:12278, quest:"Bakonawa Lake"} , {id:5112, quest:"Wolfchev's Laboratory"}, {id:12317, quest:"Old Glast Heim"}, {id:23182, quest:"Jitterbug"}, {id:13185, quest:"Charleston Crisis"}, {id:15050, quest:"Airship Assault"}, {id:15002, quest:"Endless Tower"}, {id:13999, quest:"Faceworm Nest"}, {id:13994, quest:"Devil's Tower"}, {id:13997, quest:"Ghost Palace"}, {id:60201, quest:"Bangungot Hospital"}, {id:18134, quest:"Isle of Bios"}, {id:13182, quest:"Geffen Magic Tournament"}];
+    self.quests = [{id:3045, quest:"Sealed Shrine", img:"http://www.divine-pride.net/img/items/item/iRO/750"}, {id:12059, quest:"Orc's Memory", img:"http://static.divine-pride.net/images/items/item/2299.png"}, {id:3136, quest:"Nidhoggur's Nest", img:"http://static.divine-pride.net/images/items/item/2554.png"}, {id:7211, quest:"Hazy Forest", img:"/img/instance.png"}, {id:12254, quest:"Malangdo Culverts", img:"http://static.divine-pride.net/images/items/item/16750.png"}, {id:4197, quest:"Octopus", img:"/img/quest/6772.png"}, {id:9224, quest:"Bangungot Hospital", img:"/img/quest/6517.png"}, {id:4229, quest:"Buwaya Cave", img:"/img/quest/6518.png"}, {id:12278, quest:"Bakonawa Lake", img:"/img/quest/6516.png"} , {id:5112, quest:"Wolfchev's Laboratory", img:"/img/quest/6470.png"}, {id:12317, quest:"Old Glast Heim", img:"/img/quest/7566.png"}, {id:23182, quest:"Jitterbug", img:"/img/quest/2988.png"}, {id:13185, quest:"Charleston Crisis", img:"/img/quest/15110.png"}, {id:15050, quest:"Airship Assault", img:"/img/quest/5359.png"}, {id:15002, quest:"Sara's Memories", img:"/img/quest/28311.png"}, {id:13999, quest:"Faceworm Nest", img:"/img/quest/20717.png"}, {id:13994, quest:"Devil's Tower", img:"/img/quest/16027.png"}, {id:13997, quest:"Ghost Palace", img:"/img/quest/13093.png"}, {id:60201, quest:"Endless Tower", img:"/img/quest/7026.png"}, {id:18134, quest:"Isle of Bios", img:"/img/quest/15094.png"}, {id:13182, quest:"Geffen Magic Tournament", img:"/img/quest/15074.png"}];
 
     // console.log('chars quest', self.chars);
 
@@ -56,7 +56,7 @@
 
       self.chars = session.get('chars');
       self.filtered_quests = [];
-      console.log('chars',session.get('chars'));
+      // console.log('chars',session.get('chars'));
 
       self.chars.forEach(function (value,index,ar) {
         
@@ -71,7 +71,7 @@
         url: INSTANCE_URL + '/api/v2/odinsro/_table/quest?filter=char_id='+value.char_id,
         method:'GET'
         }).then(function (data) {
-          console.log('query',data.resource.length);
+          // console.log('query',data.resource.length);
 
           if (data.resource.length > 0) {
             data.resource.forEach(function (value,index,ar) {
@@ -86,7 +86,7 @@
               });
             });
             
-            console.log('filtered',self.filtered_quests);
+            // console.log('filtered',self.filtered_quests);
           } else {
             self.filtered_quests = self.quests;
           }
@@ -103,10 +103,6 @@
       
 
       $('.main-menu').addClass('container');
-    });
-
-    view.addUnmountListener('server-info', function() {
-      self.unmount(true);
     });
   </script>
 </quest>

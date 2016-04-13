@@ -217,7 +217,7 @@
                               chars: response.resource
                             });
                             window.dispatchEvent(charLoaded);
-                            // console.log('chars', session.get('chars')); 
+                            console.log('chars', session.get('chars')); 
                         }
                         if (response.resource[0].value) {
                             setToken('cash', response.resource[0].value);
@@ -238,7 +238,7 @@
                     },
                     error:function (response) {
                         
-                        console.log(response);
+                        // console.log(response);
                         if (response.responseJSON.error.message == 'Token has expired') {
                         Materialize.toast('<span>Session expired. Please log in again</span>', 8000);
                         $.api.logout();

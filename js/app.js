@@ -16,14 +16,22 @@ function preLoader(element, preloader) {
     // Handler for .load() called.
     $('.preloader-wrapper').remove();
     $(element).children().show();
-    console.log(element);
+    // console.log(element);
   });
   
 }
 
-
-
 $(document).ready(function(){
+
+  //changes the menu top position when page is scrolled
+  $(window).scroll(function(){
+      if ($(window).scrollTop() > 30){
+        $('.side-nav.fixed').css('top','0px');
+      }
+      else {
+        $('.side-nav.fixed').css('top','inherit');
+      }
+  });
 
   // ROUTES
   riot.route('', function() {
@@ -38,9 +46,21 @@ $(document).ready(function(){
     $('.main-menu').removeClass('container');
   });
 
+  riot.route('reset', function() {
+    view.render('reset');
+    //remove container from header
+    $('.main-menu').removeClass('container');
+  });
+
   riot.route('download', function() {
     view.render('download');
   });
+
+  riot.route('char-reset', function() {
+
+    view.render('reset','widget');
+  });
+
 
   riot.route('server-info', function() {
     view.render('server-info');
@@ -69,5 +89,4 @@ $(document).ready(function(){
     $.api.logout();
     riot.route('');
   });
-
 });
