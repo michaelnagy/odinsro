@@ -241,8 +241,7 @@
                         // console.log(response);
                         if (response.responseJSON.error.message == 'Token has expired') {
                         Materialize.toast('<span>Session expired. Please log in again</span>', 8000);
-                        $.api.logout();
-                        riot.route('/');
+                        riot.route('logout');
                         }
                         if (response.status == 404) {
                             window.dispatchEvent(widgetLoaded);
