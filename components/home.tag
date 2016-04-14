@@ -15,6 +15,9 @@
               <li>
                 <img src="img/3.jpg">
               </li>
+              <li>
+                <img src="img/4.jpg">
+              </li>
             </ul>
           </div>
         </div>

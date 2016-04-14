@@ -183,11 +183,7 @@
     this.on('mount', function(){
 
       //initialize preloaders
-      preLoader(element, preloader);
-
-      $('.collapsible').collapsible({
-          accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-        });  
+      preLoader(element, preloader); 
       //API calls to get basic profile info  
       $.api.getRecords('char?filter=account_id='+this.odinid,this.session);
       // $.api.getRecords('global_reg_value?id_field=account_id&ids='+this.odinid,this.session);

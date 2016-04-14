@@ -62,5 +62,12 @@
   </style>
 
   <script>
+  this.on('mount', function() {
+    // activates accordion menu behavior
+      $('.collapsible').collapsible({
+          accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        }); 
+  });
+
   </script>
 </profile-sidebar>
