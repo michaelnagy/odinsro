@@ -17,7 +17,7 @@
                 <p if={names} class="profile-tags"><span>Autotrade:</span><span class="profile-info right on">ON</span></p>
                 <p if={!names} class="profile-tags"><span>Autotrade:</span><span class="profile-info right off">OFF</span></p>
                 <p if={vip == 1} class="profile-tags"><span>VIP:</span><span class="profile-info right on">ON</span></p>
-                <p if={vip == 0 || !vip} class="profile-tags"><span>VIP:</span><span class="profile-info right off">OFF</span></p>
+                <p if={vip == 0} class="profile-tags"><span>VIP:</span><span class="profile-info right off">OFF</span></p>
                 <p if={!vip} class="profile-tags"><span>VIP:</span><span class="profile-info right off">OFF</span></p>
                 <p class="profile-tags"><span>Zeny:</span><span if={zeny} class="profile-info right">{zeny}</span><span if={!zeny} class="profile-info right">0</span></p>
                 <p class="profile-tags"><span>Cash:</span><span if={cash} class="profile-info right">{cash} <span class="buy right">buy more</span></span><span if={!cash} class="profile-info right">0 <span class="buy right">buy more</span></span></p>

@@ -5,13 +5,13 @@
     <thead>
       <tr>
           <th data-field="id">Instance</th>
-          <th data-field="name">Time Left</th>
+          <th data-field="name">Countdown</th>
       </tr>
     </thead>
 
     <tbody>
       <tr each={filtered_quests}>
-        <td> {quest}</td>
+        <td if={quest}> {quest}</td>
         <td if={time.seconds <= 0}>You can go to the instance now! <img class="right" style="margin-right: 5px;" src="{img}"></td>
         <td if={!time}>You can go to the instance now! <img class="right" style="margin-right: 5px;" src="{img}"></td>
         <td if={time.seconds > 0}>days: {time.days} hours: {time.hours} minutes: {time.minutes} left <img class="right" style="margin-right: 5px;" src="{img}"></td>

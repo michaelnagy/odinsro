@@ -12,7 +12,7 @@
                     url: INSTANCE_URL + '/api/v2/user/session',
                     data: JSON.stringify({
                         "email": email,
-                        "password": password
+                        "password": md5(password)
                     }),
                     headers: {
                         "X-DreamFactory-API-Key": APP_API_KEY
@@ -148,7 +148,7 @@
                 });
             },
 
-            register: function(display_name, email, password, recaptcha) {
+            register: function(display_name, email, password, birthdate, recaptcha) {
                 $.ajax({
                     dataType: 'json',
                     contentType: 'application/json; charset=utf-8',
@@ -158,6 +158,7 @@
                         "display_name": display_name,
                         "email": email,
                         "new_password": password,
+                        "birthdate": birthdate,
                         "recaptcha": recaptcha
                     }),
                     headers: {
@@ -211,7 +212,13 @@
                         "X-DreamFactory-Session-Token": token
                     },
                     success:function (response) {
+                        console.log(response.resource);
+                        if (response.status == 404 || response.resource[0] === '' || response.resource[0] === null || response.resource[0] === undefined) {
+                            window.dispatchEvent(widgetLoaded);
+                            return;
+                        }
                         if (response.resource[0].zeny != undefined) {
+
                             setToken('zeny', response.resource[0].zeny);
                             session.set({
                               chars: response.resource
@@ -233,6 +240,9 @@
                               woe: response.resource
                             });
                             console.log('castle_id', response.resource);
+                        }
+                        else {
+                            window.dispatchEvent(charLoaded);
                         }
                         riot.update();
                     },

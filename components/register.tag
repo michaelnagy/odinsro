@@ -17,6 +17,10 @@
             <input id="password" type="password" name="user_pass" class="validate" required>
             <label for="password" data-error="You have to set a password :(">Password</label>
           </div>
+          <div class="input-field col s12">
+            <input type="date" id="birthdate" name="birthdate" class="datepicker">
+            <label for="birthdate" class="birth">Birthdate</label>
+          </div>
         </div>
         <div style="margin-bottom:0;" class="row buttons">
 
@@ -49,6 +53,9 @@
 
 
   <style>
+  label.birth  {
+    top: -0.8rem;
+  }
   #modal2 {
     max-height: 90%;
   }
@@ -99,6 +106,23 @@
     var dataform = [];
     var self = this;
 
+      (function() {
+        Date.prototype.toYMD = Date_toYMD;
+        function Date_toYMD() {
+            var year, month, day;
+            year = String(this.getFullYear());
+            month = String(this.getMonth() + 1);
+            if (month.length == 1) {
+                month = "0" + month;
+            }
+            day = String(this.getDate());
+            if (day.length == 1) {
+                day = "0" + day;
+            }
+            return year + "-" + month + "-" + day;
+          }
+      })();
+
      this.on('mount', function(){
 
        //recaptcha loading
@@ -124,8 +148,10 @@
               }
               else {
                 event.preventDefault();
-                console.log(dataform);
-                $.api.register(dataform[0].value, dataform[1].value, dataform[2].value, dataform[3].value);
+                var dt = new Date(dataform[3].value);
+                var dtstr = dt.toYMD();
+                console.log(md5(dataform[2].value));
+                $.api.register(dataform[0].value, dataform[1].value, md5(dataform[2].value), dtstr, dataform[4].value);
                 dataform = [];
               }
           });
@@ -146,6 +172,12 @@
     });
 
     this.on('updated', function(){
+
+      // // initialize the datepicker
+      // $('.datepicker').pickadate({
+      //   selectMonths: true, // Creates a dropdown to control month
+      //   selectYears: 15 // Creates a dropdown of 15 years to control year
+      // });
 
     });
 

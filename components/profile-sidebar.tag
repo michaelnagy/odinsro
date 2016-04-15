@@ -2,6 +2,7 @@
   <div class="col s2 navigation">
       <ul class="side-nav green lighten-5 fixed" id="mobile-demo">
       <li><a class="side-profile" href="#profile"><i class="material-icons menu-icons">face</i> Profile</a></li>
+      <li><a class="side-profile" href="#reset"><i class="material-icons menu-icons">build</i> Char Reset</a></li>
           <li class="no-padding">
             <ul class="collapsible collapsible-accordion">
               <li>
@@ -10,19 +11,6 @@
                   <ul>
                     <li><a href="#!">Vote Point</a></li>
                     <li><a href="#rank">Rank</a></li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li class="no-padding">
-            <ul class="collapsible collapsible-accordion">
-              <li>
-                <a class="collapsible-header waves-effect waves-light"><i class="material-icons">build</i> Tools<i class="mdi-navigation-arrow-drop-down right"></i></a>
-                <div class="collapsible-body">
-                  <ul>
-                    <li><a href="#reset">Char Problem</a></li>
-                    <li><a href="#!">Account Problem</a></li>
                   </ul>
                 </div>
               </li>

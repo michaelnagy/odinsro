@@ -20,6 +20,7 @@
     "riot": "riotjs#~2.3.13",
     "Materialize": "materialize#~0.97.5",
     "animate.css": "^3.5.1",
-    "slick": "*"
+    "slick": "*",
+    "JavaScript-MD5": "https://github.com/blueimp/JavaScript-MD5.git#^2.3.0"
   }
 }
