@@ -3,6 +3,7 @@
       <ul class="side-nav green lighten-5 fixed" id="mobile-demo">
       <li><a class="side-profile" href="#profile"><i class="material-icons menu-icons">face</i> Profile</a></li>
       <li><a class="side-profile" href="#reset"><i class="material-icons menu-icons">build</i> Char Reset</a></li>
+      <li><a class="side-profile" onclick="passChange()"><i class="material-icons menu-icons">vpn_key</i> Password change</a></li>
           <li class="no-padding">
             <ul class="collapsible collapsible-accordion">
               <li>
@@ -46,7 +47,10 @@
         </ul>
     </div>
 
-  <style>  
+  <style>
+  a {
+    cursor: pointer;
+  }  
   </style>
 
   <script>

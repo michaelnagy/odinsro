@@ -19,12 +19,15 @@
   </ul>
 
   <ul if={!session} id="dropdown2" class="dropdown-content">
-    <li><a class="modal-log" href="#login">Login</a></li>
-    <li><a href="#register">Register</a></li>
+    <li><a class="modal-log" href="#login"><i class="material-icons right">account_circle</i>Login</a></li>
+    <li><a class="modal-log" href="#register"><i class="material-icons right">perm_identity</i>Register</a></li>
   </ul>
 
   <style>
-
+  .modal-log:hover {
+    border-bottom: 0;
+    margin-top: 0;
+  }
   </style>
 
   <script>

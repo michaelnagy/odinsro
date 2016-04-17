@@ -1,7 +1,7 @@
 <register>
 
   <div class="animated slideInRight">
-    <h4 class="left-align">Register</h4><a href="#" class="modal-action modal-close"><img src="img/close.png"></a>
+    <h4 class="center-align">Register</h4><a href="#" class="modal-action modal-close"><img src="img/close.png"></a>
     <div class="row">
       <form class="col s6 register-form">
         <div class="row">
@@ -29,7 +29,7 @@
           </div>
 
           <div class="col s12">
-            <button class=" light-blue darken-3 btn waves-effect waves-light btn-register" type="submit" form="login-form">Registrar
+            <button class=" light-blue darken-3 btn waves-effect waves-light btn-register" type="submit" form="login-form">Register
               <i class="material-icons right">perm_identity</i>
             </button>
           </div>
@@ -47,6 +47,15 @@
           <li class="collection-item">Rank System <i class="material-icons left green-text bold">done</i></li>
         </ul>
         <a href="" target="_blank">General Rules</a>
+        <div class="row" style="margin-top: 105px;">
+          <h6 class="center-align" style="padding-left: 20px;">Already have an account?</h6>
+          <div class="col s4 offset-s4 register-features">
+            <a href="#login" class="center-align btn waves-effect waves-light" >Login
+              <i class="material-icons right">perm_identity</i>
+            </a>        
+          </div>
+        </div>
+        
       </div>
     </div>
   </div>

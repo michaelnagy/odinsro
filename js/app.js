@@ -2,6 +2,10 @@
 // ** logout
 riot.route.start(true);
 
+function passChange() {
+        $('#modal3').openModal();
+}
+
 //event to listen when widget has finished loading data
 var widgetLoaded = new Event('widgetLoaded');
 var charLoaded = new Event('charLoaded');
@@ -75,6 +79,10 @@ $(document).ready(function(){
     view.render('login', 'modal');
     $('#modal1').openModal();
   });
+  // riot.route('profile-password-change', function() {
+  //   view.render('profile-password-change', 'modal');
+  //   $('#modal3').openModal();
+  // });
 
   riot.route('pass-recover', function() {
     view.render('pass-recover', 'modal');

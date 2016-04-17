@@ -115,6 +115,7 @@
                 });
             },
             reset2: function(email, code, new_password) {
+                // console.log('reset',md5(new_password));
                 $.ajax({
                     dataType: 'json',
                     contentType: 'application/json; charset=utf-8',
@@ -124,13 +125,13 @@
                     data: JSON.stringify({
                         "email": email,
                         "code": code,
-                        "new_password": new_password
+                        "new_password": md5(new_password)
                     }),
                     headers: {
                         "X-DreamFactory-API-Key": APP_API_KEY
                     },
                     success:function (response) {
-                        Materialize.toast('<span><b>Sucess!</b> Your password was sucessfully changed.<br>You can now press Go Back and login.</span>', 8000);
+                        Materialize.toast('<span><b>Sucess!</b> Your password was sucessfully changed.<br>You can now press <b>Go Back</b> and login.</span>', 8000);
                     },
                     error:function (response) {
                         console.log(response);
