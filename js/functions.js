@@ -75,7 +75,7 @@
                     },
                     error:function (response) {
                         Materialize.toast('<span><b>Error!</b><br>Please try to logout again.</span>', 5000);
-                    
+
                         return false;
                     }
                 });
@@ -213,42 +213,47 @@
                         "X-DreamFactory-Session-Token": token
                     },
                     success:function (response) {
-                        console.log(response.resource);
+                        // console.log(response.resource);
                         if (response.status == 404 || response.resource[0] === '' || response.resource[0] === null || response.resource[0] === undefined) {
                             window.dispatchEvent(widgetLoaded);
-                            return;
-                        }
-                        if (response.resource[0].zeny != undefined) {
-
-                            setToken('zeny', response.resource[0].zeny);
-                            session.set({
-                              chars: response.resource
-                            });
                             window.dispatchEvent(charLoaded);
-                            console.log('chars', session.get('chars')); 
+                            console.log('if 404 dispatchEvent');
                         }
-                        if (response.resource[0].value) {
-                            setToken('cash', response.resource[0].value);
-                        }
-                        if (response.resource[0].kills) {
-                            session.set({
-                              pvp: response.resource
-                            });
-                            console.log('kills', response.resource);
-                        }
-                        if (response.resource[0].castle_id) {
-                            session.set({
-                              woe: response.resource
-                            });
-                            console.log('castle_id', response.resource);
+                        else if (response.resource) {
+                          if (response.resource[0].zeny != undefined) {
+
+                              setToken('zeny', response.resource[0].zeny);
+                              session.set({
+                                chars: response.resource
+                              });
+                              window.dispatchEvent(charLoaded);
+                              console.log('chars', session.get('chars'));
+                          }
+                          if (response.resource[0].value) {
+                              setToken('cash', response.resource[0].value);
+                          }
+                          if (response.resource[0].kills) {
+                              session.set({
+                                pvp: response.resource
+                              });
+                              console.log('kills', response.resource);
+                          }
+                          if (response.resource[0].castle_id) {
+                              session.set({
+                                woe: response.resource
+                              });
+                              console.log('castle_id', response.resource);
+                          }
                         }
                         else {
                             window.dispatchEvent(charLoaded);
+                            window.dispatchEvent(charLoaded);
+                            console.log('else dispatchEvent');
                         }
                         riot.update();
                     },
                     error:function (response) {
-                        
+
                         // console.log(response);
                         if (response.responseJSON.error.message == 'Token has expired') {
                         Materialize.toast('<span>Session expired. Please log in again</span>', 8000);

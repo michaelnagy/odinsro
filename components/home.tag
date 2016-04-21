@@ -26,7 +26,7 @@
         <div class="col s4 news">
 
           <div class="card">
-           
+
             <div class="card-content black-text server-features">
               <span class="card-title grey-text text-darken-4">Server Features</span>
                <ul class="collection">
@@ -40,9 +40,9 @@
             <div class="card-action grey lighten-3">
               <span class="card-title grey-text text-darken-4">Server Info<a href="#server-info" class="btn-game-info btn waves-effect waves-light right"><i class="material-icons">info_outline</i></a></span>
             </div>
-        
+
           </div>
-          
+
         </div>
         <!-- Server Features END -->
       </div> <!-- ROW SECTION END -->
@@ -80,15 +80,15 @@
         </div>
 
         </div>
-        
+
       </div>
 
       <div class="row section-news-list">
         <div class="col s12 z-depth-1 news">
-          
+
         </div>
       </div>
-        
+
   </div><!-- CONTAINER END -->
 
   <style>
@@ -101,10 +101,10 @@
     }
     ul.slides {
       height: 360px !important;
-    } 
+    }
     .video-container {
       margin-top: 0.5rem;
-      padding-bottom: 78.25%;%; 
+      padding-bottom: 78.25%;%;
     }
     .section-news .news-img {
       margin-top: 25px;
@@ -156,7 +156,7 @@
       text-align: center;
     }
     .news-item {
-      margin-bottom: 0; 
+      margin-bottom: 0;
     }
     .facebook {
      float: right;
@@ -178,14 +178,18 @@
 
       //get the news from forum
       $.get("http://forum.odinsro.net/api/discussions?include=startPost%2Ctags&filter%5Bq%5D=%20tag%3Anews&", function( data ) {
-        
+
+        if (!data.included) {
+          return
+        }
+        console.log(data.data);
         self.news = data.data;
         self.posts = data.included;
         // console.log(data.data, self.posts);
         // console.log('TITLE: ',data.data[0].attributes.title, 'POST: ',data.included[0].attributes.contentHtml);
-        for (i = 0; i < self.posts.length; i++) { 
+        for (i = 0; i < self.posts.length; i++) {
           if (self.posts[i].attributes.contentHtml === undefined) {
-            self.posts.splice(i, 1); 
+            self.posts.splice(i, 1);
           }
           else {
             self.posts[i].attributes.contentHtml = self.posts[i].attributes.contentHtml.replace(/<\/?[^>]+(>|$)/g, "");
@@ -210,10 +214,10 @@
             }
          }
         //order results by day
-        self.time = self.time.sort(function(a,b) {return (a.day > b.day) ? 1 : ((b.day > a.day) ? -1 : 0);} ); 
+        self.time = self.time.sort(function(a,b) {return (a.day > b.day) ? 1 : ((b.day > a.day) ? -1 : 0);} );
         //update the tag instance
         self.update();
-      });  
+      });
     });
 
     this.on('updated', function(){

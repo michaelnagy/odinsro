@@ -36,12 +36,12 @@
 
         <login></login>
         <pass-recover></pass-recover>
-        
+
       </div>
     </div>
     <div id="modal2" class="modal">
       <div class="modal-content">
-       
+
         <register></register>
 
       </div>
@@ -89,15 +89,10 @@
       <reset></reset>
       <server-info></server-info>
       <rank></rank>
-      
-    </main>
-    <footer>
-    <div class="col s12 copyright z-depth-1">
-      <p class="center-align white-text">© Copyright 2015-2016 odinsRO and legendRO developers other trademarks and images belongs to their respective owners.
-Ragnarok Online and all related contents are all property of Gravity.</p>
-    </div>
 
-    </footer>
+    </main>
+    <riot-footer></riot-footer>
+
   <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
   <script src="/bower_components/JavaScript-MD5/js/md5.min.js" charset="utf-8"></script>
   <script src="/bower_components/Materialize/dist/js/materialize.min.js" charset="utf-8"></script>
@@ -112,6 +107,7 @@ Ragnarok Online and all related contents are all property of Gravity.</p>
   <script src='https://www.google.com/recaptcha/api.js?render=explicit' async defer></script>
   <!-- TAGS -->
   <script src="/components/profile-sidebar.tag" type="riot/tag"></script>
+  <script src="/components/riot-footer.tag" type="riot/tag"></script>
   <script src="/components/profile-password-change.tag" type="riot/tag"></script>
   <script src="/components/reset.tag" type="riot/tag"></script>
   <script src="/components/quest.tag" type="riot/tag"></script>
@@ -128,6 +124,7 @@ Ragnarok Online and all related contents are all property of Gravity.</p>
   <!-- MOUNTED TAGS -->
   <script>riot.mount('perfil-menu')</script>
   <script>riot.mount('profile-password-change')</script>
+  <script>riot.mount('riot-footer')</script>
 
   </body>
 </html>

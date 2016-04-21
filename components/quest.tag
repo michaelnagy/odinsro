@@ -26,7 +26,7 @@
     bottom: 20px;
     right: 30px;
   }
-    
+
   </style>
 
   <script>
@@ -51,15 +51,17 @@
     }
 
     this.on('mount', function(){
-
+      console.log('chars',session.get('chars'));
       window.addEventListener("charLoaded", function () {
 
       self.chars = session.get('chars');
+      if (!self.chars) {
+        self.filtered_quests = self.quests;
+        return;
+      }
       self.filtered_quests = [];
-      // console.log('chars',session.get('chars'));
-
       self.chars.forEach(function (value,index,ar) {
-        
+
         $.ajax({
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
@@ -71,9 +73,10 @@
         url: INSTANCE_URL + '/api/v2/odinsro/_table/quest?filter=char_id='+value.char_id,
         method:'GET'
         }).then(function (data) {
-          // console.log('query',data.resource.length);
+          console.log('query',data.resource);
 
           if (data.resource.length > 0) {
+            console.log('if');
             data.resource.forEach(function (value,index,ar) {
               // value.quest_id
               self.filtered_quests = self.quests.filter(function (obj) {
@@ -85,10 +88,11 @@
                 return obj
               });
             });
-            
+
             // console.log('filtered',self.filtered_quests);
           } else {
             self.filtered_quests = self.quests;
+            console.log(self.filtered_quests);
           }
           // console.log(index, data, data.resource.length);
           // self.vendingid = data.resource[0];
@@ -97,10 +101,10 @@
       });
 
 
-        
+
       });
 
-      
+
 
       $('.main-menu').addClass('container');
     });
