@@ -19,11 +19,11 @@
                 <p if={vip == 1} class="profile-tags"><span>VIP:</span><span class="profile-info right on">ON</span></p>
                 <p if={vip == 0} class="profile-tags"><span>VIP:</span><span class="profile-info right off">OFF</span></p>
                 <p if={!vip} class="profile-tags"><span>VIP:</span><span class="profile-info right off">OFF</span></p>
-                <p class="profile-tags"><span>Zeny:</span><span if={zeny} class="profile-info right">{zeny}</span><span if={!zeny} class="profile-info right">0</span></p>
+                <p class="profile-tags"><span>Zeny:</span><span if={totalzeny} class="profile-info right">{totalzeny}</span><span if={!totalzeny} class="profile-info right">0</span></p>
                 <p class="profile-tags"><span>Cash:</span><span if={cash} class="profile-info right">{cash} <span class="buy right">buy more</span></span><span if={!cash} class="profile-info right">0 <span class="buy right">buy more</span></span></p>
                 <p class="profile-tags"><span>Last Login: </span><span if={lasttime} class="profile-info right">{lasttime}</span></p>
-              
-            </div> 
+
+            </div>
           </div>
         </div>
 
@@ -43,9 +43,9 @@
                     </div>
                   </li>
                 </ul>
-                
+
             </div>
-              
+
           </div>
           <ul class="pagination">
             <li class="waves-effect"><a onclick={prev}><i class="material-icons">chevron_left</i></a></li>
@@ -64,9 +64,9 @@
       </div>
 
       </div>
-        
+
     </div>
-  
+
   <style>
   .chip img {
     width: 24px !important;
@@ -127,7 +127,7 @@
       font-size: 20px;
     }
     .profile-info {
-      font-weight:300; 
+      font-weight:300;
     }
     .pagination {
       position: relative;
@@ -138,6 +138,8 @@
   <script>
     var itemsProcessed = 0;
     var self = this;
+
+    self.totalzeny = 0;
     //attribute basic profile info to sessionStorage
     this.session = getToken('token');
     this.email = getToken('email');
@@ -147,11 +149,10 @@
     this.lasttime = getToken('lasttime');
     this.vip = getToken('vip');
 
-
-    //autotrade widgets pagination function 
+    //autotrade widgets pagination function
     self.page = 0;
     self.pagesize = 5;
-    
+
     first() {
     self.page = 0;
     }
@@ -180,14 +181,23 @@
       return;
     }
 
+    //extract zeny from chars after the char call finishes
+    window.addEventListener("charLoaded", function () {
+      self.chars = session.get('chars');
+      self.chars.forEach(function (element, index, array) {
+        self.totalzeny += element.zeny;
+        // console.log(self.totalzeny, element.zeny);
+        self.update();
+      });
+    });
+
     this.on('mount', function(){
 
       //initialize preloaders
-      preLoader(element, preloader); 
-      //API calls to get basic profile info  
+      preLoader(element, preloader);
+      //API calls to get basic profile info
       $.api.getRecords('char?filter=account_id='+this.odinid,this.session);
-      // $.api.getRecords('global_reg_value?id_field=account_id&ids='+this.odinid,this.session);
-      
+
       //get autotrade info and start getting items name here
       $.ajax({
         dataType: 'json',
@@ -200,10 +210,14 @@
         url: INSTANCE_URL + '/api/v2/odinsro/_table/vendings?id_field=account_id&ids='+this.odinid,
         method:'GET'
       }).then(function (data) {
-        // console.log(data);
+        // if returns
         self.vendingid = data.resource[0];
-         
+      }, function (data) {
+        // if error
+        // console.log(data);
+        window.dispatchEvent(widgetLoaded);
       }).then(function (data) {
+        console.log(data);
           $.ajax({
           dataType: 'json',
           contentType: 'application/json; charset=utf-8',
@@ -211,15 +225,17 @@
           headers: {
             "X-DreamFactory-API-Key": APP_API_KEY,
             "X-DreamFactory-Session-Token": getToken('token'),
-          }, 
+          },
           url: INSTANCE_URL + '/api/v2/odinsro/_table/vending_items?filter=vending_id='+self.vendingid.id,
           method:'GET'
         }).then(function (data) {
+          console.log(data);
             self.vendingitems = [];
             data.resource.forEach(function (value,index,ar) {
               self.vendingitems[index] = value;
             });
           }).then(function (data) {
+            console.log(data);
             self.nameid = [];
             self.vendingitems.forEach(function (value,index,ar) {
               $.ajax({
@@ -233,11 +249,9 @@
                 url: INSTANCE_URL + '/api/v2/odinsro/_table/cart_inventory?ids='+value.cartinventory_id,
                 method:'GET'
               }).then(function (data) {
-
+                console.log(data);
                 self.nameid[index] = {id: data.resource[0].nameid, amount: data.resource[0].amount};
-                // console.log(self.nameid);
-                callNames(self.nameid);
-                
+                callNames(self.nameid)
               });
             });
           });
@@ -272,11 +286,10 @@
     });
 
     this.on('update', function(){
-      
       this.autotrade = session.get('autotrade');
       this.vending = session.get('vending');
       this.cartinventory = session.get('cartinventory');
-      this.zeny = getToken('zeny');
+      // this.zeny = getToken('zeny');
       this.cash = getToken('cash');
     });
 
@@ -285,4 +298,3 @@
     });
   </script>
 </profile>
-

@@ -217,7 +217,7 @@
                         if (response.status == 404 || response.resource[0] === '' || response.resource[0] === null || response.resource[0] === undefined) {
                             window.dispatchEvent(widgetLoaded);
                             window.dispatchEvent(charLoaded);
-                            console.log('if 404 dispatchEvent');
+                            // console.log('if 404 dispatchEvent');
                         }
                         else if (response.resource) {
                           if (response.resource[0].zeny != undefined) {
@@ -227,7 +227,7 @@
                                 chars: response.resource
                               });
                               window.dispatchEvent(charLoaded);
-                              console.log('chars', session.get('chars'));
+                              // console.log('chars', session.get('chars'));
                           }
                           if (response.resource[0].value) {
                               setToken('cash', response.resource[0].value);
@@ -242,13 +242,13 @@
                               session.set({
                                 woe: response.resource
                               });
-                              console.log('castle_id', response.resource);
+                              // console.log('castle_id', response.resource);
                           }
                         }
                         else {
                             window.dispatchEvent(charLoaded);
                             window.dispatchEvent(charLoaded);
-                            console.log('else dispatchEvent');
+                            // console.log('else dispatchEvent');
                         }
                         riot.update();
                     },

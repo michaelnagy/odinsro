@@ -1,6 +1,13 @@
 <quest>
   <h5>Instances</h5>
   <hr>
+  <div if={chars} class="input-field col s12">
+    <select id='charselect' onchange="{loadquest}">
+      <option value="" disabled selected>First Choose your Char</option>
+      <option each={chars} value="{char_id}">{name}</option>
+    </select>
+  </div>
+
   <table class="striped">
     <thead>
       <tr>
@@ -8,7 +15,6 @@
           <th data-field="name">Countdown</th>
       </tr>
     </thead>
-
     <tbody>
       <tr each={filtered_quests}>
         <td if={quest}> {quest}</td>
@@ -49,64 +55,62 @@
         'seconds': seconds
       };
     }
+    loadquest(e) {
+      //get the select char value
+      var select = document.getElementById("charselect");
+      var charid = select.options[select.selectedIndex].value;
+      // console.log('charid: ', charid, 'e: ', select);
+      //make the ajax call
+      $.ajax({
+      dataType: 'json',
+      contentType: 'application/json; charset=utf-8',
+      cache:false,
+      headers: {
+        "X-DreamFactory-API-Key": APP_API_KEY,
+        "X-DreamFactory-Session-Token": getToken('token'),
+      },
+      url: INSTANCE_URL + '/api/v2/odinsro/_table/quest?filter=char_id='+charid,
+      method:'GET'
+      }).then(function (data) {
+        // console.log('query',data.resource);
+        if (data.resource.length > 0) {
+          // console.log('if');
+          data.resource.forEach(function (value,index,ar) {
+            // value.quest_id
+            self.filtered_quests = self.quests.filter(function (obj) {
+              if (obj.id == value.quest_id) {
+                obj.time = new Date(value.time * 1000);
+                obj.time = getTimeRemaining(obj.time);
+                // console.log(obj.time);
+              }
+              return obj
+            });
+          });
+          // console.log('filtered',self.filtered_quests);
+        } else {
+          self.filtered_quests = self.quests;
+          // console.log(self.filtered_quests);
+        }
+        console.log(self.filtered_quests);
+        // self.vendingid = data.resource[0];
+        self.update();
+      });
+    }
 
     this.on('mount', function(){
-      console.log('chars',session.get('chars'));
+
       window.addEventListener("charLoaded", function () {
-
-      self.chars = session.get('chars');
-      if (!self.chars) {
-        self.filtered_quests = self.quests;
-        return;
-      }
-      self.filtered_quests = [];
-      self.chars.forEach(function (value,index,ar) {
-
-        $.ajax({
-        dataType: 'json',
-        contentType: 'application/json; charset=utf-8',
-        cache:false,
-        headers: {
-          "X-DreamFactory-API-Key": APP_API_KEY,
-          "X-DreamFactory-Session-Token": getToken('token'),
-        },
-        url: INSTANCE_URL + '/api/v2/odinsro/_table/quest?filter=char_id='+value.char_id,
-        method:'GET'
-        }).then(function (data) {
-          console.log('query',data.resource);
-
-          if (data.resource.length > 0) {
-            console.log('if');
-            data.resource.forEach(function (value,index,ar) {
-              // value.quest_id
-              self.filtered_quests = self.quests.filter(function (obj) {
-                if (obj.id == value.quest_id) {
-                  obj.time = new Date(value.time * 1000);
-                  obj.time = getTimeRemaining(obj.time);
-                  // console.log(obj.time);
-                }
-                return obj
-              });
-            });
-
-            // console.log('filtered',self.filtered_quests);
-          } else {
-            self.filtered_quests = self.quests;
-            console.log(self.filtered_quests);
-          }
-          // console.log(index, data, data.resource.length);
-          // self.vendingid = data.resource[0];
-        });
-
+        self.chars = session.get('chars');
+        // console.log('chars', self.chars);
+        self.update();
       });
-
-
-
-      });
-
-
-
       $('.main-menu').addClass('container');
+
+    });
+
+    this.on('update', function(){
+      //materialize initialize select form
+      $('select').material_select();
     });
   </script>
 </quest>
