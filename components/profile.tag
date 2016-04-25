@@ -16,7 +16,7 @@
                 <p if={birthdate != 'undefined'} class="profile-tags"><span>Birthdate:</span><span class="profile-info right"> {birthdate}</span></p>
                 <p if={names} class="profile-tags"><span>Autotrade:</span><span class="profile-info right on">ON</span></p>
                 <p if={!names} class="profile-tags"><span>Autotrade:</span><span class="profile-info right off">OFF</span></p>
-                <p if={vip == 1} class="profile-tags"><span>VIP:</span><span class="profile-info right on">ON</span></p>
+                <p if={vip > 1} class="profile-tags"><span>VIP:</span><span class="profile-info right on">ON</span></p>
                 <p if={vip == 0} class="profile-tags"><span>VIP:</span><span class="profile-info right off">OFF</span></p>
                 <p if={!vip} class="profile-tags"><span>VIP:</span><span class="profile-info right off">OFF</span></p>
                 <p class="profile-tags"><span>Zeny:</span><span if={totalzeny} class="profile-info right">{totalzeny}</span><span if={!totalzeny} class="profile-info right">0</span></p>
@@ -54,7 +54,7 @@
           </ul>
         </div>
 
-        <div class="col s12">
+        <div class="col s12" style="margin-top:-30px">
             <div class="card-panel grey lighten-5 z-depth-1 quest">
               <div class="animated fadeIn">
                 <quest></quest>
@@ -65,6 +65,12 @@
 
       </div>
 
+    </div>
+    <div class="row">
+      <div class="col s10 push-s2 copyright">
+        <p class="center-align white-text">© Copyright 2015-2016 odinsRO and legendRO developers other trademarks and images belongs to their respective owners.
+      Ragnarok Online and all related contents are all property of Gravity.</p>
+      </div>
     </div>
 
   <style>
@@ -133,6 +139,13 @@
       position: relative;
       bottom: 70px;
     }
+    .copyright {
+      height: auto;
+      background-color: #16475F;
+    }
+    .copyright p {
+      padding: 20px;
+    }
   </style>
 
   <script>
@@ -148,7 +161,7 @@
     this.birthdate = getToken('birthdate');
     this.lasttime = getToken('lasttime');
     this.vip = getToken('vip');
-
+    console.log(this.vip);
     //autotrade widgets pagination function
     self.page = 0;
     self.pagesize = 5;

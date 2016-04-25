@@ -39,10 +39,10 @@
               <li class="collection-item">Lottery</li>
             </ul>
 		    	</div>
-          
+
         </div>
 
-        
+
         <div class="col s6">
 	        <div class="card-panel">
 	        	<h5 class="align-center">Custom Server Features</h5>
@@ -72,17 +72,23 @@
               <li class="collection-item">Third Classes: Fully Available</li>
               <li class="collection-item">Rebellion/Kagerou/Oboro: Fully Available</li>
               <li class="collection-item">Functional Eclage, El Dicastes, Malangdo & Mora Quests</li>
-              <li class="collection-item">Instance Dungeons Available: 
+              <li class="collection-item">Instance Dungeons Available:
 Nightmarish Jitterbug, Morse Cave, Bios Island, Geffen Magic Tournament, Nightmare Toy Factory, Ghost Palace, Faceworm's Nest, Old Glast Heim, Endless Tower, Bakonawa Lake, Hazy Forest, Sara's Memory and more!</li>
               <li class="collection-item">Nightmare Clock Tower, Nightmare Glast Heim, Nightmare Pyramids</li>
               <li class="collection-item">Champion Mob System</li>
             </ul>
         	</div>
-        </div> 
+        </div>
   </div><!-- CONTAINER END -->
+  <div class="row">
+      <div class="col s12 copyright">
+        <p class="center-align white-text">© Copyright 2015-2016 odinsRO and legendRO developers other trademarks and images belongs to their respective owners.
+      Ragnarok Online and all related contents are all property of Gravity.</p>
+      </div>
+    </div>
 
   <style>
-    
+
   </style>
 
   <script>
