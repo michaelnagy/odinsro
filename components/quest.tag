@@ -20,7 +20,7 @@
         <td if={quest}> {quest}</td>
         <td if={time.seconds <= 0}>You can go to the instance now! <img class="right" style="margin-right: 5px;" src="{img}"></td>
         <td if={!time}>You can go to the instance now! <img class="right" style="margin-right: 5px;" src="{img}"></td>
-        <td if={time.seconds > 0}>days: {time.days} hours: {time.hours} minutes: {time.minutes} left <img class="right" style="margin-right: 5px;" src="{img}"></td>
+        <td if={time.seconds > 0}>{time.days} <b>days</b>, {time.hours} <b>hours</b>, {time.minutes} <b>minutes</b> left <img class="right" style="margin-right: 5px;" src="{img}"></td>
       </tr>
     </tbody>
   </table>
@@ -91,7 +91,7 @@
           self.filtered_quests = self.quests;
           // console.log(self.filtered_quests);
         }
-        console.log(self.filtered_quests);
+        // console.log(self.filtered_quests);
         // self.vendingid = data.resource[0];
         self.update();
       });

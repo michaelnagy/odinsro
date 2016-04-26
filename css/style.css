@@ -74,11 +74,7 @@ nav ul a:hover {
   right: 20px;
   width: 12%; }
 
-.copyright {
-  height: 60px;
-  background-color: #16475F; }
-
-.copyright p {
-  padding: 20px; }
+.footer {
+  margin-bottom: 0; }
 
 /*# sourceMappingURL=style.css.map */

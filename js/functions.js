@@ -265,32 +265,6 @@
                     }
                 });
             },
-            // getRecords: function(table, params, token) {
-            //     $.ajax({
-            //         dataType: 'json',
-            //         contentType: 'application/json; charset=utf-8',
-            //         url: INSTANCE_URL + '/api/v2/odinsro/_table/' + table +'?id_field=account_id&ids='+2004003,
-            //         cache:false,
-            //         data: params,
-            //         method:'GET',
-            //         headers: {
-            //             "X-DreamFactory-API-Key": APP_API_KEY,
-            //             "X-DreamFactory-Session-Token": token
-            //         },
-            //         success:function (response) {
-            //             if(typeof callback !== 'undefined') {
-            //                 if (response.hasOwnProperty('resource'))
-            //                     callback(response.resource);
-            //                 else
-            //                     callback(response);
-            //             }
-            //         },
-            //         error:function (response) {
-            //             callback(response);
-            //             return false;
-            //         }
-            //     });
-            // },
 
             setRecord: function(table, params, token, callback) {
                 $.ajax({

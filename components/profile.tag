@@ -66,7 +66,7 @@
       </div>
 
     </div>
-    <div class="row">
+    <div class="row footer">
       <div class="col s10 push-s2 copyright">
         <p class="center-align white-text">© Copyright 2015-2016 odinsRO and legendRO developers other trademarks and images belongs to their respective owners.
       Ragnarok Online and all related contents are all property of Gravity.</p>
@@ -161,7 +161,7 @@
     this.birthdate = getToken('birthdate');
     this.lasttime = getToken('lasttime');
     this.vip = getToken('vip');
-    console.log(this.vip);
+    // console.log(this.vip);
     //autotrade widgets pagination function
     self.page = 0;
     self.pagesize = 5;
@@ -196,12 +196,14 @@
 
     //extract zeny from chars after the char call finishes
     window.addEventListener("charLoaded", function () {
-      self.chars = session.get('chars');
-      self.chars.forEach(function (element, index, array) {
-        self.totalzeny += element.zeny;
-        // console.log(self.totalzeny, element.zeny);
-        self.update();
+      if (self.chars) {
+        self.chars = session.get('chars');
+        self.chars.forEach(function (element, index, array) {
+          self.totalzeny += element.zeny;
+          // console.log(self.totalzeny, element.zeny);
+          self.update();
       });
+      }
     });
 
     this.on('mount', function(){
