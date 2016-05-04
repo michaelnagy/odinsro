@@ -90,12 +90,6 @@
       </div>
 
   </div><!-- CONTAINER END -->
-  <div class="row footer">
-      <div class="col s12 copyright">
-        <p class="center-align white-text">© Copyright 2015-2016 odinsRO and legendRO developers other trademarks and images belongs to their respective owners.
-      Ragnarok Online and all related contents are all property of Gravity.</p>
-      </div>
-    </div>
   <style>
     .facebook-widget {
       padding-top: 8px !important;

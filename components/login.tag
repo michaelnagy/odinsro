@@ -2,7 +2,7 @@
 
   <div class="animated slideInRight">
     <h4 class="center-align">Login</h4><a href="#" class="modal-action modal-close right"><img src="img/close.png"></a>
-    <div class="row">
+    <div class="row login-row">
       <form class="col s12 login-form">
         <div class="row">
           <div class="input-field email col s12">
@@ -28,6 +28,14 @@
 
 
   <style>
+  #modal1 {
+    width: 30%;
+  }
+  .login-row {
+    background-color: #F3F3F3;
+    border: 1px solid #E4E4E4;
+    padding-bottom: 40px !important;
+  }
   a#pass-recover {
     margin-top: 20px;
     margin-bottom: -20px;
@@ -72,7 +80,7 @@
       //submit form on Enter press
       $('input[type=password]').on('keydown', function(e) {
         if (e.which == 13) {
-         
+
           dataform = [];
           dataform = $('.login-form').serializeArray();
 

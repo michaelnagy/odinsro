@@ -66,12 +66,6 @@
       </div>
 
     </div>
-    <div class="row footer">
-      <div class="col s10 push-s2 copyright">
-        <p class="center-align white-text">© Copyright 2015-2016 odinsRO and legendRO developers other trademarks and images belongs to their respective owners.
-      Ragnarok Online and all related contents are all property of Gravity.</p>
-      </div>
-    </div>
 
   <style>
   .chip img {
