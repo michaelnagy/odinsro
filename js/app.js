@@ -22,7 +22,7 @@ function preLoader(element, preloader) {
     $(element).children().show();
     // console.log(element);
   });
-  
+
 }
 
 $(document).ready(function(){
@@ -42,6 +42,11 @@ $(document).ready(function(){
     view.render('home');
     //remove container from header
     $('.main-menu').addClass('container');
+  });
+
+  riot.route('shop', function() {
+    view.render('shop');
+    $('.main-menu').removeClass('container');
   });
 
   riot.route('profile', function() {
@@ -87,12 +92,12 @@ $(document).ready(function(){
   riot.route('pass-recover', function() {
     view.render('pass-recover', 'modal');
   });
-  
+
   riot.route('register', function() {
     view.render('register', 'modal');
     $('#modal2').openModal();
   });
-  
+
   riot.route('logout', function() {
     $.api.logout();
     riot.route('');

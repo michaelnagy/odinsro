@@ -77,4 +77,8 @@ nav ul a:hover {
 .footer {
   margin-bottom: 0; }
 
+.copyright {
+  position: relative;
+  z-index: 2000; }
+
 /*# sourceMappingURL=style.css.map */
