@@ -44,7 +44,9 @@
                         // console.log(response);
                     },
                     error: function (response) {
+                        //hides the loader
                         $( ".login-preloader" ).children().addClass('hide');
+
                         var msgObj = {};
                         msgObj = parseResponse(response);
                         if(msgObj) {
@@ -171,6 +173,9 @@
                     },
                     cache:false,
                     method:'POST',
+                    beforeSend: function(){
+                       $( ".register-btn .preloader-wrapper" ).removeClass('hide');
+                    },
                     success:function (response) {
                       if(response.hasOwnProperty('session_token')) {
                           // console.log(response, email);
@@ -194,6 +199,8 @@
 
                     },
                     error:function (response) {
+                      // remove preloader
+                      $( ".register-btn .preloader-wrapper" ).addClass('hide');
 
                       var msgObj = {};
                       msgObj = parseResponse(response);

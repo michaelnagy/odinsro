@@ -24,6 +24,10 @@ function preLoader(element, preloader) {
   });
 
 }
+// add the preloader to the site
+window.onload = function () {
+  $(".preloader-container").fadeOut('slow');
+}
 
 $(document).ready(function(){
 

@@ -28,14 +28,25 @@
             <div id="recaptcha"></div>
           </div>
 
-          <div class="col s12">
+          <div class="col s12 register-btn">
             <button class=" light-blue darken-3 btn waves-effect waves-light btn-register" type="submit" form="login-form">Register
               <i class="material-icons right">perm_identity</i>
             </button>
+            <div class="preloader-wrapper small active hide" style="display:block; margin:10px; auto;">
+              <div class="spinner-layer spinner-green-only">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          
+
         </div>
-      
+
       </form>
 
       <div class="col s6 register-features">
@@ -52,10 +63,10 @@
           <div class="col s4 offset-s4 register-features">
             <a href="#login" class="center-align btn waves-effect waves-light" >Login
               <i class="material-icons right">perm_identity</i>
-            </a>        
+            </a>
           </div>
         </div>
-        
+
       </div>
     </div>
   </div>
@@ -70,7 +81,7 @@
   }
   .recaptcha {
     margin-bottom: 10px;
-  } 
+  }
 
   a#pass-recover {
     margin-top: 20px;
@@ -164,7 +175,7 @@
                 dataform = [];
               }
           });
-          $('.register-form').submit(); 
+          $('.register-form').submit();
       });
       //submit form on Enter press
       $('input[type=password]').on('keydown', function(e) {
@@ -173,11 +184,11 @@
           $('.login-form').submit();
         }
       });
-      
+
     });
 
     this.on('update', function(){
-      
+
     });
 
     this.on('updated', function(){
