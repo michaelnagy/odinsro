@@ -19,6 +19,9 @@
                     },
                     cache:false,
                     method:'POST',
+                    beforeSend: function(){
+                       $( ".login-preloader" ).children().removeClass('hide');
+                    },
                     success: function (response) {
 
                         if(response.hasOwnProperty('session_token')) {
@@ -41,6 +44,7 @@
                         // console.log(response);
                     },
                     error: function (response) {
+                        $( ".login-preloader" ).children().addClass('hide');
                         var msgObj = {};
                         msgObj = parseResponse(response);
                         if(msgObj) {

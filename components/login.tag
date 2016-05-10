@@ -21,6 +21,20 @@
               <i class="material-icons right">send</i>
             </button>
           </div>
+          <div class="col s6 login-preloader">
+            <!-- preloader -->
+            <div class="preloader-wrapper small active hide">
+              <div class="spinner-layer spinner-green-only">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col s12 valign-wrapper"><a href="#pass-recover" id="pass-recover">Forgot your password?</a></div>
       </div>
     </div>
