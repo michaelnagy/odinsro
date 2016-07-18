@@ -1,5 +1,5 @@
 <reset>
-  
+
   <div class="row">
     <profile-sidebar></profile-sidebar>
     <div class="col s5">
@@ -47,7 +47,7 @@
         </div>
     </div>
   </div>
-  
+
   <style>
     .side-nav.fixed {
         top: inherit;
@@ -68,13 +68,13 @@
     }
 
     charreset(e) {
-      console.log(e.currentTarget.getAttribute('data-char-id'));
+      // console.log(e.currentTarget);
       // e.currentTarget.getAttribute('data-char-id')
       $.ajax({
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
         url: INSTANCE_URL + '/api/v2/odinsro/_table/char?fields=last_map,char_id&id_field=char_id&ids='+e.currentTarget.getAttribute('data-char-id'),
-        data: JSON.stringify({                    
+        data: JSON.stringify({
             "resource": [{"last_map": "prontera"}]
         }),
         headers: {
@@ -98,13 +98,13 @@
         });
     }
     stylereset(e) {
-      console.log(e.currentTarget.getAttribute('data-char-id'));
+      // console.log(e.currentTarget.getAttribute('data-char-id'));
       // e.currentTarget.getAttribute('data-char-id')
       $.ajax({
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
         url: INSTANCE_URL + '/api/v2/odinsro/_table/char?fields=last_map,char_id&id_field=char_id&ids='+e.currentTarget.getAttribute('data-char-id'),
-        data: JSON.stringify({                    
+        data: JSON.stringify({
             "resource": [{"hair_color": 1, "clothes_color": 1, "hair": 1, "head_top": 1, "head_mid": 1, "head_bottom": 1}]
         }),
         headers: {
@@ -128,7 +128,7 @@
         });
     }
 
-   
+
     this.on('mount', function(){
       //get char data only when it finishes loading
       window.addEventListener("charLoaded", function () {

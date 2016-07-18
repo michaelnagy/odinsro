@@ -33,8 +33,9 @@
                           setToken('birthdate', response.birthdate);
                           setToken('name', response.name);
                           setToken('lasttime', response.last_login_date);
-                          setToken('vip', response.group_id);
-                          console.log(response);
+                          setToken('vip', response.vip_time);
+                          setToken('created', response.created);
+                          // console.log(response);
                           //closes the login modal
                           $('#modal1.modal').closeModal();
                           //changes URL in browser
@@ -104,10 +105,10 @@
                         Materialize.toast('<span>A <b>confirmation code</b> was sent to your e-mail.<br>Insert it in the field below and set your <b>new password.</b></span>', 20000);
                         $('.reset2, .btn-reset2').fadeIn('slow');
                         $('.btn-reset').hide();
-                        console.log(response);
+                        // console.log(response);
                     },
                     error:function (response) {
-                        console.log(response);
+                        // console.log(response);
 
                         var msgObj = {};
                         msgObj = parseResponse(response);
@@ -140,7 +141,7 @@
                         Materialize.toast('<span><b>Sucess!</b> Your password was sucessfully changed.<br>You can now press <b>Go Back</b> and login.</span>', 8000);
                     },
                     error:function (response) {
-                        console.log(response);
+                        // console.log(response);
 
                         var msgObj = {};
                         msgObj = parseResponse(response);
@@ -185,6 +186,7 @@
                             setToken('odinid', response.odinid);
                             setToken('birthdate', response.birthdate);
                             setToken('name', display_name);
+                            setToken('created', response.created);
                             // console.log(response);
 
                             //update riotjs tags
@@ -239,9 +241,6 @@
                               });
                               window.dispatchEvent(charLoaded);
                               // console.log('chars', session.get('chars'));
-                          }
-                          if (response.resource[0].value) {
-                              setToken('cash', response.resource[0].value);
                           }
                           if (response.resource[0].kills) {
                               session.set({

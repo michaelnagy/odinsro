@@ -16,9 +16,8 @@
                 <p if={birthdate != 'undefined'} class="profile-tags"><span>Birthdate:</span><span class="profile-info right"> {birthdate}</span></p>
                 <p if={names} class="profile-tags"><span>Autotrade:</span><span class="profile-info right on">ON</span></p>
                 <p if={!names} class="profile-tags"><span>Autotrade:</span><span class="profile-info right off">OFF</span></p>
-                <p if={vip > 1} class="profile-tags"><span>VIP:</span><span class="profile-info right on">ON</span></p>
-                <p if={vip == 0} class="profile-tags"><span>VIP:</span><span class="profile-info right off">OFF</span></p>
-                <p if={!vip} class="profile-tags"><span>VIP:</span><span class="profile-info right off">OFF</span></p>
+                <p if={vip > 0} class="profile-tags"><span>VIP:</span><span class="profile-info right on">ON</span></p>
+                <p if={!vip || vip < 1} class="profile-tags"><span>VIP:</span><span class="profile-info right off">OFF</span></p>
                 <p class="profile-tags"><span>Zeny:</span><span if={totalzeny} class="profile-info right">{totalzeny}</span><span if={!totalzeny} class="profile-info right">0</span></p>
                 <p class="profile-tags"><span>Cash:</span><span if={cash} class="profile-info right">{cash} <span class="buy right">buy more</span></span><span if={!cash} class="profile-info right">0 <span class="buy right">buy more</span></span></p>
                 <p class="profile-tags"><span>Last Login: </span><span if={lasttime} class="profile-info right">{lasttime}</span></p>
@@ -147,6 +146,7 @@
     var self = this;
 
     self.totalzeny = 0;
+    self.cash = 0;
     //attribute basic profile info to sessionStorage
     this.session = getToken('token');
     this.email = getToken('email');
@@ -155,7 +155,7 @@
     this.birthdate = getToken('birthdate');
     this.lasttime = getToken('lasttime');
     this.vip = getToken('vip');
-    // console.log(this.vip);
+    // console.log('vip ',this.vip);
     //autotrade widgets pagination function
     self.page = 0;
     self.pagesize = 5;
@@ -190,14 +190,14 @@
 
     //extract zeny from chars after the char call finishes
     window.addEventListener("charLoaded", function () {
-      if (self.chars) {
+      // console.log('charloaded');
+
         self.chars = session.get('chars');
         self.chars.forEach(function (element, index, array) {
           self.totalzeny += element.zeny;
           // console.log(self.totalzeny, element.zeny);
           self.update();
-      });
-      }
+        });
     });
 
     this.on('mount', function(){
@@ -206,6 +206,30 @@
       preLoader(element, preloader);
       //API calls to get basic profile info
       $.api.getRecords('char?filter=account_id='+this.odinid,this.session);
+
+      //get cash info
+      $.ajax({
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        cache:false,
+        headers: {
+          "X-DreamFactory-API-Key": APP_API_KEY,
+          "X-DreamFactory-Session-Token": getToken('token'),
+        },
+        url: INSTANCE_URL + '/api/v2/odinsro/_table/acc_reg_num?id_field=account_id&ids='+this.odinid,
+        method:'GET'
+      }).then(function (data) {
+        if (data.resource[0].value) {
+          self.cash = data.resource[0].value;
+          // console.log('if ', self.cash);
+          self.update();
+        }
+        else {
+          self.cash = 0;
+          // console.log('else cash ', self.cash);
+        }
+        // console.log(data);
+      });
 
       //get autotrade info and start getting items name here
       $.ajax({
@@ -226,7 +250,7 @@
         // console.log(data);
         window.dispatchEvent(widgetLoaded);
       }).then(function (data) {
-        console.log(data);
+        // console.log(data);
           $.ajax({
           dataType: 'json',
           contentType: 'application/json; charset=utf-8',
@@ -238,13 +262,13 @@
           url: INSTANCE_URL + '/api/v2/odinsro/_table/vending_items?filter=vending_id='+self.vendingid.id,
           method:'GET'
         }).then(function (data) {
-          console.log(data);
+          // console.log(data);
             self.vendingitems = [];
             data.resource.forEach(function (value,index,ar) {
               self.vendingitems[index] = value;
             });
           }).then(function (data) {
-            console.log(data);
+            // console.log(data);
             self.nameid = [];
             self.vendingitems.forEach(function (value,index,ar) {
               $.ajax({
@@ -258,7 +282,7 @@
                 url: INSTANCE_URL + '/api/v2/odinsro/_table/cart_inventory?ids='+value.cartinventory_id,
                 method:'GET'
               }).then(function (data) {
-                console.log(data);
+                // console.log(data);
                 self.nameid[index] = {id: data.resource[0].nameid, amount: data.resource[0].amount};
                 callNames(self.nameid)
               });
@@ -298,8 +322,6 @@
       this.autotrade = session.get('autotrade');
       this.vending = session.get('vending');
       this.cartinventory = session.get('cartinventory');
-      // this.zeny = getToken('zeny');
-      this.cash = getToken('cash');
     });
 
     view.addUnmountListener('profile', function() {

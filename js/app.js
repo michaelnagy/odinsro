@@ -2,6 +2,9 @@
 // ** logout
 riot.route.start(true);
 
+// Initialize collapse button menu
+  $(".button-collapse").sideNav();
+
 function passChange() {
         $('#modal3').openModal();
 }

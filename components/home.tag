@@ -48,15 +48,28 @@
       </div> <!-- ROW SECTION END -->
 
       <div class="row section-featured">
-         <div class="col s6 facebook-widget">
-          <div class="fb-page" data-href="https://www.facebook.com/oficialodinsro" data-tabs="timeline" data-width="500" data-height="361" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/oficialodinsro"><a href="https://www.facebook.com/oficialodinsro">Odinsro</a></blockquote></div></div>
+        <div class="col s6 facebook-widget">
+          <div class="fb-page z-depth-1" data-href="https://www.facebook.com/oficialodinsro" data-tabs="timeline" data-width="450" data-height="361" data-small-header="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/oficialodinsro"><a href="https://www.facebook.com/oficialodinsro">Odinsro</a></blockquote></div></div>
         </div>
 
-        <div class="col s6 video">
-          <div class="video-container z-depth-1">
-            <iframe width="853" height="480" src="https://www.youtube.com/embed/2vKt_xav6gI" frameborder="0" allowfullscreen></iframe>
+        <div class="col s6 z-depth-1 video-col">
+          <div class="video">
+            <div>
+              <iframe width="100%" height="270" src="https://www.youtube.com/embed/2vKt_xav6gI" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div>
+              <iframe width="100%" height="270" src="https://www.youtube.com/embed/86efD2Bxtr0" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div>
+              <iframe width="100%" height="270" src="https://www.youtube.com/embed/cnqQPwt8Om8" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="arrows">
+            <button class="arrow-left waves-effect waves-light btn"><i class="material-icons left">skip_previous</i>Prev</button>
+            <button class="arrow-right waves-effect waves-light btn"><i class="material-icons right">skip_next</i>Next</button>
           </div>
         </div>
+
       </div>
 
       <div class="row section-news">
@@ -91,19 +104,27 @@
 
   </div><!-- CONTAINER END -->
   <style>
-    .facebook-widget {
-      padding-top: 8px !important;
+    .arrows {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      align-content: flex-end;
+      text-align: center;
+      justify-content: center;
+      flex-direction: row;
+      height: 80px;
     }
-    .slider {
-      height: 390px !important;
-      margin-top: 9px;
+    .arrows button {
+      margin: 0 10px;
     }
-    ul.slides {
-      height: 360px !important;
+    .video {
+      height: 270px;
     }
-    .video-container {
-      margin-top: 0.5rem;
-      padding-bottom: 78.25%;%;
+    .video-col {
+      background-color: #eee;
+      padding: 0.75rem !important;
+      height: 361px;
     }
     .section-news .news-img {
       margin-top: 25px;
@@ -169,9 +190,22 @@
     var date = {};
     var month = new Array();
 
+    this.on('update', function() {
+    });
+
     this.on('mount', function(){
-      $('.main-menu').addClass('container')
-        $('.collapsible').collapsible({
+
+      $('.video').slick({
+        appendArrows: '.arrows',
+        nextArrow:'.arrow-right',
+        prevArrow:'.arrow-left'
+      });
+
+      // adds the container class to the page
+      $('.main-menu').addClass('container');
+
+      // initializes the collapsible menu
+      $('.collapsible').collapsible({
         accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
         });
 

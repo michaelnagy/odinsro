@@ -17,10 +17,10 @@
 		// var_dump(event.request.parameters.reset);
 
 	 //    if(event.request.payload.new_password){
-	       
+
 	 //    var result = platform.api.patch("odinsro/_table/login?filter=email%20like%20"+event.request.payload.email+"", {"resource": [{"user_pass":event.request.payload.new_password}]});
 	 //        var_dump(result);
-	            
+
 	 //    }
 
 
@@ -31,13 +31,13 @@
 
 // if(result.content.resource[0]) {
 //         throw 'This username is already taken';
-//     }    
+//     }
 
 
 // Process Event Scripts  user  user.register  [POST] user.register  user.register.post.post_process
 
 // var userbd = {};
-        
+
 //         userbd.email = event.request.payload.email;
 //         userbd.user_pass = event.request.payload.new_password;
 //         userbd.userid = event.request.payload.display_name;
@@ -52,13 +52,45 @@
 
 // Process Event Scripts  user  user.register  [POST] user.register  user.register.post.post_process
 // var userbd = {};
-        
+
+// var userbd = {};
+//
 //         userbd.email = event.request.payload.email;
 //         userbd.user_pass = event.request.payload.new_password;
 //         userbd.userid = event.request.payload.display_name;
+//         userbd.birthdate = event.request.payload.birthdate;
 //         //POST to odinsro database
 //         var result = platform.api.post("odinsro/_table/login", {"resource": [userbd]});
+//         var session = platform.api.get("user/session");
+//         var created = platform.api.get("system/user/"+session.content.id);
+//         event.response.content.id = session.content.id;
+//         event.response.content.created = created.content.created_date;
 //         event.response.content.odinid = result.content.resource[0].account_id;
 //         event.response.content.email = event.request.payload.email;
 //         event.response.content.name = event.request.payload.display_name;
 //         event.response.content_changed = true;
+//         var_dump(event.request.payload);
+//         var_dump(event.response);
+//         var_dump(created);
+
+
+// user.session.post.post_process
+//
+// var result = platform.api.get("odinsro/_table/login?filter=email%20like%20"+event.request.payload.email+"");
+//
+//
+//         var created = platform.api.get("system/user/"+event.response.content.id);
+//         event.response.content.odinid = result.content.resource[0].account_id;
+//         event.response.content.birthdate = result.content.resource[0].birthdate;
+//         event.response.content.group_id = result.content.resource[0].group_id;
+//         event.response.content.email = event.request.payload.email;
+//         event.response.content.created = created.content.created_date;
+//         event.response.content_changed = true;
+        // var_dump(event.response);
+        // var_dump(created);
+        // var session = platform.api.get("user/session");
+        // event.response.content.id = session.content.id;
+        // var_dump(session);
+        // var_dump(event.request.payload);
+        // var_dump(result);
+        // var_dump(event.request.payload);

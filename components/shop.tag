@@ -14,13 +14,13 @@
             <div class="row">
               <div class="col s3">
                 <div class="card grey lighten-5 z-depth-1 animated fadeIn">
-                  <div class="card-content activator">
+                  <div class="card-content">
                     <span class="card-title">Bronze Package</span>
                     <img src="img/shop/bronze.gif" style="width:150px;" class="shop-gif" />
                     <p style="padding-top: 43px;padding-bottom: 20px; font-size: 20px;" class="center-align bold">5.000 Cash</p>
                   </div>
                   <div class="card-action grey lighten-3">
-                    <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&widget=p10_1" target="_blank">buy</a><span class="price">$9.99</span>
+                    <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&email={email}&history={register}&widget=p10_1" target="_blank">buy</a><span class="price">$9.99</span>
                   </div>
                 </div>
               </div>
@@ -29,7 +29,7 @@
                 <div class="card grey lighten-5 z-depth-1 animated fadeIn">
                   <div class="card-content activator">
                     <span class="card-title">Silver Package <i class="material-icons right shop-icon">info_outline</i></span>
-                    <img src="img/shop/silver.gif" class="shop-gif" />
+                    <img src="img/shop/silver.gif" class="shop-gif activator" />
                     <del><p class="center-align">15.000 Cash</p></del>
                     <p class="center-align" style="font-size: 13px;">10% Bonus</p>
                     <p class="center-align bold" style="font-size: 20px;">16.500 Cash</p>
@@ -43,7 +43,7 @@
                     <p class="center-align bold" style="font-size: 20px;">16.500 Cash</p>
                   </div>
                   <div class="card-action grey lighten-3">
-                    <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&widget=p10_1" target="_blank">buy</a><span class="price">$29.99</span>
+                    <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&email={email}&history={register}&widget=p10_1" target="_blank">buy</a><span class="price">$29.99</span>
                   </div>
                 </div>
               </div>
@@ -66,7 +66,7 @@
                     <p class="center-align bold" style="font-size: 20px;">30.000 Cash</p>
                   </div>
                   <div class="card-action grey lighten-3">
-                    <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&widget=p10_1" target="_blank">buy</a><span class="price">$49.99</span>
+                    <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&email={email}&history={register}&widget=p10_1" target="_blank">buy</a><span class="price">$49.99</span>
                   </div>
                 </div>
               </div>
@@ -89,7 +89,7 @@
                     <p class="center-align bold" style="font-size: 20px;">70.000 Cash</p>
                   </div>
                   <div class="card-action grey lighten-3">
-                    <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&widget=p10_1" target="_blank">buy</a><span class="price">$99.99</span>
+                    <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&email={email}&history={register}&widget=p10_1" target="_blank">buy</a><span class="price">$99.99</span>
                   </div>
                 </div>
               </div>
@@ -124,7 +124,7 @@
                 </ul>
               </div>
               <div class="card-action grey lighten-3">
-                <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&widget=p10_1" target="_blank">buy</a><span class="price">$24.99</span>
+                <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&email={email}&history={register}&widget=p10_1" target="_blank">buy</a><span class="price">$24.99</span>
               </div>
             </div>
           </div>
@@ -153,9 +153,13 @@
   </style>
   <script>
     var self = this;
-    //get session token
+
+    //get session data
     this.session = getToken('token');
     this.odinid = getToken('odinid');
+    this.email = getToken('email');
+    this.register = new Date(getToken('created')).getTime()/1000;
+    console.log(this.register);
     //check if session is active
     if (!this.session) {
       riot.route('logout');
