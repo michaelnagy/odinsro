@@ -100,4 +100,11 @@ nav ul a:hover {
 .slider {
   height: 400px !important; }
 
+.arrows {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-top: 20px; }
+
 /*# sourceMappingURL=style.css.map */

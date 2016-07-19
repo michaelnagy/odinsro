@@ -107,13 +107,18 @@
     .arrows {
       width: 100%;
       position: relative;
-      display: flex;
+      /*display: flex;
       align-items: center;
       align-content: flex-end;
       text-align: center;
       justify-content: center;
       flex-direction: row;
-      height: 80px;
+      height: 80px;*/
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      margin-top: 20px;
     }
     .arrows button {
       margin: 0 10px;

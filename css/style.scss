@@ -84,7 +84,7 @@ nav ul a:hover {
 }
 .copyright {
   position: relative;
-  z-index: 2000;
+  z-index: 1000;
 }
 .preloader-container {
   width: 100%;
@@ -104,4 +104,11 @@ nav ul a:hover {
 }
 .slider {
   height: 400px !important;
+}
+.arrows {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-top: 20px;
 }
