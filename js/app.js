@@ -72,6 +72,10 @@ $(document).ready(function(){
     view.render('download');
   });
 
+  riot.route('vote', function() {
+    view.render('vote');
+  });
+
   riot.route('char-reset', function() {
 
     view.render('reset','widget');

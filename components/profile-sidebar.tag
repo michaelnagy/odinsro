@@ -11,7 +11,7 @@
                 <a class="collapsible-header waves-effect waves-light"><i class="material-icons">settings</i> System<i class="mdi-navigation-arrow-drop-down right"></i></a>
                 <div class="collapsible-body">
                   <ul>
-                    <li><a href="#!">Vote Point</a></li>
+                    <li><a href="#vote">Vote Point</a></li>
                     <li><a href="#rank">Rank</a></li>
                   </ul>
                 </div>

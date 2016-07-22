@@ -107,7 +107,11 @@
                     <div class="collapsible-header">VIP Features <i class="material-icons">arrow_drop_down</i></div>
                     <div class="collapsible-body">
                       <ul class="collection">
-                        <li class="collection-item"><b>@VIP Command</b> - A system that provides quick access to SPECIAL BUFF, Card Remove, SHOP VIP, announce VIP, Build Manager and more!</li>
+                        <li class="collection-item"><b>@VIP Command:</b> A system that provides quick access to SPECIAL BUFF, Card Remove, SHOP VIP, announce VIP, Build Manager!</li>
+                        <li class="collection-item"><b>Storage Slot increase:</b> Normal Slot limit + 200</li>
+                        <li class="collection-item"><b>Base, Job and Quest XP:</b> 2x base and job XP / Battle Manual experience increase 2x</li>
+                        <li class="collection-item"><b>Characters per account:</b> Normal limit + 5</li>
+                        <li class="collection-item"><b>Eden Special BUFF</b></li>
                       </ul>
                     </div>
                   </li>
@@ -116,8 +120,6 @@
                     <div class="collapsible-body">
                       <ul class="collection">
                         <li class="collection-item">50% + BG Rewards -> If you get 10 badges being normal player becoming VIP you will gain 15 badges!</li>
-                        <li class="collection-item">50% XP/DROP in Instances</li>
-                        <li class="collection-item">Eden Special BUFF</li>
                       </ul>
                     </div>
                   </li>

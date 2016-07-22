@@ -9,9 +9,20 @@
       <link rel="stylesheet" href="/bower_components/animate.css/animate.min.css" media="screen" charset="utf-8">
       <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
       <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+      <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.css"/>
       <link rel="stylesheet" href="/css/style.css" media="screen" charset="utf-8">
   </head>
   <body class="blue lighten-5">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-81228407-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
     <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -46,7 +57,56 @@
     </div>
     <!-- preloader END -->
 
+    <!-- Clock Modal -->
+    <style>
+      #modalclock .modal-content {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+      .clock {
+        width: 490px;
+      }
+      #modalclock .modal-content .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+      #modalclock .modal-content .bear {
+        margin-top: 40px;
+      }
+    </style>
+    <div id="modalclock" class="modal">
+      <div class="modal-content grey lighten-5">
+        <h2>Opening</h2><a href="#" class="modal-action modal-close right"><img src="img/close.png"></a>
+        <div class="clock">
+
+        </div>
+        <div class="chip" style="font-weight: bolder;font-size:18px">
+          The Installer and Patcher will be available after countdown.
+        </div>
+        <img class="bear" src="http://i682.photobucket.com/albums/vv189/hawksungold/Teddy.gif" alt="" />
+
+      </div>
+    </div>
+
     <!-- Login Register Modal -->
+
     <div id="modal1" class="modal">
       <div class="modal-content">
 
@@ -76,7 +136,7 @@
           <a href="#" class="brand-logo"><img src="img/logo.png" alt="" /></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a class="home" href="#">Home</a></li>
-            <li><a href="#download">Download</a></li>
+            <!-- <li><a href="#download">Download</a></li> -->
             <li><a href="#server-info">Game Info</a></li>
             <li><a href="http://forum.odinsro.net/" target="_blank">Community</a></li>
             <li>
@@ -87,7 +147,7 @@
           <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
           <ul class="side-nav" id="mobile-menu">
             <li><a href="/">Home</a></li>
-            <li><a href="#download">Download</a></li>
+            <!-- <li><a href="#download">Download</a></li> -->
             <li><a href="#server-info">Game Info</a></li>
             <li><a href="/register">Register</a></li>
           </ul>
@@ -104,6 +164,7 @@
       <server-info></server-info>
       <rank></rank>
       <shop></shop>
+      <vote></vote>
 
     </main>
     <footer>
@@ -121,6 +182,7 @@
   <script src="/bower_components/riot/riot+compiler.min.js" charset="utf-8"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
   <script src="/bower_components/loStorage.js/src/loStorage.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
   <script src="js/df.js" charset="utf-8"></script>
   <script src="js/script.js" charset="utf-8"></script>
   <script src="js/functions.js" charset="utf-8"></script>
@@ -143,9 +205,25 @@
   <script src="/components/server-info.tag" type="riot/tag"></script>
   <script src="/components/rank.tag" type="riot/tag"></script>
   <script src="/components/shop.tag" type="riot/tag"></script>
+  <script src="/components/vote.tag" type="riot/tag"></script>
   <!-- MOUNTED TAGS -->
   <script>riot.mount('perfil-menu')</script>
   <script>riot.mount('profile-password-change')</script>
+  <script type="text/javascript">
+  var clock;
 
+    $(document).ready(function() {
+      var seconds1 = new Date().getTime() / 1000;
+      var seconds2 = new Date(2016, 06, 22, 14).getTime() / 1000;
+      var totaltime = Math.round(seconds2 - seconds1);
+      console.log(totaltime);
+      // open modal
+      $('#modalclock').openModal();
+      // seta clock
+      var clock = $('.clock').FlipClock(totaltime, {
+    		countdown: true
+    	});
+    });
+  </script>
   </body>
 </html>
