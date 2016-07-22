@@ -79,18 +79,21 @@
 // var result = platform.api.get("odinsro/_table/login?filter=email%20like%20"+event.request.payload.email+"");
 //
 //
-//         var created = platform.api.get("system/user/"+event.response.content.id);
+//
 //         event.response.content.odinid = result.content.resource[0].account_id;
 //         event.response.content.birthdate = result.content.resource[0].birthdate;
-//         event.response.content.group_id = result.content.resource[0].group_id;
+//         event.response.content.vip_time = result.content.resource[0].vip_time;
 //         event.response.content.email = event.request.payload.email;
+//         event.response.content.name = result.content.resource[0].userid;
+//         var created = platform.api.get("system/user/"+event.response.content.id);
 //         event.response.content.created = created.content.created_date;
 //         event.response.content_changed = true;
-        // var_dump(event.response);
-        // var_dump(created);
-        // var session = platform.api.get("user/session");
-        // event.response.content.id = session.content.id;
-        // var_dump(session);
-        // var_dump(event.request.payload);
-        // var_dump(result);
-        // var_dump(event.request.payload);
+//         // var_dump(event.response);
+//         // var_dump(created);
+//         // var session = platform.api.get("user/session");
+//         // event.response.content.id = session.content.id;
+//         // var_dump(session);
+//         // var_dump(event.request.payload);
+//         // var_dump(result);
+//         // var_dump(event.request.payload);
+//         // var_dump(result.content.resource[0]);

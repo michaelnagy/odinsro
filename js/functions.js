@@ -35,7 +35,7 @@
                           setToken('lasttime', response.last_login_date);
                           setToken('vip', response.vip_time);
                           setToken('created', response.created);
-                          // console.log(response);
+                          console.log(response);
                           //closes the login modal
                           $('#modal1.modal').closeModal();
                           //changes URL in browser

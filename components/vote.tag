@@ -20,37 +20,37 @@
                     <td>TOP RAGNAROK</td>
                     <td>2 pts</td>
                     <td>12h</td>
-                    <td><a target="_blank" href="http://forum.odinsro.net/vote/voteA.php?user={name}" class="topr z-depth-1 hoverable"></a></td>
+                    <td><a target="_blank" href="http://forum.odinsro.net/vote/voteA.php?user={odinid}" class="topr z-depth-1 hoverable"></a></td>
                   </tr>
                   <tr>
                     <td>TOP ORG</td>
                     <td>2 pts</td>
                     <td>12h</td>
-                    <td><a target="_blank" href="http://forum.odinsro.net/vote/voteB.php?user={name}" class="toporg z-depth-1 hoverable"></a></td>
+                    <td><a target="_blank" href="http://forum.odinsro.net/vote/voteB.php?user={odinid}" class="toporg z-depth-1 hoverable"></a></td>
                   </tr>
                   <tr>
                     <td>TOP GAMES</td>
                     <td>2 pts</td>
                     <td>12h</td>
-                    <td><a target="_blank" href="http://forum.odinsro.net/vote/voteC.php?user={name}"><img class="z-depth-1 hoverable" src=" http://www.topgamesites.net/images/14.jpg"/></a></td>
+                    <td><a target="_blank" href="http://forum.odinsro.net/vote/voteC.php?user={odinid}"><img class="z-depth-1 hoverable" src=" http://www.topgamesites.net/images/14.jpg"/></a></td>
                   </tr>
                   <tr>
                     <td>TOP 100</td>
                     <td>2 pts</td>
                     <td>12h</td>
-                    <td><a target="_blank" href="http://forum.odinsro.net/vote/voteD.php?user={name}"><img class="z-depth-1 hoverable" src="http://www.gtop100.com/images/votebutton.jpg"/></a></td>
+                    <td><a target="_blank" href="http://forum.odinsro.net/vote/voteD.php?user={odinid}"><img class="z-depth-1 hoverable" src="http://www.gtop100.com/images/votebutton.jpg"/></a></td>
                   </tr>
                   <tr>
                     <td>TOP 200</td>
                     <td>2 pts</td>
                     <td>12h</td>
-                    <td><a target="_blank" href="http://forum.odinsro.net/vote/voteE.php?user={name}"><img class="z-depth-1 hoverable" src="http://www.topservers200.com/button/18033.png"/></a></td>
+                    <td><a target="_blank" href="http://forum.odinsro.net/vote/voteE.php?user={odinid}"><img class="z-depth-1 hoverable" src="http://www.topservers200.com/button/18033.png"/></a></td>
                   </tr>
                   <tr>
                     <td>TOP G</td>
                     <td>2 pts</td>
                     <td>12h</td>
-                    <td><a target="_blank" href="http://forum.odinsro.net/vote/voteF.php?user={name}"><img class="z-depth-1 hoverable" src="http://topg.org/topg.gif"/></a></td>
+                    <td><a target="_blank" href="http://forum.odinsro.net/vote/voteF.php?user={odinid}"><img class="z-depth-1 hoverable" src="http://topg.org/topg.gif"/></a></td>
                   </tr>
                 </tbody>
               </table>

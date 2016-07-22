@@ -15,7 +15,7 @@
             <div class="download-buttons">
               <img src="img/rubylit.gif" alt="" />
               <p>
-                <a href="https://mega.nz/#!LQZz0IaJ!41ZGAP6H4tEQa0RFPA3BPo8CLv2jcoyl-9_VXQXAH9s" target="_blank" class="waves-effect waves-light btn-large orange" style="margin-right:20px"><i class="material-icons left">cloud</i>Installer</a><a href="https://mega.nz/#!aRwCQKAZ!cy5mtAw2Hw1YTngST2FhVyHZEVqgox-yO8Gpx_hvmKE" target="_blank" class="waves-effect waves-light btn-large"><i class="material-icons left">system_update_alt</i>Data file</a>
+                <a href="http://www.mediafire.com/download/20cgga4t6ga0dmt/odinsRO_install.exe" target="_blank" class="waves-effect waves-light btn-large orange" style="margin-right:20px"><i class="material-icons left">cloud</i>Installer</a><a href="https://mega.nz/#!aRwCQKAZ!cy5mtAw2Hw1YTngST2FhVyHZEVqgox-yO8Gpx_hvmKE" target="_blank" class="waves-effect waves-light btn-large"><i class="material-icons left">system_update_alt</i>Data file</a>
               </p>
               <img src="img/sapphilit.gif" alt="" />
             </div>
