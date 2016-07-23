@@ -54,7 +54,10 @@
 	            <li class="collection-item">Paramk Map</li>
 	            <li class="collection-item">Automated Events</li>
 	            <li class="collection-item">Eden - Quest up to 175</li>
-	            <li class="collection-item">Commands: commands,autoloot,alootid,autoloottype,autotrade,showexp,showzeny,whereis,exp,mobinfo,iteminfo,whodrops,time,noask,noks,go,guild,help,rates,duel,accept,invite,leave,whosells,homtalk,pettalk,channel,changegm,storage,storeall,<b>mobalive,manager,database</b></li>
+	            <li class="collection-item">
+                <b>Commands:</b><br>
+                commands, autoloot, alootid, autoloottype, autotrade, showexp, showzeny, whereis, exp, mobinfo, iteminfo, whodrops, time, noask, noks, go, guild, help, rates, duel, accept, invite, leave, whosells, homtalk, pettalk, channel, changegm, storage, storeall, <b>mobalive, manager, database</b>
+              </li>
 	          </ul>
 	        </div>
         </div>
@@ -67,9 +70,8 @@
               <li class="collection-item">Third Classes: Fully Available</li>
               <li class="collection-item">Doram/Rebellion/Kagerou/Oboro: Fully Available</li>
               <li class="collection-item">Quests Eclage, El Dicastes, Malangdo & Mora 100%</li>
-              <li class="collection-item">Instances:
-Nightmarish Jitterbug, Morse Cave, Bios Island, Geffen Magic Tournament, <b>Horror Toy Factory</b>, Ghost Palace, Faceworm's Nest, Old Glast Heim, Endless Tower, Bakonawa Lake, Hazy Forest, Sara's Memory, <b>Sarah & Fenrir</b>, <b>Airship Assault</b>, End of Morroc, <b>Infinity Space</b> and more!</li>
-              <li class="collection-item">Nightmare Clock Tower, Nightmare Glast Heim, Nightmare Pyramids</li>
+              <li class="collection-item"><b>Instances:</b><br>
+Nightmarish Jitterbug, Morse Cave, Bios Island, Geffen Magic Tournament, <b>Horror Toy Factory</b>, Ghost Palace, Faceworm's Nest, Old Glast Heim, Endless Tower, Bakonawa Lake, Hazy Forest, Sara's Memory, <b>Sarah & Fenrir</b>, <b>Airship Assault</b>, End of Morroc, <b>Infinity Space</b>, Nightmare Clock Tower, Nightmare Glast Heim, Nightmare Pyramids</li>
 
             </ul>
         	</div>
