@@ -20,8 +20,8 @@
                 <p if={!vip || vip < 1} class="profile-tags"><span>VIP:</span><span class="profile-info right off">OFF</span></p>
                 <p class="profile-tags"><span>Zeny:</span><span if={totalzeny} class="profile-info right">{totalzeny}</span><span if={!totalzeny} class="profile-info right">0</span></p>
                 <p class="profile-tags"><span>Cash:</span><span if={cash} class="profile-info right">{cash} <a href="#shop" class="btn-floating waves-effect waves-light green"><i class="material-icons">add</i></a></span><span if={!cash} class="profile-info right">0 <a href="#shop" class="btn-floating waves-effect waves-light green"><i class="material-icons">add</i></a></span></p>
-                <p class="profile-tags"><span>Vote Points:</span><span if={totalvote} class="profile-info right">{totalvote} <a href="#vote" class="btn-floating waves-effect waves-light orange"><i class="material-icons">add</i></a></span><span if={!totalvote} class="profile-info right">0   <a href="#vote" class="btn-floating waves-effect waves-light orange"><i class="material-icons">add</i></a>
-</span></p>
+                <!-- <p class="profile-tags"><span>Vote Points:</span><span if={totalvote} class="profile-info right">{totalvote} <a href="#vote" class="btn-floating waves-effect waves-light orange"><i class="material-icons">add</i></a></span><span if={!totalvote} class="profile-info right">0   <a href="#vote" class="btn-floating waves-effect waves-light orange"><i class="material-icons">add</i></a>
+</span></p> -->
                 <p class="profile-tags"><span>Last Login: </span><span if={lasttime} class="profile-info right">{lasttime}</span></p>
             </div>
           </div>
@@ -204,14 +204,35 @@
       // console.log('charloaded');
 
         self.chars = session.get('chars');
-        self.chars.forEach(function (element, index, array) {
-          self.totalzeny += element.zeny;
-          // console.log(self.totalzeny, element.zeny);
-          self.update();
-        });
+        if (self.chars) {
+          self.chars.forEach(function (element, index, array) {
+            self.totalzeny += element.zeny;
+            // console.log(self.totalzeny, element.zeny);
+            self.update();
+          });
+        }
     });
 
     this.on('mount', function(){
+
+      // Get points
+      // $.ajax({
+      //   dataType: 'json',
+      //   contentType: 'application/json; charset=utf-8',
+      //   cache:false,
+      //   headers: {
+      //     "X-DreamFactory-API-Key": APP_API_KEY,
+      //     "X-DreamFactory-Session-Token": getToken('token'),
+      //   },
+      //   url: INSTANCE_URL + '/api/v2/odinsro/_table/odinsro.cp_v4p_voters?id_field=account_id&ids='+this.odinid,
+      //   method:'GET'
+      // }).then(function (data) {
+      //   // if returns
+      //   self.totalvote = data.resource[0].points;
+      //   console.log(self.totalvote);
+      //   self.update();
+      //
+      // });
 
       //initialize preloaders
       preLoader(element, preloader);
@@ -240,25 +261,6 @@
           // console.log('else cash ', self.cash);
         }
         // console.log(data);
-      });
-
-      // Get points
-      $.ajax({
-        dataType: 'json',
-        contentType: 'application/json; charset=utf-8',
-        cache:false,
-        headers: {
-          "X-DreamFactory-API-Key": APP_API_KEY,
-          "X-DreamFactory-Session-Token": getToken('token'),
-        },
-        url: INSTANCE_URL + '/api/v2/odinsro/_table/ragnarok.cp_v4p_voters?id_field=account_id&ids='+this.odinid,
-        method:'GET'
-      }).then(function (data) {
-        // if returns
-
-        self.totalvote = data.resource[0].points;
-        self.update();
-        console.log(self.totalvote);
       });
 
       //get autotrade info and start getting items name here

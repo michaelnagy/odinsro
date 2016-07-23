@@ -210,20 +210,24 @@
   <script>riot.mount('perfil-menu')</script>
   <script>riot.mount('profile-password-change')</script>
   <script type="text/javascript">
-  var clock;
+  console.log(location.search);
 
-    $(document).ready(function() {
-      var seconds1 = new Date().getTime() / 1000;
-      var seconds2 = new Date(2016, 06, 22, 18).getTime() / 1000;
-      var totaltime = Math.round(seconds2 - seconds1);
-      console.log(totaltime);
-      // open modal
-      $('#modalclock').openModal();
-      // seta clock
-      var clock = $('.clock').FlipClock(totaltime, {
-    		countdown: true
-    	});
-    });
+    if (location.hash == "") {
+      var clock;
+      $(document).ready(function() {
+        var seconds1 = new Date().getTime() / 1000;
+        var seconds2 = new Date(2016, 06, 23, 16).getTime() / 1000;
+        var totaltime = Math.round(seconds2 - seconds1);
+        // console.log(totaltime);
+        // open modal
+        $('#modalclock').openModal();
+        // seta clock
+        var clock = $('.clock').FlipClock(totaltime, {
+      		countdown: true
+      	});
+      });
+    }
+
   </script>
   </body>
 </html>
