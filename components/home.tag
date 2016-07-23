@@ -30,10 +30,10 @@
             <div class="card-content black-text server-features">
               <span class="card-title grey-text text-darken-4">Server Features</span>
                <ul class="collection">
-                <li class="collection-item"><a href=""><span>Episode 15.1</span> <img class="right" src="img/tv.png"></a></li>
-                <li class="collection-item"><a href=""><span>New Doram Race updates!</span> <img class="right" src="img/tv.png"></a></li>
-                <li class="collection-item"><a href=""><span>New BG System!</span> <img class="right" src="img/tv.png"></a></li>
-                <li class="collection-item"><a href=""><span>New Market System!</span> <img class="right" src="img/tv.png"></a></li>
+                <li class="collection-item"><span>Episode 15.1</span> </li>
+                <li class="collection-item"><span>New Doram Race updates!</span> </li>
+                <li class="collection-item"><span>New BG System!</span> </li>
+                <li class="collection-item"><span>New Market System!</span> </li>
               </ul>
             </div>
 
