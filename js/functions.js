@@ -1,4 +1,8 @@
 
+//redefine console log for production
+// var console = {};
+// console.log = function(){}
+// window.console = console;
 
 (function($) {
 
@@ -35,7 +39,7 @@
                           setToken('lasttime', response.last_login_date);
                           setToken('vip', response.vip_time);
                           setToken('created', response.created);
-                          console.log(response);
+                          // console.log(response);
                           //closes the login modal
                           $('#modal1.modal').closeModal();
                           //changes URL in browser
@@ -246,7 +250,7 @@
                               session.set({
                                 pvp: response.resource
                               });
-                              console.log('kills', response.resource);
+                              // console.log('kills', response.resource);
                           }
                           if (response.resource[0].castle_id) {
                               session.set({

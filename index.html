@@ -98,7 +98,7 @@
 
         </div>
         <div class="chip" style="font-weight: bolder;font-size:18px">
-          The Installer and Patcher will be available after countdown.
+          The Installer will be available after the countdown.
         </div>
         <img class="bear" src="http://i682.photobucket.com/albums/vv189/hawksungold/Teddy.gif" alt="" />
 
@@ -136,9 +136,11 @@
           <a href="#" class="brand-logo"><img src="img/logo.png" alt="" /></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a class="home" href="#">Home</a></li>
-            <!-- <li><a href="#download">Download</a></li> -->
+            <li><a href="#download">Download</a></li>
             <li><a href="#server-info">Game Info</a></li>
+            <li><a href="/register">Register</a></li>
             <li><a href="http://forum.odinsro.net/" target="_blank">Community</a></li>
+            <li><a href="https://discord.gg/6fuTyfW" target="_blank">Chat</a></li>
             <li>
               <perfil-menu></perfil-menu>
             </li>
@@ -147,9 +149,11 @@
           <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
           <ul class="side-nav" id="mobile-menu">
             <li><a href="/">Home</a></li>
-            <!-- <li><a href="#download">Download</a></li> -->
+            <li><a href="#download">Download</a></li>
             <li><a href="#server-info">Game Info</a></li>
             <li><a href="/register">Register</a></li>
+            <li><a href="http://forum.odinsro.net/" target="_blank">Community</a></li>
+            <li><a href="https://discord.gg/6fuTyfW" target="_blank">Chat</a></li>
           </ul>
         </div>
       </nav>
@@ -170,7 +174,7 @@
     <footer>
       <div class="container-fluid">
         <div class="col s12 copyright">
-          <p class="center-align white-text">© Copyright 2015-2016 odinsRO and legendRO developers other trademarks and images belongs to their respective owners.
+          <p class="center-align white-text">© Copyright 2015-2016 odinsRO trademarks and images belongs to their respective owners.
         Ragnarok Online and all related contents are all property of Gravity.</p>
         </div>
       </div>
@@ -210,24 +214,28 @@
   <script>riot.mount('perfil-menu')</script>
   <script>riot.mount('profile-password-change')</script>
   <script type="text/javascript">
-  console.log(location.search);
+  // console.log(location.search);
+  //
+  //   if (location.hash == "") {
+  //     var clock;
+  //     $(document).ready(function() {
+  //       var seconds1 = new Date().getTime() / 1000;
+  //       var seconds2 = new Date(2016, 06, 23, 15).getTime() / 1000;
+  //       var totaltime = Math.round(seconds2 - seconds1);
+  //       // console.log(totaltime);
+  //       // open modal
+  //       $('#modalclock').openModal();
+  //       // seta clock
+  //       var clock = $('.clock').FlipClock(totaltime, {
+  //     		countdown: true
+  //     	});
+  //     });
+  //   }
 
-    if (location.hash == "") {
-      var clock;
-      $(document).ready(function() {
-        var seconds1 = new Date().getTime() / 1000;
-        var seconds2 = new Date(2016, 06, 23, 16).getTime() / 1000;
-        var totaltime = Math.round(seconds2 - seconds1);
-        // console.log(totaltime);
-        // open modal
-        $('#modalclock').openModal();
-        // seta clock
-        var clock = $('.clock').FlipClock(totaltime, {
-      		countdown: true
-      	});
-      });
-    }
-
+  </script>
+  <script
+    src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-2.min.js"
+    data-apikey="bffd95f1562732a2389f0f1cc1e592cb">
   </script>
   </body>
 </html>

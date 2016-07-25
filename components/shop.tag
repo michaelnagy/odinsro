@@ -161,7 +161,7 @@
     this.odinid = getToken('odinid');
     this.email = getToken('email');
     this.register = new Date(getToken('created')).getTime()/1000;
-    console.log(this.register);
+    // console.log(this.register);
     //check if session is active
     if (!this.session) {
       riot.route('logout');

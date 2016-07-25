@@ -75,7 +75,6 @@
       <div class="row section-news">
         <div class="col s12">
 
-
         <div class="row" each={new, key in news}>
           <div class="col s12 z-depth-1 grey lighten-3">
             <div class="row news-item">
@@ -220,7 +219,7 @@
         if (!data.included) {
           return
         }
-        console.log(data.data);
+        // console.log(data.data);
         self.news = data.data;
         self.posts = data.included;
         // console.log(data.data, self.posts);

@@ -14,8 +14,14 @@
             </ul>
             <div class="download-buttons">
               <img src="img/rubylit.gif" alt="" />
+              <span class="installer">
+                <h6>Mirror 1 (Mediafire)</h6>
+                <a href="http://www.mediafire.com/download/20cgga4t6ga0dmt/odinsRO+install.exe" target="_blank" class="waves-effect waves-light btn-large orange" style="margin-right:20px"><i class="material-icons left">cloud</i>Installer</a>
+                <h6>Mirror 2 (Mega)</h6>
+                <a href="https://mega.nz/#!ldBH0Q4I!r4THr2mrq_tEMkRYRDXcevKuXlsI0ks6XaOEmuQGHJk" target="_blank" class="waves-effect waves-light btn-large orange" style="margin-right:20px"><i class="material-icons left">cloud</i>Installer</a>
+              </span>
               <p>
-                <a href="http://www.mediafire.com/download/20cgga4t6ga0dmt/odinsRO_install.exe" target="_blank" class="waves-effect waves-light btn-large orange" style="margin-right:20px"><i class="material-icons left">cloud</i>Installer</a><a href="https://mega.nz/#!aRwCQKAZ!cy5mtAw2Hw1YTngST2FhVyHZEVqgox-yO8Gpx_hvmKE" target="_blank" class="waves-effect waves-light btn-large"><i class="material-icons left">system_update_alt</i>Data file</a>
+                <a href="https://mega.nz/#!aRwCQKAZ!cy5mtAw2Hw1YTngST2FhVyHZEVqgox-yO8Gpx_hvmKE" target="_blank" class="waves-effect waves-light btn-large"><i class="material-icons left">system_update_alt</i>Recommended GRF: kRO</a>
               </p>
               <img src="img/sapphilit.gif" alt="" />
             </div>
@@ -26,17 +32,39 @@
   </div>
 
   <style>
+  .installer {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
   download ul li {
     font-size: 18px;
     line-height: 2;
   }
   download .card-panel {
-    height: 80vh;
+    height: 85vh;
   }
   download .animated {
     height: 100%;
   }
   .download-buttons {
+    padding-bottom: 20px;
+    padding-top: 10px;
     height: 40%;
     background-color: #e3e5e6;
     width: 100%;

@@ -136,7 +136,7 @@
       });
       self.char = session.get('chars');
       self.update();
-      console.log('reset', session.get('chars'));
+      // console.log('reset', session.get('chars'));
       //gets the char_id to pass to the POST request
       $()
     });

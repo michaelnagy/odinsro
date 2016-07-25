@@ -152,10 +152,10 @@
 
       // Ajax to register
       $('.btn-register').click(function () {
-        console.log('register');
+        // console.log('register');
 
       dataform = $('.register-form').serializeArray();
-      console.log(dataform);
+      // console.log(dataform);
       $('.register-form').submit(function(event){
         if(!this.checkValidity())
               {
@@ -170,7 +170,7 @@
                 event.preventDefault();
                 var dt = new Date(dataform[3].value);
                 var dtstr = dt.toYMD();
-                console.log(md5(dataform[2].value));
+                // console.log(md5(dataform[2].value));
                 $.api.register(dataform[0].value, dataform[1].value, md5(dataform[2].value), dtstr, dataform[4].value);
                 dataform = [];
               }
