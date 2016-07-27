@@ -45,6 +45,11 @@
   #modal1 {
     width: 30%;
   }
+  @media only screen and (max-width: 992px) {
+    #modal1 {
+        width: 80% !important;
+      }
+  }
   .login-row {
     background-color: #F3F3F3;
     border: 1px solid #E4E4E4;
@@ -54,6 +59,7 @@
     margin-top: 20px;
     margin-bottom: -20px;
   }
+
   </style>
 
   <script>

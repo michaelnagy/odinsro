@@ -23,6 +23,20 @@
       ga('send', 'pageview');
 
     </script>
+    <!-- Facebook Pixel Code -->
+      <script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+      fbq('init', '1142542769135807');
+      fbq('track', "PageView");</script>
+      <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1142542769135807&ev=PageView&noscript=1"
+      /></noscript>
+    <!-- End Facebook Pixel Code -->
     <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -91,20 +105,6 @@
         margin-top: 40px;
       }
     </style>
-    <div id="modalclock" class="modal">
-      <div class="modal-content grey lighten-5">
-        <h2>Opening</h2><a href="#" class="modal-action modal-close right"><img src="img/close.png"></a>
-        <div class="clock">
-
-        </div>
-        <div class="chip" style="font-weight: bolder;font-size:18px">
-          The Installer will be available after the countdown.
-        </div>
-        <img class="bear" src="http://i682.photobucket.com/albums/vv189/hawksungold/Teddy.gif" alt="" />
-
-      </div>
-    </div>
-
     <!-- Login Register Modal -->
 
     <div id="modal1" class="modal">
@@ -147,17 +147,19 @@
           </ul>
 
           <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-          <ul class="side-nav" id="mobile-menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="#download">Download</a></li>
-            <li><a href="#server-info">Game Info</a></li>
-            <li><a href="/register">Register</a></li>
-            <li><a href="http://forum.odinsro.net/" target="_blank">Community</a></li>
-            <li><a href="https://discord.gg/6fuTyfW" target="_blank">Chat</a></li>
-          </ul>
         </div>
       </nav>
+
     </header>
+    <ul class="side-nav" id="mobile-menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="#download">Download</a></li>
+      <li><a href="#server-info">Game Info</a></li>
+      <li><a href="#login">Login</a></li>
+      <li><a href="#register">Register</a></li>
+      <li><a href="http://forum.odinsro.net/" target="_blank">Community</a></li>
+      <li><a href="https://discord.gg/6fuTyfW" target="_blank">Chat</a></li>
+    </ul>
     <main>
 
       <home></home>
