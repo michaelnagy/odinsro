@@ -86,6 +86,19 @@ $(document).ready(function(){
     view.render('server-info');
   });
 
+  riot.route('privacy', function() {
+    view.render('privacy');
+  });
+  riot.route('terms', function() {
+    view.render('terms');
+  });
+  riot.route('refund', function() {
+    view.render('refund');
+  });
+  riot.route('contact', function() {
+    view.render('contact');
+  });
+
   riot.route('rank', function() {
     view.render('rank');
     $('.main-menu').removeClass('container');

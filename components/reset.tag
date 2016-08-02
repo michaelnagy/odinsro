@@ -68,7 +68,7 @@
     }
 
     charreset(e) {
-      // console.log(e.currentTarget);
+      console.log(e.currentTarget.getAttribute('data-char-id'));
       // e.currentTarget.getAttribute('data-char-id')
       $.ajax({
         dataType: 'json',
@@ -85,6 +85,7 @@
         method:'PATCH',
         success:function (response) {
             Materialize.toast('<i class="material-icons left green-text">done</i><span>Done</span>', 8000);
+            console.log(); e.currentTarget.getAttribute('data-char-id')
           }
         ,
         error:function (response) {
@@ -98,7 +99,7 @@
         });
     }
     stylereset(e) {
-      // console.log(e.currentTarget.getAttribute('data-char-id'));
+      console.log(e.currentTarget.getAttribute('data-char-id'));
       // e.currentTarget.getAttribute('data-char-id')
       $.ajax({
         dataType: 'json',
@@ -136,9 +137,8 @@
       });
       self.char = session.get('chars');
       self.update();
-      // console.log('reset', session.get('chars'));
+      console.log('reset', session.get('chars'));
       //gets the char_id to pass to the POST request
-      $()
     });
 
     view.addUnmountListener('reset', function() {

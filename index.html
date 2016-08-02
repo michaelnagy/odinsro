@@ -138,7 +138,6 @@
             <li><a class="home" href="#">Home</a></li>
             <li><a href="#download">Download</a></li>
             <li><a href="#server-info">Game Info</a></li>
-            <li><a href="/register">Register</a></li>
             <li><a href="http://forum.odinsro.net/" target="_blank">Community</a></li>
             <li><a href="https://discord.gg/6fuTyfW" target="_blank">Chat</a></li>
             <li>
@@ -171,14 +170,25 @@
       <rank></rank>
       <shop></shop>
       <vote></vote>
+      <privacy></privacy>
+      <terms></terms>
+      <refund></refund>
+      <contact></contact>
 
     </main>
     <footer>
       <div class="container-fluid">
-        <div class="col s12 copyright">
+        <div class="col s12 copyright center">
           <p class="center-align white-text">© Copyright 2015-2016 odinsRO trademarks and images belongs to their respective owners.
-        Ragnarok Online and all related contents are all property of Gravity. <a class="ratemyserver" href="http://ratemyserver.net/index.php?page=detailedlistserver&serid=19035&url_sname=odinsRO" target='_blank' title = "Review odinsRO at RateMyServer.Net"><img src = 'http://ratemyserver.net/images/site_icon.gif' border = 0 alt = "Review odinsRO at http://ratemyserver.net/"></a>
-        </p>
+            Ragnarok Online and all related contents are all property of Gravity. <a class="ratemyserver" href="http://ratemyserver.net/index.php?page=detailedlistserver&serid=19035&url_sname=odinsRO" target='_blank' title = "Review odinsRO at RateMyServer.Net"><img src = 'http://ratemyserver.net/images/site_icon.gif' border = 0 alt = "Review odinsRO at http://ratemyserver.net/"></a>
+          </p>
+
+            <a class="btn-flat disabled" href="#terms">TERMS OF USE</a>
+            <a class="btn-flat disabled" href="#terms">IN GAME RULES</a>
+            <a class="btn-flat disabled" href="#privacy">PRIVACY POLICY</a>
+            <a class="btn-flat disabled" href="#refund">REFUND AND CANCELATION</a>
+            <a class="btn-flat disabled" href="#contact">CONTACT US</a>
+
         </div>
       </div>
     </footer>
@@ -189,7 +199,7 @@
   <script src="/bower_components/riot/riot+compiler.min.js" charset="utf-8"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
   <script src="/bower_components/loStorage.js/src/loStorage.min.js" charset="utf-8"></script>
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
   <script src="js/df.js" charset="utf-8"></script>
   <script src="js/script.js" charset="utf-8"></script>
   <script src="js/functions.js" charset="utf-8"></script>
@@ -213,6 +223,10 @@
   <script src="/components/rank.tag" type="riot/tag"></script>
   <script src="/components/shop.tag" type="riot/tag"></script>
   <script src="/components/vote.tag" type="riot/tag"></script>
+  <script src="/components/privacy.tag" type="riot/tag"></script>
+  <script src="/components/terms.tag" type="riot/tag"></script>
+  <script src="/components/refund.tag" type="riot/tag"></script>
+  <script src="/components/contact.tag" type="riot/tag"></script>
   <!-- MOUNTED TAGS -->
   <script>riot.mount('perfil-menu')</script>
   <script>riot.mount('profile-password-change')</script>

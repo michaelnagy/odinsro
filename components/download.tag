@@ -7,22 +7,28 @@
             <h4 class="text-flow">DOWNLOAD SECTION</h4>
             <h5>Installation instructions:</h5>
             <ul>
-              <li>1. Download both of the files.</li>
-              <li>2. Install the "Install Odinsro.exe" file.</li>
-              <li>3. Unzip de data.zip file.</li>
+              <li>1. Download the <b>Installer</b> and the <b>GRF Data File</b>.</li>
+              <li>2. Install the Installer "Install Odinsro.exe" file.</li>
+              <li>3. Unzip the GRF Data File "data.zip".</li>
               <li>4. Move the unziped file "data.grf" to the installation folder. Usually in "C:\Program Files (x86)\odinsRO" path.</li>
+              <li style="font-size:16px;">PS: You can also use a kRO data.grf</li>
             </ul>
             <div class="download-buttons">
               <img src="img/rubylit.gif" alt="" />
               <span class="installer">
-                <h6>Mirror 1 (Mediafire)</h6>
-                <a href="http://www.mediafire.com/download/20cgga4t6ga0dmt/odinsRO+install.exe" target="_blank" class="waves-effect waves-light btn-large orange" style="margin-right:20px"><i class="material-icons left">cloud</i>Installer</a>
-                <h6>Mirror 2 (Mega)</h6>
+                <h6>Installer option 1</h6>
+                <a href="https://drive.google.com/folderview?id=0BwjVctmIbqF5dGFvN25ma3VQZlU&usp=sharing" target="_blank" class="waves-effect waves-light btn-large orange" style="margin-right:20px"><i class="material-icons left">cloud</i>Installer</a>
+                <!-- <a href="http://www.mediafire.com/download/20cgga4t6ga0dmt/odinsRO+install.exe" target="_blank" class="waves-effect waves-light btn-large orange" style="margin-right:20px"><i class="material-icons left">cloud</i>Installer</a> -->
+                <h6>Installer option 2</h6>
                 <a href="https://mega.nz/#!ldBH0Q4I!r4THr2mrq_tEMkRYRDXcevKuXlsI0ks6XaOEmuQGHJk" target="_blank" class="waves-effect waves-light btn-large orange" style="margin-right:20px"><i class="material-icons left">cloud</i>Installer</a>
               </span>
-              <p>
-                <a href="https://mega.nz/#!aRwCQKAZ!cy5mtAw2Hw1YTngST2FhVyHZEVqgox-yO8Gpx_hvmKE" target="_blank" class="waves-effect waves-light btn-large"><i class="material-icons left">system_update_alt</i>Recommended GRF: kRO</a>
-              </p>
+              <span class="installer">
+                <h6>Data GRF option 1</h6>
+                <a href="https://mega.nz/#!aRwCQKAZ!cy5mtAw2Hw1YTngST2FhVyHZEVqgox-yO8Gpx_hvmKE" target="_blank" class="waves-effect waves-light btn-large"><i class="material-icons left">system_update_alt</i>GRF Data File</a>
+
+                <h6>Data GRF option 2</h6>
+                <a href="https://drive.google.com/folderview?id=0BwjVctmIbqF5dGFvN25ma3VQZlU&usp=sharing" target="_blank" class="waves-effect waves-light btn-large"><i class="material-icons left">system_update_alt</i>GRF Data File</a>
+              </span>
               <img src="img/sapphilit.gif" alt="" />
             </div>
           </div>

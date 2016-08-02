@@ -11,9 +11,9 @@
 	              <li class="collection-item"><span>Base & Job (floating): </span><span class="badge">200x ~ 500x</span></li>
 	              <li class="collection-item"><span>Quest: </span><span class="badge">200x</a></li>
 	              <li class="collection-item"><span>MVP Card: </span><span class="badge">1%</span></li>
-	              <li class="collection-item"><span>MVP Drop: </span><span class="badge">20%</span></li>
+	              <li class="collection-item"><span>MVP Drop: </span><span class="badge">50x</span></li>
 	              <li class="collection-item"><span>Normal Card: </span><span class="badge">2%</span></li>
-	              <li class="collection-item"><span>Normal Drop: </span><span class="badge">40%</span></li>
+	              <li class="collection-item"><span>Normal Drop: </span><span class="badge">500x</span></li>
 	            </ul>
 	        </div>
         </div>

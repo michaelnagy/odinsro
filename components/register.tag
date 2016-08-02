@@ -145,6 +145,13 @@
 
      this.on('mount', function(){
 
+       // IF firefox then
+       if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
+         //maskedinput
+         $("#birthdate").mask("99/99/9999");
+      }
+
+
        //recaptcha loading
       grecaptcha.render('recaptcha', {
         'sitekey' : '6LflHxsTAAAAAJd8J1vtxys-GZRNVLAq2ipGAP_x',

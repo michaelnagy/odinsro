@@ -9,6 +9,12 @@
               <li class="tab col s3"><a class="active" href="#packages">Packages</a></li>
               <li class="tab col s3"><a href="#vip">VIP</a></li>
             </ul>
+
+          </div>
+          <div class="col s12 center">
+            <div class="chip" style="margin: 20px;font-size: 17px;font-weight: 600;color: #807f7f;">
+              If the payment method you want is not available, message us on <a href="https://www.facebook.com/oficialodinsro/" target="_blank">Facebook Page</a> or <a href="https://discord.gg/6fuTyfW" target="_blank">Chat</a> to make your payment.
+            </div>
           </div>
           <div id="packages" class="col s12">
             <div class="row">
