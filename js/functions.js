@@ -191,9 +191,9 @@
                             setToken('birthdate', response.birthdate);
                             setToken('name', display_name);
                             setToken('created', response.created);
-                            
+
                             // FB Account Created event
-                            fbq('track', "CompleteRegistration");
+                            // fbq('track', "CompleteRegistration");
 
                             //update riotjs tags
                             riot.update();

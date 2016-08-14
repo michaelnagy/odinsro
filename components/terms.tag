@@ -15,7 +15,7 @@
 
                 <h6>2. RELATIONSHIP PLAYER X STAFF</h6>
 
-                2.1 - ÉIt is strictly forbidden to insult a Staff member (Game Masters, Moderators, Interns and Administrators), both in the forum and in the game.
+                2.1 - It is strictly forbidden to insult a Staff member (Game Masters, Moderators, Interns and Administrators), both in the forum and in the game.
                 Punishment:
                 1st Occurrence: 2 days ban in the forum and game;
                 2nd Occurrence: 5 days ban in the forum and game;

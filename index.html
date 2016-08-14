@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="/bower_components/animate.css/animate.min.css" media="screen" charset="utf-8">
       <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
       <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
-      <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.css"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/notie/3.9.2/notie.min.css">
       <link rel="stylesheet" href="/css/style.css" media="screen" charset="utf-8">
   </head>
   <body class="blue lighten-5">
@@ -70,6 +70,8 @@
       </div>
     </div>
     <!-- preloader END -->
+
+    <!-- Server Status END -->
 
     <!-- Clock Modal -->
     <style>
@@ -182,12 +184,14 @@
           <p class="center-align white-text">© Copyright 2015-2016 odinsRO trademarks and images belongs to their respective owners.
             Ragnarok Online and all related contents are all property of Gravity. <a class="ratemyserver" href="http://ratemyserver.net/index.php?page=detailedlistserver&serid=19035&url_sname=odinsRO" target='_blank' title = "Review odinsRO at RateMyServer.Net"><img src = 'http://ratemyserver.net/images/site_icon.gif' border = 0 alt = "Review odinsRO at http://ratemyserver.net/"></a>
           </p>
-
+          <div class="footer-buttons">
             <a class="btn-flat disabled" href="#terms">TERMS OF USE</a>
             <a class="btn-flat disabled" href="#terms">IN GAME RULES</a>
             <a class="btn-flat disabled" href="#privacy">PRIVACY POLICY</a>
             <a class="btn-flat disabled" href="#refund">REFUND AND CANCELATION</a>
             <a class="btn-flat disabled" href="#contact">CONTACT US</a>
+          </div>
+
 
         </div>
       </div>
@@ -200,6 +204,8 @@
   <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
   <script src="/bower_components/loStorage.js/src/loStorage.min.js" charset="utf-8"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/notie/3.9.2/notie.min.js"></script>
+  <script src="js/ping.js" charset="utf-8"></script>
   <script src="js/df.js" charset="utf-8"></script>
   <script src="js/script.js" charset="utf-8"></script>
   <script src="js/functions.js" charset="utf-8"></script>
@@ -230,29 +236,18 @@
   <!-- MOUNTED TAGS -->
   <script>riot.mount('perfil-menu')</script>
   <script>riot.mount('profile-password-change')</script>
-  <script type="text/javascript">
-  // console.log(location.search);
-  //
-  //   if (location.hash == "") {
-  //     var clock;
-  //     $(document).ready(function() {
-  //       var seconds1 = new Date().getTime() / 1000;
-  //       var seconds2 = new Date(2016, 06, 23, 15).getTime() / 1000;
-  //       var totaltime = Math.round(seconds2 - seconds1);
-  //       // console.log(totaltime);
-  //       // open modal
-  //       $('#modalclock').openModal();
-  //       // seta clock
-  //       var clock = $('.clock').FlipClock(totaltime, {
-  //     		countdown: true
-  //     	});
-  //     });
-  //   }
-
-  </script>
   <script
     src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-2.min.js"
     data-apikey="bffd95f1562732a2389f0f1cc1e592cb">
+  </script>
+  <script type="text/javascript">
+    ping('http://158.69.25.150').then(function(delta) {
+      console.log('Ping time was ' + String(delta) + ' ms');
+    }).catch(function(err) {
+      console.log('Could not ping remote URL', err);
+      $('.server').text('OFF').css({'color':'#ef9a9a','border-left':'#ef9a9a'});
+      $('.server-status').css('border-left','6px #ef9a9a solid');
+    });
   </script>
   </body>
 </html>

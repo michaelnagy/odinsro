@@ -1,4 +1,15 @@
 <home>
+  <!-- Server Status -->
+  <div class="info-widgets">
+    <div class="server-status grey lighten-5 z-depth-1 ">
+      server<br><span class="server" style="color:#00c853;">ON</span>
+    </div>
+    <div class="server-woe grey lighten-5 z-depth-1 ">
+      WOE<br><span class="woe" style="color:#ef9a9a;">OFF</span><br>
+      <a class="woe-link"><i class="material-icons">event</i></a>
+    </div>
+  </div>
+
   <div class="container animated fadeIn">
       <!-- ROW SECTION -->
       <div class="row section1">
@@ -78,11 +89,11 @@
         <div class="row" each={new, key in news}>
           <div class="col s12 z-depth-1 grey lighten-3">
             <div class="row news-item">
-              <div class="col s2 news-date orange lighten-1 white-text">
+              <!-- <div class="col s2 news-date orange lighten-1 white-text">
                 <span class="day">{time[key].day}</span>
                 <span class="month">{time[key].month}</span>
-              </div>
-              <div class="col s10 news-content">
+              </div> -->
+              <div class="col s12 news-content">
                 <h5><a target="_blank" href="http://forum.odinsro.net/d/{news[key].id}">{news[key].attributes.title}</a></h5>
                 <span class="truncate">{posts[key].attributes.contentHtml}</span>
                 <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://forum.odinsro.net/d/{news[key].id}&title=OdinsRO - {news[key].attributes.title}"><img class="facebook circle" src="img/facebook.png"></a>
@@ -198,6 +209,14 @@
     });
 
     this.on('mount', function(){
+
+      // WOE informations notie
+      var notiehtml = '<table class="centered"><thead><tr><th data-field="id">Castle</th><th data-field="name">Date</th><th data-field="price">Time</th></tr></thead><tbody><tr><td>Leprion</td><td>08/14/16</td><td>4 PM</td></tr><tr><td>Leprion</td><td>08/14/16</td><td>4 PM</td></tr><tr><td>Leprion</td><td>08/14/16</td><td>4 PM</td></tr></tbody></table>';
+      var woecoming = '<h4>Calendar Coming Soon</4><br><img width="250px" class="z-depth-2" src="http://www.myro-ph.com/images/forum/animepapernetpicture-standard-.jpg" alt="animepapernetpicture-standard-.jpg">'
+
+      $('.woe-link').click(function () {
+        notie.alert(4, woecoming, 60);
+      });
 
       $('.video').slick({
         appendArrows: '.arrows',

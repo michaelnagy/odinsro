@@ -113,4 +113,37 @@ nav ul a:hover {
   border-radius: 6px;
   margin-left: 20px; }
 
+.footer-buttons {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+.server-status {
+  min-width: 65px;
+  position: fixed;
+  padding: 8px;
+  display: block;
+  top: 20%;
+  right: 0;
+  border-left: 6px #00c853 solid;
+  text-align: center; }
+  .server-status span {
+    font-weight: bold; }
+
+.server-woe {
+  min-width: 65px;
+  position: fixed;
+  padding: 8px;
+  padding-bottom: 0;
+  display: block;
+  top: 32%;
+  right: 0;
+  border-left: 6px #ef9a9a solid;
+  text-align: center; }
+  .server-woe span {
+    font-weight: bold; }
+
+.woe-link i {
+  padding-top: 10px;
+  font-size: 30px; }
+
 /*# sourceMappingURL=style.css.map */

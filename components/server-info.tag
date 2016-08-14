@@ -56,7 +56,7 @@
 	            <li class="collection-item">Eden - Quest up to 175</li>
 	            <li class="collection-item">
                 <b>Commands:</b><br>
-                commands, autoloot, alootid, autoloottype, autotrade, showexp, showzeny, whereis, exp, mobinfo, iteminfo, whodrops, time, noask, noks, go, guild, help, rates, duel, accept, invite, leave, whosells, homtalk, pettalk, channel, changegm, storage, storeall, <b>mobalive, manager, database</b>
+                commands, autoloot, alootid, autoloottype, autotrade, gstorage, guildstorage, showexp, showzeny, whereis, exp, mobinfo, iteminfo, whodrops, time, noask, noks, go, guild, help, rates, duel, accept, invite, leave, whosells, homtalk, pettalk, channel, changegm, storage, storeall, <b>mobalive, manager, database</b>
               </li>
 	          </ul>
 	        </div>

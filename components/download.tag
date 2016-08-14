@@ -16,19 +16,20 @@
             <div class="download-buttons">
               <img src="img/rubylit.gif" alt="" />
               <span class="installer">
-                <h6>Installer option 1</h6>
-                <a href="https://drive.google.com/folderview?id=0BwjVctmIbqF5dGFvN25ma3VQZlU&usp=sharing" target="_blank" class="waves-effect waves-light btn-large orange" style="margin-right:20px"><i class="material-icons left">cloud</i>Installer</a>
+                <h6>Direct Link</h6>
+                <a href="https://drive.google.com/file/d/0BwjVctmIbqF5Y3lINDZReVgzMDg/view?usp=sharing" target="_blank" class="waves-effect waves-light btn-large orange" style="margin-right:20px"><i class="material-icons left">cloud</i>Installer</a>
                 <!-- <a href="http://www.mediafire.com/download/20cgga4t6ga0dmt/odinsRO+install.exe" target="_blank" class="waves-effect waves-light btn-large orange" style="margin-right:20px"><i class="material-icons left">cloud</i>Installer</a> -->
-                <h6>Installer option 2</h6>
-                <a href="https://mega.nz/#!ldBH0Q4I!r4THr2mrq_tEMkRYRDXcevKuXlsI0ks6XaOEmuQGHJk" target="_blank" class="waves-effect waves-light btn-large orange" style="margin-right:20px"><i class="material-icons left">cloud</i>Installer</a>
+                <!-- <a href="https://drive.google.com/file/d/0BwjVctmIbqF5Y3lINDZReVgzMDg/view?usp=sharing" target="_blank" class="waves-effect waves-light btn-large orange" style="margin-right:20px"><i class="material-icons left">cloud</i>Installer</a> -->
+                <h6>Torrent</h6>
+                <a href="magnet:?xt=urn:btih:5C336476DE67E00B0C4444BD421A8EE656B32B27&dn=InstallerOdinsRO.exe&tr=udp%3a%2f%2f9.rarbg.com%3a2800%2fannounce&tr=http%3a%2f%2fannounce.torrentsmd.com%3a6969%2fannounce&tr=http%3a%2f%2fbt.careland.com.cn%3a6969%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=http%3a%2f%2fmgtracker.org%3a2710%2fannounce&tr=http%3a%2f%2ftracker.tfile.me%2fannounce&tr=http%3a%2f%2ftracker.torrenty.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.trackerfix.com%3a80%2fannounce&tr=http%3a%2f%2fwww.mvgroup.org%3a2710%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2800%2fannounce&tr=udp%3a%2f%2f9.rarbg.me%3a2780%2fannounce&tr=udp%3a%2f%2f9.rarbg.to%3a2710%2fannounce&tr=udp%3a%2f%2fcoppersurfer.tk%3a6969%2fannounce&tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&tr=udp%3a%2f%2fglotorrents.pw%3a6969%2fannounce&tr=%2audp%3a%2f%2fopen.demonii.com%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.coppersurfer.tk%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.glotorrents.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.leechers-paradise.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.publicbt.com%3a80%2fannounce&tr=udp%3a%2f%2ftracker4.piratux.com%3a6969%2fannounce" target="_blank" class="waves-effect waves-light btn-large orange" style="margin-right:20px"><img src="img/magnet.png" style="margin-right: 23px;" />Installer</a>
               </span>
               <span class="installer">
-                <h6>Data GRF option 1</h6>
-                <a href="https://mega.nz/#!aRwCQKAZ!cy5mtAw2Hw1YTngST2FhVyHZEVqgox-yO8Gpx_hvmKE" target="_blank" class="waves-effect waves-light btn-large"><i class="material-icons left">system_update_alt</i>GRF Data File</a>
+                <h6>Direct Link</h6>
+                <a href="https://drive.google.com/file/d/0BwjVctmIbqF5NWV0Ymc0QmxyVTQ/view?usp=sharing" target="_blank" class="waves-effect waves-light btn-large"><i class="material-icons left">system_update_alt</i>GRF Data File</a>
 
-                <h6>Data GRF option 2</h6>
-                <a href="https://drive.google.com/folderview?id=0BwjVctmIbqF5dGFvN25ma3VQZlU&usp=sharing" target="_blank" class="waves-effect waves-light btn-large"><i class="material-icons left">system_update_alt</i>GRF Data File</a>
-              </span>
+                <h6>Torrent</h6>
+                <a href="magnet:?xt=urn:btih:ED67B98419B3CC781C559AE0D2458B9A5AC68A6D&dn=data.grf&tr=udp%3a%2f%2f9.rarbg.com%3a2800%2fannounce&tr=http%3a%2f%2fannounce.torrentsmd.com%3a6969%2fannounce&tr=http%3a%2f%2fbt.careland.com.cn%3a6969%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=http%3a%2f%2fmgtracker.org%3a2710%2fannounce&tr=http%3a%2f%2ftracker.tfile.me%2fannounce&tr=http%3a%2f%2ftracker.torrenty.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.trackerfix.com%3a80%2fannounce&tr=http%3a%2f%2fwww.mvgroup.org%3a2710%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2800%2fannounce&tr=udp%3a%2f%2f9.rarbg.me%3a2730%2fannounce&tr=udp%3a%2f%2f9.rarbg.to%3a2710%2fannounce&tr=udp%3a%2f%2fcoppersurfer.tk%3a6969%2fannounce&tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&tr=udp%3a%2f%2fglotorrents.pw%3a6969%2fannounce&tr=%2audp%3a%2f%2fopen.demonii.com%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.coppersurfer.tk%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.glotorrents.com%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.leechers-paradise.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.publicbt.com%3a80%2fannounce&tr=udp%3a%2f%2ftracker4.piratux.com%3a6969%2fannounce" target="_blank" class="waves-effect waves-light btn-large"><img src="img/magnet.png" style="margin-right: 23px;" />GRF Data File</a>
+                </span>
               <img src="img/sapphilit.gif" alt="" />
             </div>
           </div>

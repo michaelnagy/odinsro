@@ -34,6 +34,9 @@ window.onload = function () {
 
 $(document).ready(function(){
 
+  // tooltip
+  $('.tooltipped').tooltip({html: true, position: 'left', delay: 50, tooltip: "<i class='material-icons'>info_outline</i> WOE Event - 12/21/16 - 4 P.M<br><i class='material-icons'>info_outline</i> WOE Event 2 - 12/21/16 - 6 P.M"});
+
   //changes the menu top position when page is scrolled
   $(window).scroll(function(){
       if ($(window).scrollTop() > 30){
@@ -120,6 +123,7 @@ $(document).ready(function(){
   riot.route('register', function() {
     view.render('register', 'modal');
     $('#modal2').openModal();
+    fbq('track', "ViewContent");
   });
 
   riot.route('logout', function() {
