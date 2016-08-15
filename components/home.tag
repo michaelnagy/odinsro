@@ -2,13 +2,19 @@
   <!-- Server Status -->
   <div class="info-widgets">
     <div class="server-status grey lighten-5 z-depth-1 ">
-      server<br><span class="server" style="color:#00c853;">ON</span>
+      status<br><span class="server" style="color:#00c853;">ON</span><br>
+      time<br>
+      <b></b>
     </div>
     <div class="server-woe grey lighten-5 z-depth-1 ">
       WOE<br><span class="woe" style="color:#ef9a9a;">OFF</span><br>
       <a class="woe-link"><i class="material-icons">event</i></a>
     </div>
+    <!-- <div class="server-time grey lighten-5 z-depth-1 ">
+      server time<br><span class="server" style="color:#00c853;">ON</span>
+    </div> -->
   </div>
+
 
   <div class="container animated fadeIn">
       <!-- ROW SECTION -->
@@ -117,13 +123,6 @@
     .arrows {
       width: 100%;
       position: relative;
-      /*display: flex;
-      align-items: center;
-      align-content: flex-end;
-      text-align: center;
-      justify-content: center;
-      flex-direction: row;
-      height: 80px;*/
       display: flex;
       align-items: center;
       align-content: center;
@@ -217,6 +216,9 @@
       $('.woe-link').click(function () {
         notie.alert(4, woecoming, 60);
       });
+
+      // Get and Set servertime widget
+      $('.server-status b').text(moment().locale('pt-br').tz("America/Sao_Paulo").format('HH:mm'));
 
       $('.video').slick({
         appendArrows: '.arrows',

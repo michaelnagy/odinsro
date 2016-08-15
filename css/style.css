@@ -135,11 +135,26 @@ nav ul a:hover {
   padding: 8px;
   padding-bottom: 0;
   display: block;
-  top: 32%;
+  top: 39%;
   right: 0;
   border-left: 6px #ef9a9a solid;
   text-align: center; }
   .server-woe span {
+    font-weight: bold; }
+  .server-woe a {
+    color: #616161; }
+
+.server-time {
+  min-width: 65px;
+  position: fixed;
+  padding: 8px;
+  padding-bottom: 0;
+  display: block;
+  top: 20%;
+  left: 0;
+  border-right: 6px #2962ff solid;
+  text-align: center; }
+  .server-time span {
     font-weight: bold; }
 
 .woe-link i {
