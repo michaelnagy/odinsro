@@ -144,15 +144,99 @@ nav ul a:hover {
   display: block;
   top: 39%;
   right: 0;
-  border-left: 6px #ef9a9a solid;
+  border-left: 6px #00c853 solid;
   text-align: center;
+  transition: all 0.5s ease-in-out;
+  z-index:300;
+  .woe-schedule {
+    max-height: 0;
+    max-width: 0;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+  }
+  table {
+    transition: all 0.5s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+  }
   span {
     font-weight: bold;
   }
   a {
     color:#616161;
   }
+  .emperium {
+    display: none;
+  }
+  &:hover {
+    // .woe, .woe-link {
+    //   display: none;
+    // }
+    .emperium {
+      display: block;
+      margin: 0 auto;
+    }
+    .woe-schedule {
+      max-height: 999px;
+      max-width: 999px;
+    }
+    table {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
 }
+.pvp-widget {
+  min-width: 65px;
+  position: fixed;
+  padding: 8px;
+  padding-bottom: 0;
+  display: block;
+  top: 120px;
+  left: 0;
+  border-right: 6px #FF9438 solid;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+  z-index: 300;
+  .woe-schedule {
+    max-height: 0;
+    max-width: 0;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+  }
+  table {
+    transition: all 0.5s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+  }
+  span {
+    font-weight: bold;
+  }
+  a {
+    color:#616161;
+  }
+  .emperium {
+    display: none;
+  }
+  &:hover {
+    // .woe, .woe-link {
+    //   display: none;
+    // }
+    .emperium {
+      display: block;
+      margin: 0 auto;
+    }
+    .woe-schedule {
+      max-height: 999px;
+      max-width: 999px;
+    }
+    table {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
 .server-time {
   min-width: 65px;
   position: fixed;
@@ -170,4 +254,8 @@ nav ul a:hover {
 .woe-link i {
   padding-top: 10px;
   font-size: 30px;
+}
+.info {
+  background-color: #fbe6ec;
+  border-radius: 3px;
 }

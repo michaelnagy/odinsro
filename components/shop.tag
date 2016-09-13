@@ -113,7 +113,7 @@
                     <div class="collapsible-header">VIP Features <i class="material-icons">arrow_drop_down</i></div>
                     <div class="collapsible-body">
                       <ul class="collection">
-                        <li class="collection-item"><b>@VIP Command:</b> A system that provides quick access to SPECIAL BUFF, Card Remove, SHOP VIP, announce VIP, Build Manager!</li>
+                        <li class="collection-item"><b>@VIP Command:</b> A system that provides quick access to SPECIAL BUFF, Card Remove, SHOP VIP, announce VIP, Build Manager (Save your build - 4 slots available)!</li>
                         <li class="collection-item"><b>Storage Slot increase:</b> Normal Slot limit + 200</li>
                         <li class="collection-item"><b>Base, Job and Quest XP:</b> 2x base and job XP / Battle Manual experience increase 2x</li>
                         <li class="collection-item"><b>Characters per account:</b> Normal limit + 5</li>
@@ -132,7 +132,9 @@
                 </ul>
               </div>
               <div class="card-action grey lighten-3">
-                <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&email={email}&history={register}&widget=p10_1" target="_blank">buy</a><span class="price">$24.99</span>
+                <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&email={email}&history={register}&widget=p10_1" target="_blank">buy</a>
+                <!-- <del><span style="margin-left: 70px;">$24.99</span></del> -->
+                <span class="price">$24.99</span>
               </div>
             </div>
           </div>

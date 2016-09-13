@@ -1,18 +1,49 @@
 <home>
   <!-- Server Status -->
   <div class="info-widgets">
+    <pvp></pvp>
     <div class="server-status grey lighten-5 z-depth-1 ">
       status<br><span class="server" style="color:#00c853;">ON</span><br>
       time<br>
       <b></b>
     </div>
-    <div class="server-woe grey lighten-5 z-depth-1 ">
-      WOE<br><span class="woe" style="color:#ef9a9a;">OFF</span><br>
+    <div class="server-woe grey lighten-5 z-depth-1 align-center">
+      WOE<br>
+      <span class="woe" style="color:#00c853">OFF</span><br>
       <a class="woe-link"><i class="material-icons">event</i></a>
-    </div>
-    <!-- <div class="server-time grey lighten-5 z-depth-1 ">
-      server time<br><span class="server" style="color:#00c853;">ON</span>
-    </div> -->
+      <!-- <img class="emperium" width="50px" src="/img/emperium.png" alt="" /> -->
+      <div class="woe-schedule">
+        <table class="centered">
+          <thead>
+            <tr>
+              <th data-field="id">Castle</th>
+              <th data-field="name">Date</th>
+              <th data-field="price">Start - Finish</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bergel</td>
+              <td>Sunday</td>
+              <td>18:00 - 19:00</td>
+            </tr>
+            <tr>
+              <td>Mardol</td>
+              <td>Wednesday</td>
+              <td>07:00 - 08:00</td>
+            </tr>
+            <tr>
+              <td>Swanhild</td>
+              <td>Friday</td>
+              <td>14:00 - 15:00</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="info">
+          more information in prontera 151 169
+        </p>
+      </div>
+      </div>
   </div>
 
 
@@ -210,12 +241,12 @@
     this.on('mount', function(){
 
       // WOE informations notie
-      var notiehtml = '<table class="centered"><thead><tr><th data-field="id">Castle</th><th data-field="name">Date</th><th data-field="price">Time</th></tr></thead><tbody><tr><td>Leprion</td><td>08/14/16</td><td>4 PM</td></tr><tr><td>Leprion</td><td>08/14/16</td><td>4 PM</td></tr><tr><td>Leprion</td><td>08/14/16</td><td>4 PM</td></tr></tbody></table>';
-      var woecoming = '<h4>Calendar Coming Soon</4><br><img width="250px" class="z-depth-2" src="http://www.myro-ph.com/images/forum/animepapernetpicture-standard-.jpg" alt="animepapernetpicture-standard-.jpg">'
-
-      $('.woe-link').click(function () {
-        notie.alert(4, woecoming, 60);
-      });
+      // var notiehtml = '<table class="centered"><thead><tr><th data-field="id">Castle</th><th data-field="name">Date</th><th data-field="price">Time</th></tr></thead><tbody><tr><td>Leprion</td><td>08/14/16</td><td>4 PM</td></tr><tr><td>Leprion</td><td>08/14/16</td><td>4 PM</td></tr><tr><td>Leprion</td><td>08/14/16</td><td>4 PM</td></tr></tbody></table>';
+      // var woecoming = '<h4>Calendar Coming Soon</4><br><img width="250px" class="z-depth-2" src="http://www.myro-ph.com/images/forum/animepapernetpicture-standard-.jpg" alt="animepapernetpicture-standard-.jpg">'
+      //
+      // $('.woe-link').click(function () {
+      //   notie.alert(4, woecoming, 60);
+      // });
 
       // Get and Set servertime widget
       $('.server-status b').text(moment().locale('pt-br').tz("America/Sao_Paulo").format('HH:mm'));
