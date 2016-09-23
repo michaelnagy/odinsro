@@ -2,14 +2,15 @@
   <!-- Server Status -->
   <div class="info-widgets">
     <pvp></pvp>
+    <woe></woe>
     <div class="server-status grey lighten-5 z-depth-1 ">
       status<br><span class="server" style="color:#00c853;">ON</span><br>
       time<br>
       <b></b>
     </div>
     <div class="server-woe grey lighten-5 z-depth-1 align-center">
-      WOE<br>
-      <span class="woe" style="color:#00c853">OFF</span><br>
+      <b>WOE</b><br>
+      <!-- <span class="woe" style="color:#00c853">OFF</span><br> -->
       <a class="woe-link"><i class="material-icons">event</i></a>
       <!-- <img class="emperium" width="50px" src="/img/emperium.png" alt="" /> -->
       <div class="woe-schedule">
@@ -266,7 +267,7 @@
         });
 
       //get the news from forum
-      $.get("http://forum.odinsro.net/api/discussions?include=startPost%2Ctags&filter%5Bq%5D=%20tag%3Anews&", function( data ) {
+      $.get("http://forum.odinsro.net/api/discussions?limit=5&include=startPost%2Ctags&filter%5Bq%5D=%20tag%3Anews&", function( data ) {
 
         if (!data.included) {
           return

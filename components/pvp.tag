@@ -50,7 +50,7 @@ $.ajax({
       self.pvp[0].medal = 'gold.png';
       self.pvp[1].medal = 'silver.png';
       self.pvp[2].medal = 'bronze.png';
-      console.log(self.pvp);
+      // console.log(self.pvp);
       self.update();
     }
   });

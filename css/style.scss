@@ -198,6 +198,9 @@ nav ul a:hover {
   text-align: center;
   transition: all 0.5s ease-in-out;
   z-index: 300;
+  &:hover {
+    z-index: 302;
+  }
   .woe-schedule {
     max-height: 0;
     max-width: 0;

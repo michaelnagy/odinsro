@@ -21,9 +21,23 @@
               <div class="col s3">
                 <div class="card grey lighten-5 z-depth-1 animated fadeIn">
                   <div class="card-content">
+                    <span class="card-title">Leather Package</span>
+                    <img src="img/shop/poring.gif" width="50px" style="display:block;margin:0 auto;"/>
+                    <p style="padding-top: 43px;padding-bottom: 20px; font-size: 20px;" class="center-align bold">2.500 Cash</p>
+                  </div>
+                  <div class="card-action grey lighten-3">
+                    <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&email={email}&history={register}&widget=p10_1" target="_blank">buy</a><span class="price">$4.99</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col s3">
+                <div class="card grey lighten-5 z-depth-1 animated fadeIn">
+                  <div class="card-content">
                     <span class="card-title">Bronze Package</span>
                     <img src="img/shop/bronze.gif" style="width:150px;" class="shop-gif" />
-                    <p style="padding-top: 43px;padding-bottom: 20px; font-size: 20px;" class="center-align bold">5.000 Cash</p>
+                    <del><p class="center-align">5.000 Cash</p></del>
+                    <p class="center-align" style="font-size: 13px;">5% Bonus</p>
+                    <p style="padding-top: 43px;padding-bottom: 20px; font-size: 20px;" class="center-align bold">5.250 Cash</p>
                   </div>
                   <div class="card-action grey lighten-3">
                     <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&email={email}&history={register}&widget=p10_1" target="_blank">buy</a><span class="price">$9.99</span>
