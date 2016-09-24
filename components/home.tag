@@ -273,8 +273,8 @@
           return
         }
         // console.log(data.data);
-        self.news = data.data;
-        self.posts = data.included;
+        self.news = data.data.slice(0,4);
+        self.posts = data.included.slice(0,4);
         // console.log(data.data, self.posts);
         // console.log('TITLE: ',data.data[0].attributes.title, 'POST: ',data.included[0].attributes.contentHtml);
         for (i = 0; i < self.posts.length; i++) {
