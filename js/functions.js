@@ -39,6 +39,7 @@
                           setToken('lasttime', response.last_login_date);
                           setToken('vip', response.vip_time);
                           setToken('created', response.created);
+                          setToken('hwid', response.hwid);
                           // console.log(response);
                           //closes the login modal
                           $('#modal1.modal').closeModal();

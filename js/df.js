@@ -81,6 +81,7 @@
 //
 //
 //         event.response.content.odinid = result.content.resource[0].account_id;
+//         event.response.content.hwid = result.content.resource[0].hwid;
 //         event.response.content.birthdate = result.content.resource[0].birthdate;
 //         event.response.content.vip_time = result.content.resource[0].vip_time;
 //         event.response.content.email = event.request.payload.email;

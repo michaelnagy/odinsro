@@ -31,7 +31,7 @@
             <tr>
               <td>Mardol</td>
               <td>Wednesday</td>
-              <td>07:00 - 08:00</td>
+              <td>08:00 - 09:00</td>
             </tr>
             <tr>
               <td>Swanhild</td>
@@ -104,7 +104,10 @@
         <div class="col s6 z-depth-1 video-col">
           <div class="video">
             <div>
-              <iframe width="100%" height="270" src="https://www.youtube.com/embed/2vKt_xav6gI" frameborder="0" allowfullscreen></iframe>
+              <iframe width="100%" height="270" src="https://www.youtube.com/embed/jg6AX99LwKw" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div>
+              <iframe width="100%" height="270" src="https://www.youtube.com/embed/u2q49bmItFk" frameborder="0" allowfullscreen></iframe>
             </div>
             <div>
               <iframe width="100%" height="270" src="https://www.youtube.com/embed/86efD2Bxtr0" frameborder="0" allowfullscreen></iframe>

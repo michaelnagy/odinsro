@@ -1,5 +1,6 @@
 <profile>
   <div class="row">
+    <sharer></sharer>
     <profile-sidebar></profile-sidebar>
 
     <div class="col s10 animated fadeInUp content">

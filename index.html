@@ -13,6 +13,7 @@
       <link rel="stylesheet" href="/css/style.css" media="screen" charset="utf-8">
   </head>
   <body class="blue lighten-5">
+    <discord-widget></discord-widget>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -141,7 +142,6 @@
             <li><a href="#download">Download</a></li>
             <li><a href="#server-info">Game Info</a></li>
             <li><a href="http://forum.odinsro.net/" target="_blank">Community</a></li>
-            <li><a href="https://discord.gg/6fuTyfW" target="_blank">Chat</a></li>
             <li>
               <perfil-menu></perfil-menu>
             </li>
@@ -159,7 +159,6 @@
       <li><a href="#login">Login</a></li>
       <li><a href="#register">Register</a></li>
       <li><a href="http://forum.odinsro.net/" target="_blank">Community</a></li>
-      <li><a href="https://discord.gg/6fuTyfW" target="_blank">Chat</a></li>
     </ul>
     <main>
 
@@ -238,9 +237,12 @@
   <script src="/components/contact.tag" type="riot/tag"></script>
   <script src="/components/pvp.tag" type="riot/tag"></script>
   <script src="/components/woe.tag" type="riot/tag"></script>
+  <script src="/components/discord-widget.tag" type="riot/tag"></script>
+  <script src="/components/sharer.tag" type="riot/tag"></script>
   <!-- MOUNTED TAGS -->
   <script>riot.mount('perfil-menu')</script>
   <script>riot.mount('profile-password-change')</script>
+  <script>riot.mount('discord-widget')</script>
   <script
     src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-2.min.js"
     data-apikey="bffd95f1562732a2389f0f1cc1e592cb">

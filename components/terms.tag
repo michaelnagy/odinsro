@@ -11,7 +11,7 @@
                 1.2 - The Staff declares its RESPONSIBILITIES DISCLAIMS relating to: hacking accounts, delete characters and doubtful loss of account.
                 1.2.1 - The Staff declares the right (not the obligation) to investigate and punish hacking with UNLIMITED BAN; the same goes for the accounts related to account banned;
                 1.2.1.1 - The staff is not responsible for items that have lost their effect or modified by nerfs with the purpose of balancing the server. The staff have responsibility to pay for items that have lost effect for reasons of bugs or server errors.
-                1.2.2 - The Staff doesn't state the right (or the obligation) to recover lost items, lost accounts and losses due to fraudulent trading, hacking, and bad use of items , etc.
+                1.2.2 - The Staff state the right (nor the obligation) to recover lost items, lost accounts and losses due to fraudulent trading, hacking, and bad use of items , etc.
 
                 <h6>2. RELATIONSHIP PLAYER X STAFF</h6>
 
@@ -168,6 +168,8 @@
                 15.1 - It is unacceptable to a player, playing odinsRO, to defame odinsRO, lower his morale, or raise any kind of rumor that harms the image of our server.
                 First occurrence: two days of general BAN
                 Second occurrence: definitive Ban on all accounts
+
+                15.2 - The odinRO team has complete freedom to edit, remove, add and put exception to any rule listed here, with complete freedom in their decisions;
 	            </div>
 	        </div>
         </div>
