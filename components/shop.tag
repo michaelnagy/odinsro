@@ -1,4 +1,51 @@
 <shop>
+  <!-- Modal Structure -->
+  <div id="modalpayment" class="modal" style="max-height:90%">
+    <div class="modal-content center">
+      <h4>Payment Instructions</h4>
+      <div class="initial-info">
+        <div class="row">
+          <p style="font-size:1.34rem;">Choose your payment method below</p>
+          <div class="col s6 center">
+            <a class="paypal"><img class="hoverable" src="/img/paypal.png" alt="" /></a>
+          </div>
+          <div class="col s6 center">
+            <div class="valign-wrapper" style="height:256px;">
+              <a class="bitcoin"><img class="hoverable" width="300px" src="/img/bitcoin.png" alt="" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 center paypal-info" style="display:none">
+          <div>
+            <h5 style="font-size:1.44rem;">1. Send the money to the paypal address <b>managyteo@yahoo.com.br</b></h5>
+            <h5 style="font-size:1.44rem;">2. Contact us on <a href="https://www.facebook.com/oficialodinsro/" target="_blank">Facebook Page</a> or <a href="https://discord.gg/6fuTyfW" target="_blank">Chat</a> to get your <b>CASHPOINTS</b>.</h5>
+          </div>
+        </div>
+        <div class="col s12 center bitcoin-info" style="display:none">
+          <div>
+            <h5 style="font-size:1.44rem;">1. Send the bitcoins to our Wallet:</h5>
+            <p style="font-size:1.44rem">
+              <b>1JFvtRhBfTipfkgdqkPMen7EBqp1HRDuQ3</b>
+            </p>
+            <img src="https://chart.googleapis.com/chart?cht=qr&chs=350x350&chl=bitcoin:1JFvtRhBfTipfkgdqkPMen7EBqp1HRDuQ3" alt="" />
+            <h5 style="font-size:1.44rem;">2. Contact us on <a href="https://www.facebook.com/oficialodinsro/" target="_blank">Facebook Page</a> or <a href="https://discord.gg/6fuTyfW" target="_blank">Chat</a> to get your <b>CASHPOINTS</b>.</h5>
+
+          </div>
+        </div>
+        <div class="col s12 center">
+          <div class="chip" style="margin: 20px;font-size: 17px;font-weight: 600;color: #807f7f;">
+            If you find any problem, message us on <a href="https://www.facebook.com/oficialodinsro/" target="_blank">Facebook Page</a> or <a href="https://discord.gg/6fuTyfW" target="_blank">Chat</a>.
+          </div><br>
+          <button class="back-btn waves-effect waves-light btn" type="button" name="button">GO BACK</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <div class="container-fluid">
     <div class="row">
       <profile-sidebar></profile-sidebar>
@@ -26,7 +73,7 @@
                     <p style="padding-top: 43px;padding-bottom: 20px; font-size: 20px;" class="center-align bold">2.500 Cash</p>
                   </div>
                   <div class="card-action grey lighten-3">
-                    <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&email={email}&history={register}&widget=p10_1" target="_blank">buy</a><span class="price">$4.99</span>
+                    <a class="waves-effect waves-light btn btn-game-info" href="#modalpayment">buy</a><span class="price">$4.99</span>
                   </div>
                 </div>
               </div>
@@ -40,7 +87,7 @@
                     <p style="padding-top: 43px;padding-bottom: 20px; font-size: 20px;" class="center-align bold">5.250 Cash</p>
                   </div>
                   <div class="card-action grey lighten-3">
-                    <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&email={email}&history={register}&widget=p10_1" target="_blank">buy</a><span class="price">$9.99</span>
+                    <a class="waves-effect waves-light btn btn-game-info" href="#modalpayment">buy</a><span class="price">$9.99</span>
                   </div>
                 </div>
               </div>
@@ -63,7 +110,7 @@
                     <p class="center-align bold" style="font-size: 20px;">16.500 Cash</p>
                   </div>
                   <div class="card-action grey lighten-3">
-                    <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&email={email}&history={register}&widget=p10_1" target="_blank">buy</a><span class="price">$29.99</span>
+                    <a class="waves-effect waves-light btn btn-game-info" href="#modalpayment">buy</a><span class="price">$29.99</span>
                   </div>
                 </div>
               </div>
@@ -86,7 +133,7 @@
                     <p class="center-align bold" style="font-size: 20px;">30.000 Cash</p>
                   </div>
                   <div class="card-action grey lighten-3">
-                    <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&email={email}&history={register}&widget=p10_1" target="_blank">buy</a><span class="price">$49.99</span>
+                    <a class="waves-effect waves-light btn btn-game-info" href="#modalpayment">buy</a><span class="price">$49.99</span>
                   </div>
                 </div>
               </div>
@@ -109,7 +156,7 @@
                     <p class="center-align bold" style="font-size: 20px;">70.000 Cash</p>
                   </div>
                   <div class="card-action grey lighten-3">
-                    <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&email={email}&history={register}&widget=p10_1" target="_blank">buy</a><span class="price">$99.99</span>
+                    <a class="waves-effect waves-light btn btn-game-info" href="#modalpayment">buy</a><span class="price">$99.99</span>
                   </div>
                 </div>
               </div>
@@ -146,7 +193,7 @@
                 </ul>
               </div>
               <div class="card-action grey lighten-3">
-                <a class="waves-effect waves-light btn btn-game-info" href="https://api.paymentwall.com/api/subscription/?key=eb907cd7bde6ad788220708ebc7c6a48&uid={odinid}&email={email}&history={register}&widget=p10_1" target="_blank">buy</a>
+                <a class="waves-effect waves-light btn btn-game-info" href="#modalpayment">buy</a>
                 <!-- <del><span style="margin-left: 70px;">$24.99</span></del> -->
                 <span class="price">$24.99</span>
               </div>
@@ -194,7 +241,24 @@
       //initialize materialize tabs component
       $('ul.tabs').tabs();
 
-      // ajax post to payment API
+      // initialize modal
+      $('.btn-game-info').leanModal();
+
+      //hiding and showing instructions
+      $('.paypal').click(function () {
+        $('.bitcoin-info').hide();
+        $('.initial-info').hide();
+        $('.paypal-info').fadeIn();
+      })
+      $('.bitcoin').click(function () {
+        $('.paypal-info').hide();
+        $('.initial-info').hide();
+        $('.bitcoin-info').fadeIn();
+      })
+      $('.back-btn').click(function () {
+        $('.initial-info').fadeIn();
+        $('.bitcoin-info, .paypal-info').hide();
+      });
 
     });
 
