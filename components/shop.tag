@@ -1,6 +1,6 @@
 <shop>
   <!-- Modal Structure -->
-  <div id="modalpayment" class="modal" style="max-height:90%">
+  <div id="modalpayment" class="modal" style="max-height:95%">
     <div class="modal-content center">
       <h4>Payment Instructions</h4>
       <div class="initial-info">
@@ -26,6 +26,10 @@
         </div>
         <div class="col s12 center bitcoin-info" style="display:none">
           <div>
+            <div class="chip" style="margin: 20px;font-size: 17px;font-weight: 600;color: #807f7f;">
+              If you are from Philippines get Bitcoins using 7 ELEVEN in <a href="https://coins.ph/" target="_blank">Coins.ph</a></a>.
+            </div><br>
+
             <h5 style="font-size:1.44rem;">1. Send the bitcoins to our Wallet:</h5>
             <p style="font-size:1.44rem">
               <b>1JFvtRhBfTipfkgdqkPMen7EBqp1HRDuQ3</b>
@@ -36,9 +40,6 @@
           </div>
         </div>
         <div class="col s12 center">
-          <div class="chip" style="margin: 20px;font-size: 17px;font-weight: 600;color: #807f7f;">
-            If you find any problem, message us on <a href="https://www.facebook.com/oficialodinsro/" target="_blank">Facebook Page</a> or <a href="https://discord.gg/6fuTyfW" target="_blank">Chat</a>.
-          </div><br>
           <button class="back-btn waves-effect waves-light btn" type="button" name="button">GO BACK</button>
         </div>
       </div>
@@ -242,7 +243,7 @@
       $('ul.tabs').tabs();
 
       // initialize modal
-      $('.btn-game-info').leanModal();
+      $('.btn-game-info').leanModal({starting_top: '4%',ending_top: '10%'});
 
       //hiding and showing instructions
       $('.paypal').click(function () {

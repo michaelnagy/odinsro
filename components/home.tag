@@ -3,6 +3,15 @@
   <div class="info-widgets">
     <pvp></pvp>
     <woe></woe>
+
+    <!-- Rate us widget -->
+    <div class="pvp-widget grey lighten-5 z-depth-1 align-center" style="top:295px; min-width: 95px;">
+      <b>RATE US!<br></b>
+      <a href="http://ratemyserver.net/index.php?page=detailedlistserver&serid=19122&url_sname=OdinsRO" target="_blank"><img src="/img/golden-poring.gif" style="width:35px" /></a>
+
+    </div>
+    <!-- Rate us widget -->
+
     <div class="server-status grey lighten-5 z-depth-1 ">
       status<br><span class="server" style="color:#00c853;">ON</span><br>
       time<br>
@@ -24,19 +33,19 @@
           </thead>
           <tbody>
             <tr>
-              <td>Bergel</td>
-              <td>Sunday</td>
-              <td>18:00 - 19:00</td>
-            </tr>
-            <tr>
               <td>Mardol</td>
               <td>Wednesday</td>
-              <td>08:00 - 09:00</td>
+              <td>13:00 - 14:00</td>
             </tr>
             <tr>
               <td>Swanhild</td>
               <td>Friday</td>
               <td>14:00 - 15:00</td>
+            </tr>
+            <tr>
+              <td>Bergel</td>
+              <td>Saturday</td>
+              <td>13:00 - 14:00</td>
             </tr>
           </tbody>
         </table>

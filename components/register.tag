@@ -21,6 +21,10 @@
             <input type="date" id="birthdate" name="birthdate" class="datepicker">
             <label for="birthdate" class="birth">Birthdate</label>
           </div>
+          <div class="input-field display_name col s12">
+            <input id="affiliate_name" type="text" name="affiliate_name" class="validate">
+            <label for="affiliate_name">Affiliate partner (optional)</label>
+          </div>
         </div>
         <div style="margin-bottom:0;" class="row buttons">
 
@@ -162,6 +166,7 @@
         // console.log('register');
 
       dataform = $('.register-form').serializeArray();
+      console.log(dataform);
       // console.log(dataform);
       $('.register-form').submit(function(event){
         if(!this.checkValidity())
@@ -177,8 +182,8 @@
                 event.preventDefault();
                 var dt = new Date(dataform[3].value);
                 var dtstr = dt.toYMD();
-                // console.log(md5(dataform[2].value));
-                $.api.register(dataform[0].value, dataform[1].value, md5(dataform[2].value), dtstr, dataform[4].value);
+                console.log(dataform);
+                $.api.register(dataform[0].value, dataform[1].value, md5(dataform[2].value), dtstr, dataform[4].value, dataform[5].value);
                 dataform = [];
               }
           });

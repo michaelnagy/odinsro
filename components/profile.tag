@@ -58,6 +58,14 @@
         <div class="col s12" style="margin-top:-30px">
             <div class="card-panel grey lighten-5 z-depth-1 quest">
               <div class="animated fadeIn">
+                <!-- <affiliate></affiliate> -->
+              </div>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="card-panel grey lighten-5 z-depth-1 quest">
+              <div class="animated fadeIn">
                 <quest></quest>
               </div>
             </div>

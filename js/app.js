@@ -34,6 +34,24 @@ window.onload = function () {
 
 $(document).ready(function(){
 
+  // Initialize countdown modal
+
+
+
+    $('#modalcountdown').openModal({
+      ready : function () {
+        console.log('sadasd');
+        $("#modalcountdown .modal-content h1")
+        .countdown("2017/01/27 18:00:00", function(event) {
+          $(this).text(
+            event.strftime('%D days %H:%M:%S')
+          );
+        });
+      }
+    });
+
+
+
   // tooltip
   $('.tooltipped').tooltip({html: true, position: 'left', delay: 50, tooltip: "<i class='material-icons'>info_outline</i> WOE Event - 12/21/16 - 4 P.M<br><i class='material-icons'>info_outline</i> WOE Event 2 - 12/21/16 - 6 P.M"});
 
