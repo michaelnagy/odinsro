@@ -42,7 +42,7 @@ $(document).ready(function(){
       ready : function () {
         console.log('sadasd');
         $("#modalcountdown .modal-content h1")
-        .countdown("2017/01/27 18:00:00", function(event) {
+        .countdown("2017/02/01 15:00:00", function(event) {
           $(this).text(
             event.strftime('%D days %H:%M:%S')
           );
