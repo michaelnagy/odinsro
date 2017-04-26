@@ -38,17 +38,17 @@ $(document).ready(function(){
 
 
 
-    $('#modalcountdown').openModal({
-      ready : function () {
-        console.log('sadasd');
-        $("#modalcountdown .modal-content h1")
-        .countdown("2017/02/01 15:00:00", function(event) {
-          $(this).text(
-            event.strftime('%D days %H:%M:%S')
-          );
-        });
-      }
-    });
+    // $('#modalcountdown').openModal({
+    //   ready : function () {
+    //     var nextYear = moment.tz("2017-02-01 18:00", "America/Sao_Paulo");
+    //     $("#modalcountdown .modal-content h1")
+    //     .countdown(nextYear.toDate(), function(event) {
+    //       $(this).text(
+    //         event.strftime('%D days %H:%M:%S')
+    //       );
+    //     });
+    //   }
+    // });
 
 
 

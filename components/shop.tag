@@ -20,7 +20,7 @@
       <div class="row">
         <div class="col s12 center paypal-info" style="display:none">
           <div>
-            <h5 style="font-size:1.44rem;">1. Send the money to the paypal address <b>managyteo@yahoo.com.br</b></h5>
+            <h5 style="font-size:1.44rem;">1. Send the money to the paypal address <b>ringshield@hotmail.com</b></h5>
             <h5 style="font-size:1.44rem;">2. Contact us on <a href="https://www.facebook.com/oficialodinsro/" target="_blank">Facebook Page</a> or <a href="https://discord.gg/6fuTyfW" target="_blank">Chat</a> to get your <b>CASHPOINTS</b>.</h5>
           </div>
         </div>
