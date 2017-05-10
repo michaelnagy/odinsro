@@ -8,12 +8,12 @@
 	              <li class="collection-item"><span>Max Level: </span><span class="badge">175/60</span></li>
 	              <li class="collection-item"><span>Max ASPD: </span><span class="badge">193</span></li>
 	              <li class="collection-item"><span>Max Stats: </span><span class="badge">130 (3rd job)</span></li>
-	              <li class="collection-item"><span>Base & Job (floating): </span><span class="badge">200x ~ 500x</span></li>
+	              <li class="collection-item"><span>Base & Job (floating): </span><span class="badge">200x ~ 800x</span></li>
 	              <li class="collection-item"><span>Quest: </span><span class="badge">200x</a></li>
-	              <li class="collection-item"><span>MVP Card: </span><span class="badge">1%</span></li>
-	              <li class="collection-item"><span>MVP Drop: </span><span class="badge">50x</span></li>
-	              <li class="collection-item"><span>Normal Card: </span><span class="badge">2%</span></li>
-	              <li class="collection-item"><span>Normal Drop: </span><span class="badge">500x</span></li>
+	              <li class="collection-item"><span>MVP Card: </span><span class="badge">0.5%</span></li>
+	              <li class="collection-item"><span>MVP Drop: </span><span class="badge">10x</span></li>
+	              <li class="collection-item"><span>Normal Card: </span><span class="badge">1%</span></li>
+	              <li class="collection-item"><span>Normal Drop: </span><span class="badge">100x</span></li>
 	            </ul>
 	        </div>
         </div>
@@ -56,7 +56,7 @@
 	            <li class="collection-item">Eden - Quest up to 175</li>
 	            <li class="collection-item">
                 <b>Commands:</b><br>
-                commands, autoloot, alootid, autoloottype, autotrade, gstorage, guildstorage, showexp, showzeny, whereis, exp, mobinfo, iteminfo, whodrops, time, noask, noks, go, guild, help, rates, duel, accept, invite, leave, whosells, homtalk, pettalk, channel, changegm, storage, storeall, <b>mobalive, manager, database</b>
+                autoloot, alootid, autoloottype, autotrade, showexp, showzeny, whereis, exp, mobinfo, iteminfo, whodrops, time, noask, noks, go, guild, help, rates, duel, accept, invite, leave, homtalk, pettalk, channel, changegm, storage, hominfo, homstats, guildstorage, whogm, adopt, <b>bgregister, bgjoin, bgleave, bgunregister, bgreportafk, bgwaiting, bgranking, bgorder, bgchangeleader, mobalive, manager, database</b>
               </li>
 	          </ul>
 	        </div>
@@ -66,13 +66,13 @@
         	<div class="card-panel">
         	<h5 class="align-center">Oficial Features</h5>
           	<ul class="collection">
-              <li class="collection-item">Episode 15.1 - In production</li>
+              <li class="collection-item">Episode 15 - In production</li>
               <li class="collection-item">Third Classes: Fully Available</li>
               <li class="collection-item">Doram/Rebellion/Kagerou/Oboro: Fully Available</li>
               <li class="collection-item">Quests Eclage, El Dicastes, Malangdo & Mora 100%</li>
               <li class="collection-item"><b>Instances:</b><br>
-Nightmarish Jitterbug, Morse Cave, Bios Island, Geffen Magic Tournament, <b>Horror Toy Factory</b>, Ghost Palace, Faceworm's Nest, Old Glast Heim, Endless Tower, Bakonawa Lake, Hazy Forest, Sara's Memory, <b>Sarah & Fenrir</b>, <b>Airship Assault</b>, End of Morroc, <b>Infinity Space</b>, Nightmare Clock Tower, Nightmare Glast Heim, Nightmare Pyramids</li>
-
+              Nightmarish Jitterbug, Morse Cave, Bios Island, Geffen Magic Tournament, Horror Toy Factory, Ghost Palace, Faceworm's Nest, Old Glast Heim, Endless Tower, Bakonawa Lake, Hazy Forest, Sara's Memory, Sarah & Fenrir, Airship Assault, End of Morroc, Infinity Space, Nightmare Clock Tower, Nightmare Glast Heim, Nightmare Pyramids, <b>Charleston Crisis, The Last Room, Central Lab</b>
+              </li>
             </ul>
         	</div>
         </div>

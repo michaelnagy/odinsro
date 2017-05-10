@@ -1,8 +1,8 @@
 <home>
   <!-- Server Status -->
   <div class="info-widgets">
-    <pvp></pvp>
-    <woe></woe>
+    <!-- <pvp></pvp> -->
+    <!-- <woe></woe> -->
 
     <!-- Rate us widget -->
     <div class="pvp-widget grey lighten-5 z-depth-1 align-center" style="top:295px; min-width: 95px;">
@@ -65,16 +65,16 @@
          <div class="slider">
             <ul class="slides z-depth-1">
               <li>
-                <img src="img/1.jpg">
+                <img src="img/banner1.png">
               </li>
               <li>
-                <img src="img/2.jpg">
+                <img src="img/banner2.png">
               </li>
               <li>
-                <img src="img/3.jpg">
+                <img src="img/banner3.png">
               </li>
               <li>
-                <img src="img/4.jpg">
+                <img src="img/banner4.png">
               </li>
             </ul>
           </div>
@@ -88,10 +88,10 @@
             <div class="card-content black-text server-features">
               <span class="card-title grey-text text-darken-4">Server Features</span>
                <ul class="collection">
-                <li class="collection-item"><span>Episode 15.1</span> </li>
-                <li class="collection-item"><span>New Doram Race updates!</span> </li>
-                <li class="collection-item"><span>New BG System!</span> </li>
-                <li class="collection-item"><span>New Market System!</span> </li>
+                <li class="collection-item"><span>Episode 15</span> </li>
+                <li class="collection-item"><span>Pack Guild</span> </li>
+                <li class="collection-item"><span>WOE Reward</span> </li>
+                <li class="collection-item"><span>BG Expansive</span> </li>
               </ul>
             </div>
 

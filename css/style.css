@@ -226,4 +226,7 @@ nav ul a:hover {
   background-color: #fbe6ec;
   border-radius: 3px; }
 
+.slider .slides li img {
+  background-size: 100% 100%; }
+
 /*# sourceMappingURL=style.css.map */

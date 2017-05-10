@@ -262,3 +262,9 @@ nav ul a:hover {
   background-color: #fbe6ec;
   border-radius: 3px;
 }
+
+// Little hack for the slider to have the image contained 100%
+
+.slider .slides li img {
+  background-size: 100% 100%;
+}

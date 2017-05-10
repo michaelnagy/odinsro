@@ -35,22 +35,17 @@ window.onload = function () {
 $(document).ready(function(){
 
   // Initialize countdown modal
-
-
-
-    // $('#modalcountdown').openModal({
-    //   ready : function () {
-    //     var nextYear = moment.tz("2017-02-01 18:00", "America/Sao_Paulo");
-    //     $("#modalcountdown .modal-content h1")
-    //     .countdown(nextYear.toDate(), function(event) {
-    //       $(this).text(
-    //         event.strftime('%D days %H:%M:%S')
-    //       );
-    //     });
-    //   }
-    // });
-
-
+    $('#modalcountdown').openModal({
+      ready : function () {
+        var nextYear = moment.tz("2017-05-13 12:00", "America/Sao_Paulo");
+        $("#modalcountdown .modal-content h1")
+        .countdown(nextYear.toDate(), function(event) {
+          $(this).text(
+            event.strftime('%D days %H:%M:%S')
+          );
+        });
+      }
+    });
 
   // tooltip
   $('.tooltipped').tooltip({html: true, position: 'left', delay: 50, tooltip: "<i class='material-icons'>info_outline</i> WOE Event - 12/21/16 - 4 P.M<br><i class='material-icons'>info_outline</i> WOE Event 2 - 12/21/16 - 6 P.M"});
