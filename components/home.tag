@@ -13,7 +13,7 @@
     <!-- Rate us widget -->
 
     <div class="server-status grey lighten-5 z-depth-1 ">
-      status<br><span class="server" style="color:#00c853;">ON</span><br>
+      status<br><span class="server" style="color:#E36049;">OFF</span><br>
       time<br>
       <b></b>
     </div>
